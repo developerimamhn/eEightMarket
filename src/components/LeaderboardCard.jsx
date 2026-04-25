@@ -1,0 +1,52 @@
+import React from 'react'
+import Frame_1 from "../assets/Frame 427321461.svg";
+import FancySvgButton from './button/FancySvgButton';
+import Frame_2 from "../assets/Frame 427321365.svg";
+import GlowEllipse from './svg/GlowEllipse';
+import GlowBlob from './svg/GlowBlob';
+
+const LeaderboardCard = () => {
+    return (
+        <div className="text-stone-50">
+            <div className='flex items-center justify-between'>
+                <div className='flex items-center gap-[7.76px]'>
+                    <img src={Frame_1} alt="logo" className="w-11 h-11" />
+                    <p className='font-medium text-[17.46px] leading-[160%] tracking-normal bg-[linear-gradient(180deg,#FFFFFF_28.57%,#999999_100%)] bg-clip-text text-transparent'>Leaderboard</p>
+                </div>
+
+                <div className="flex w-84.75 h-11.5 bg-[#FFFFFF0D] rounded-2xl border border-[#FFFFFF1A] p-0.75">
+                    {/* First Button (SVG) */}
+                    <FancySvgButton
+                        text="Global Leaderboard"
+                        className="w-1/2 font-normal text-[13.58px] leading-[150%]"
+
+                    />
+
+                    {/* Second Button */}
+                    <button className="w-1/2 flex items-center justify-center font-normal text-[13.58px] leading-[150%] text-white/70 rounded-2xl">
+                        Analysis of Volume
+                    </button>
+                </div>
+            </div>
+            {/* <div>
+                <img src={Frame_2} alt="logo" className="w-full h-full" />
+
+            </div> */}
+            <div className="p-px rounded-[20px] bg-[linear-gradient(252.84deg,#86B4B4_0.99%,rgba(58,78,78,0.1)_36.61%)]">
+
+                <div className="w-full h-116.75 rounded-[20px] bg-[linear-gradient(180deg,#011314_0%,#011515_85%,rgba(9,42,45,0.7)_100%)]">
+                    <div className='flex justify-end h-full'>
+
+                        <GlowBlob />
+                        <GlowEllipse />
+                    </div>
+
+                </div>
+
+            </div>
+            <div></div>
+        </div>
+    )
+}
+
+export default LeaderboardCard
