@@ -1,64 +1,64 @@
-// import './App.css'
-// import BillingInfo from './component/Billing'
-// import Navbar from './component/Navbar'
-// import Sidebar from './component/Sidebar'
-// import Hero from './component/Hero'
-
-
-// function App() {
-//   return (
-//     <div className="flex h-screen w-screen overflow-hidden bg-[#060F10]">
-      
-//       {/* Sidebar — বামে fixed */}
-//       <Sidebar />
-
-//       {/* Right side — Navbar উপরে, content নিচে */}
-//       <div className="flex flex-col flex-1 overflow-hidden">
-        
-//         {/* Navbar — উপরে */}
-//         <Navbar />
-//         <Hero />
-
-//         {/* Page content — scroll হবে */}
-//         <div className="flex-1 overflow-y-auto p-[24px]">
-//           <BillingInfo />
-//         </div>
-
-//       </div>
-//     </div>
-//   )
-// }
-
-// export default App
 
 
 
 import { useState } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
-import BillingInfo from './component/Billing'
+
 import Navbar from './component/Navbar'
 import Sidebar from './component/Sidebar'
-import Hero from './component/Hero'
+
+// Pages
+import Dashboard from './pages/Dashboard'
+import UserSettings from './pages/UserSettings'
+import Account from './pages/Account'
+import Order from './pages/Order'
+import Leaderboard from './pages/Leaderboard'
+import Extras from './pages/Extras'
+import NewsFeed from './component/NewsFeed'
+import EconomicCalendar from './pages/EconomicCalendar'
 
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <div className="flex h-screen w-screen overflow-hidden bg-[#060F10]">
-      
-      <Sidebar mobileOpen={sidebarOpen} setMobileOpen={setSidebarOpen} />
+    <BrowserRouter>
+      <div className="min-h-screen w-full flex bg-[#060F10]">
 
-      <div className="flex flex-col flex-1 overflow-hidden">
-        
-        <Navbar onMenuClick={() => setSidebarOpen(true)} />
-        <Hero />
+        {/* Sidebar */}
+        <Sidebar
+          mobileOpen={sidebarOpen}
+          setMobileOpen={setSidebarOpen}
+        />
 
-        <div className="flex-1 overflow-y-auto p-[24px]">
-          <BillingInfo />
+        {/* Main */}
+        <div className="flex flex-col flex-1 overflow-hidden">
+
+          <Navbar onMenuClick={() => setSidebarOpen(true)} />
+
+          <div className="flex-1 overflow-y-auto p-[24px]">
+
+            <Routes>
+
+              {/* 🔥 IMPORTANT: default route */}
+              <Route path="/" element={<Dashboard />} />
+
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/settings" element={<UserSettings />} />
+              <Route path="/account" element={<Account />} />
+              <Route path="/order" element={<Order />} />
+              <Route path="/leaderboard" element={<Leaderboard />} />
+              <Route path="/extras" element={<Extras />} />
+              <Route path="/news" element={<NewsFeed />} />
+              <Route path="/calendar" element={<EconomicCalendar />} />
+
+            </Routes>
+
+          </div>
+
         </div>
-
       </div>
-    </div>
+    </BrowserRouter>
   )
 }
 
