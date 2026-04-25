@@ -50,4 +50,37 @@
   #social .button-icon {
     filter: invert(1) brightness(2);
   }
+} 
+
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.border-animate {
+  padding: 1.5px;
+  background: conic-gradient(
+    from var(--angle),
+    transparent 0deg,
+    transparent 260deg,
+    rgba(0,232,255,0.15) 290deg,
+    rgba(0,232,255,0.9) 320deg,
+    #86b4b4 340deg,
+    rgba(0,232,255,0.9) 355deg,
+    transparent 360deg
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: borderRotate 3s linear infinite;
+}
+
+@keyframes borderRotate {
+  to {
+    --angle: 360deg;
+  }
 }
