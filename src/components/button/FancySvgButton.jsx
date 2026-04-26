@@ -39,7 +39,7 @@ const FancySvgButton = ({ text = "Button", className = "", }) => {
           dominantBaseline="middle"
           className={`fill-white ${className}`}
         >
-          <img src={icon} alt="icon" className="w-4 h-4" />
+          {/* <img src={icon} alt="icon" className="w-4 h-4" /> */}
           {text}
         </text>
 

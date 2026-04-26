@@ -1,13 +1,11 @@
 import React from 'react'
 import Frame_1 from "../assets/Frame 427321461.svg";
 import FancySvgButton from './button/FancySvgButton';
-import Frame_2 from "../assets/Frame 427321365.svg";
-import GlowEllipse from './svg/GlowEllipse';
-import GlowBlob from './svg/GlowBlob';
+import Card from './Card';
 
 const LeaderboardCard = () => {
     return (
-        <div className="text-stone-50">
+        <div className="text-stone-50 max-w-6xl mx-auto">
             <div className='flex items-center justify-between'>
                 <div className='flex items-center gap-[7.76px]'>
                     <img src={Frame_1} alt="logo" className="w-11 h-11" />
@@ -28,23 +26,10 @@ const LeaderboardCard = () => {
                     </button>
                 </div>
             </div>
-            {/* <div>
-                <img src={Frame_2} alt="logo" className="w-full h-full" />
 
-            </div> */}
-            <div className="p-px rounded-[20px] bg-[linear-gradient(252.84deg,#86B4B4_0.99%,rgba(58,78,78,0.1)_36.61%)]">
-
-                <div className="w-full h-116.75 rounded-[20px] bg-[linear-gradient(180deg,#011314_0%,#011515_85%,rgba(9,42,45,0.7)_100%)]">
-                    <div className='flex justify-end h-full'>
-
-                        <GlowBlob />
-                        <GlowEllipse />
-                    </div>
-
-                </div>
-
+            <div>
+                <Card />
             </div>
-            <div></div>
         </div>
     )
 }
