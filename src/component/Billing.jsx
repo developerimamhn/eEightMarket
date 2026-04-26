@@ -5,17 +5,20 @@ import logo2 from "../assets/Logo2.png";
 import bgImage from "../assets/Background_1.png";
 
 const InputField = ({ label, value, onChange, placeholder = "" }) => (
-  <div className="relative w-full">
-    <label className="absolute px-[6px] left-[14px] -top-[9px] z-10 text-[12px] text-white/90 leading-[1.5] bg-transparent">
+  <fieldset className="w-full border border-white/15 rounded-[12px] px-[20px] ">
+
+    <legend className="text-[12px] text-white/90 px-[6px]">
       {label}
-    </label>
+    </legend>
+
     <input
       value={value}
       onChange={(e) => onChange(e.target.value)}
       placeholder={placeholder}
-      className="w-full h-[48px] px-[20px] bg-transparent outline-none rounded-[12px] text-[14px] text-white/70 leading-[1.5] border border-white/15 placeholder:text-white/25"
+      className="w-full h-[36px] bg-transparent outline-none text-[14px] text-white/70 leading-[1.5] placeholder:text-white/25"
     />
-  </div>
+
+  </fieldset>
 );
 
 const BillingInfo = () => {
@@ -73,7 +76,7 @@ const BillingInfo = () => {
         }
       `}</style>
 
-      <div className="rotating-border-wrapper w-full h-[307px]">
+      <div className="rotating-border-wrapper w-full">
         {/* Inner card with background image + dark overlay */}
         <div
           className="relative w-full rounded-[20px] overflow-hidden"
@@ -84,7 +87,7 @@ const BillingInfo = () => {
             backgroundRepeat: "no-repeat",
           }}
         >
-         
+
           {/* Content */}
           <div className="relative z-10 p-[20px]">
 
@@ -119,11 +122,12 @@ const BillingInfo = () => {
               </div>
 
               {/* Row 3 */}
-              <div className="flex flex-col sm:flex-row gap-[16px]">
+              {/* Row 3 */}
+              <div className="flex flex-col sm:flex-row items-end gap-[16px]">
                 <InputField label="Country" value={form.country} onChange={set("country")} placeholder="Bangladesh" />
                 <InputField label="State/Region" value={form.stateRegion} onChange={set("stateRegion")} placeholder="Dhaka Division" />
 
-                <button className="w-full h-[48px] rounded-[16px] text-[16px] text-white border border-[rgba(233,251,255,0.4)] bg-[linear-gradient(24.86deg,rgba(0,232,255,0.4)_41%,rgba(3,33,40,0.04)_143%)] transition-opacity duration-200 hover:opacity-90">
+                <button className="w-full h-[48px] rounded-[16px] text-[16px] text-white border border-[rgba(233,251,255,0.4)] bg-[linear-gradient(24.86deg,rgba(0,232,255,0.4)_41%,rgba(3,33,40,0.04)_143%)] transition-all duration-300 hover:brightness-125 hover:shadow-[0_0_20px_rgba(0,232,255,0.3)] hover:scale-[1.02] active:scale-[0.98]">
                   Save Changes
                 </button>
               </div>

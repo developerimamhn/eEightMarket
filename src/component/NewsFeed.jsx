@@ -192,9 +192,9 @@ export default function NewsFeed() {
         </div>
       </div>
 
-      {/* FILTER */}
+     
      {/* FILTER */}
-<div className="flex justify-between items-center">
+{/* <div className="flex justify-between items-center">
 
   <div className="flex items-center gap-[8px]">
     <img src={newsFeedHeaderLogo} className="w-[32px] h-[32px] sm:w-[42px] sm:h-[42px] object-contain" alt="news feed icon" />
@@ -215,6 +215,37 @@ export default function NewsFeed() {
         }`}
       >
         <img src={tikIcon} className="h-[12px] gap-0 sm:gap-2 sm:h-[20px]" alt="" />
+        <img src={sourceLogos[src]} className="h-[8px] sm:h-[12px]" alt={src} />
+      </button>
+    ))}
+  </div>
+
+</div> */}
+
+
+
+{/* FILTER */}
+<div className="flex justify-between items-center gap-[12px]">
+
+  <div className="flex items-center gap-[8px] shrink-0">
+    <img src={newsFeedHeaderLogo} className="w-[32px] h-[32px] sm:w-[42px] sm:h-[42px] object-contain" alt="news feed icon" />
+    <span className="text-white text-[15px] sm:text-[17.46px] font-medium leading-[160%] tracking-normal opacity-100">
+      News Feed
+    </span>
+  </div>
+
+  <div className="flex items-center gap-[0px] rounded-[10px] border border-white/10 bg-white/5 px-[4px] py-[4px] overflow-x-auto scrollbar-hide max-w-[60%] sm:max-w-none">
+    {sources.map((src) => (
+      <button
+        key={src}
+        onClick={() => setActiveSource(activeSource === src ? null : src)}
+        className={`flex items-center shrink-0 gap-[6px] sm:gap-[8px] px-[8px] sm:px-[12px] py-[5px] rounded-[8px] text-[11px] sm:text-[12px] transition
+        ${activeSource === src
+          ? "bg-white/10 text-white"
+          : "text-white/60 hover:bg-white/10"
+        }`}
+      >
+        <img src={tikIcon} className="h-[12px] sm:h-[20px]" alt="" />
         <img src={sourceLogos[src]} className="h-[8px] sm:h-[12px]" alt={src} />
       </button>
     ))}
