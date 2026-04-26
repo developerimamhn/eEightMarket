@@ -73,7 +73,7 @@ const BillingInfo = () => {
         }
       `}</style>
 
-      <div className="rotating-border-wrapper">
+      <div className="rotating-border-wrapper w-full h-[307px]">
         {/* Inner card with background image + dark overlay */}
         <div
           className="relative w-full rounded-[20px] overflow-hidden"
@@ -84,9 +84,7 @@ const BillingInfo = () => {
             backgroundRepeat: "no-repeat",
           }}
         >
-          {/* Dark overlay */}
-          {/* <div className="absolute inset-0 bg-[#011314]/90" /> */}
-
+         
           {/* Content */}
           <div className="relative z-10 p-[20px]">
 
