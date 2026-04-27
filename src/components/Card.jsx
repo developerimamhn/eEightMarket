@@ -308,8 +308,8 @@
 // }
 
 import React from 'react'
-import GlowBlob from './svg/GlowBlob'
-import GlowEllipse from './svg/GlowEllipse'
+import GlowBlob from '../svg/GlowBlob'
+import GlowEllipse from '../svg/GlowEllipse'
 import GradientButton from './button/GradientButton'
 import Frame_3 from "../assets/Frame 427321461 (2).svg";
 import Group_9 from "../assets/Group 9.svg";

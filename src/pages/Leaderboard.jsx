@@ -1,10 +1,10 @@
 import React from 'react'
 import Frame_1 from "../assets/Frame 427321461.svg";
-import FancySvgButton from './button/FancySvgButton';
-import Card from './Card';
-import Card2 from './Card2';
+import FancySvgButton from '../components/button/FancySvgButton';
+import Card from '../components/Card';
+import Card2 from '../components/Card2';
 
-const LeaderboardCard = () => {
+const Leaderboard = () => {
     return (
         <div className="text-stone-50 max-w-6xl mx-auto">
             <div className='flex items-center justify-between'>
@@ -36,4 +36,4 @@ const LeaderboardCard = () => {
     )
 }
 
-export default LeaderboardCard
+export default Leaderboard 
