@@ -2,6 +2,7 @@ import React from 'react'
 import Frame_1 from "../assets/Frame 427321461.svg";
 import FancySvgButton from './button/FancySvgButton';
 import Card from './Card';
+import Card2 from './Card2';
 
 const LeaderboardCard = () => {
     return (
@@ -29,6 +30,7 @@ const LeaderboardCard = () => {
 
             <div>
                 <Card />
+                <Card2 />
             </div>
         </div>
     )
