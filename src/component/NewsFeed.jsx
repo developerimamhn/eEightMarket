@@ -1,7 +1,3 @@
-
-
-
-
 import { useState } from "react";
 import newsBg from "../assets/NewsBg.png";
 import cardBgTeal from "../assets/cardNews.png";
@@ -21,11 +17,11 @@ const sourceLogos = {
   FXSTREET: fxstreetLogo,
 };
 
-const sourceBadgeBorder = {
-  forexlive: "border-[#00B8D9]/40",
-  DAILYFX: "border-[#4CAF50]/40",
-  FXSTREET: "border-[#FF9800]/40",
-};
+// const sourceBadgeBorder = {
+//   forexlive: "border-[#00B8D9]/40",
+//   DAILYFX: "border-[#4CAF50]/40",
+//   FXSTREET: "border-[#FF9800]/40",
+// };
 
 const cardBgMap = {
   forexlive: cardBgTeal,
