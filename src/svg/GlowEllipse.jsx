@@ -38,3 +38,4 @@ const GlowEllipse = () => {
 };
 
 export default GlowEllipse;
+

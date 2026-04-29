@@ -1,6 +1,7 @@
 import React from 'react'
 import Frame_1 from "../assets/Frame 427321461.svg";
-import FancySvgButton from '../components/button/FancySvgButton';
+import FancySvgButton from '../components/button_svg/FancySvgButton';
+import icon from "../assets/new-job.svg";
 import Card from '../components/Card';
 import Card2 from '../components/Card2';
 
@@ -15,11 +16,12 @@ const Leaderboard = () => {
 
                 <div className="flex w-84.75 h-11.5 bg-[#FFFFFF0D] rounded-2xl border border-[#FFFFFF1A] p-0.75">
                     {/* First Button (SVG) */}
-                    <FancySvgButton
-                        text="Global Leaderboard"
-                        className="w-1/2 font-normal text-[13.58px] leading-[150%]"
-
-                    />
+                    <FancySvgButton className="w-1/2 font-normal text-[13.58px] leading-[150%">
+                        <button className='flex items-center gap-1 font-normal text-[13.58px] text-white leading-[150%] tracking-normal'>
+                            <img src={icon} alt="icon" className="w-[15.52px] h-[15.52px]" />
+                            Global Leaderboard
+                        </button>
+                    </FancySvgButton>
 
                     {/* Second Button */}
                     <button className="w-1/2 flex items-center justify-center font-normal text-[13.58px] leading-[150%] text-white/70 rounded-2xl">
@@ -37,3 +39,4 @@ const Leaderboard = () => {
 }
 
 export default Leaderboard 
+
