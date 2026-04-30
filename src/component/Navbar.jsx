@@ -18,7 +18,7 @@ export default function Navbar({ onMenuClick }) {
         <div className="hidden sm:flex items-center">
           <div
             className={`flex items-center rounded-lg pl-3 pr-1 py-1 transition-all duration-200 ${
-              searchFocused ? "w-[280px] md:w-[396px]" : "w-[220px] md:w-[396px]"
+              searchFocused ? "w-70 md:w-[396px]" : "w-[220px] md:w-[396px]"
             }`}
             style={{
               background:

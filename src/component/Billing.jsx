@@ -1,13 +1,13 @@
 
 
 import { useState } from "react";
-import logo2 from "../assets/Logo2.png";
+import logo2 from "../assets/logo2.png";
 import bgImage from "../assets/Background_1.png";
 
 const InputField = ({ label, value, onChange, placeholder = "" }) => (
-  <fieldset className="w-full border border-white/15 rounded-[12px] px-[20px] ">
+  <fieldset className="w-full border border-white/15 rounded-xl px-5 py-3.5">
 
-    <legend className="text-[12px] text-white/90 px-[6px]">
+    <legend className="text-[12px] text-white/90 px-1.5">
       {label}
     </legend>
 
@@ -15,7 +15,7 @@ const InputField = ({ label, value, onChange, placeholder = "" }) => (
       value={value}
       onChange={(e) => onChange(e.target.value)}
       placeholder={placeholder}
-      className="w-full h-[36px] bg-transparent outline-none text-[14px] text-white/70 leading-[1.5] placeholder:text-white/25"
+      className="w-full  bg-transparent outline-none text-[14px] text-white/70 leading-[100%] placeholder:text-white/25"
     />
 
   </fieldset>
@@ -77,7 +77,6 @@ const BillingInfo = () => {
       `}</style>
 
       <div className="rotating-border-wrapper w-full">
-        {/* Inner card with background image + dark overlay */}
         <div
           className="relative w-full rounded-[20px] overflow-hidden"
           style={{
@@ -92,12 +91,12 @@ const BillingInfo = () => {
           <div className="relative z-10 p-[20px]">
 
             {/* Header */}
-            <div className="flex items-center gap-[8px] mb-[32px]">
-              <div className="w-[40px] h-[40px] rounded-[10px] flex items-center justify-center shrink-0 bg-white/[0.06] border border-white/10">
+            <div className="flex items-center gap-2 mb-8">
+              <div className="w-10 h-10 rounded-[10px] flex items-center justify-center shrink-0 bg-white/6 border border-white/10">
                 <img
                   src={logo2}
                   alt="logo"
-                  className="object-contain h-[36px] sm:h-[44px]"
+                  className="object-contain h-9 sm:h-11"
                 />
               </div>
               <p className="text-[16px] font-medium text-white leading-[1.6]">
@@ -106,16 +105,16 @@ const BillingInfo = () => {
             </div>
 
             {/* Form */}
-            <div className="flex flex-col gap-[24px]">
+            <div className="flex flex-col gap-6">
               {/* Row 1 */}
-              <div className="flex flex-col sm:flex-row gap-[16px]">
-                <InputField label="E-mail" value={form.email} onChange={set("email")} placeholder="naimurrahman3262@gmail.com" />
+              <div className="grid md:grid-cols-3 gap-4">
+                <InputField label="E-mail" value={form.email} onChange={set("email")} placeholder="" />
                 <InputField label="First Name" value={form.firstName} onChange={set("firstName")} placeholder="Naimur" />
                 <InputField label="Last Name" value={form.lastName} onChange={set("lastName")} placeholder="Rahman" />
               </div>
 
               {/* Row 2 */}
-              <div className="flex flex-col sm:flex-row gap-[16px]">
+              <div className="grid md:grid-cols-3 gap-4">
                 <InputField label="Address" value={form.address} onChange={set("address")} placeholder="Kaligonj, Satkhira" />
                 <InputField label="City" value={form.city} onChange={set("city")} placeholder="Satkhira" />
                 <InputField label="Zip Code" value={form.zipCode} onChange={set("zipCode")} placeholder="9440" />
@@ -123,11 +122,11 @@ const BillingInfo = () => {
 
               {/* Row 3 */}
               {/* Row 3 */}
-              <div className="flex flex-col sm:flex-row items-end gap-[16px]">
+              <div className="grid md:grid-cols-3 gap-4">
                 <InputField label="Country" value={form.country} onChange={set("country")} placeholder="Bangladesh" />
                 <InputField label="State/Region" value={form.stateRegion} onChange={set("stateRegion")} placeholder="Dhaka Division" />
 
-                <button className="w-full h-[48px] rounded-[16px] text-[16px] text-white border border-[rgba(233,251,255,0.4)] bg-[linear-gradient(24.86deg,rgba(0,232,255,0.4)_41%,rgba(3,33,40,0.04)_143%)] transition-all duration-300 hover:brightness-125 hover:shadow-[0_0_20px_rgba(0,232,255,0.3)] hover:scale-[1.02] active:scale-[0.98]">
+                <button className="w-full h-full rounded-2xl text-[16px] text-white border border-[rgba(233,251,255,0.4)] bg-[linear-gradient(24.86deg,rgba(0,232,255,0.4)_41%,rgba(3,33,40,0.04)_143%)] transition-all duration-300 hover:brightness-125 hover:shadow-[0_0_20px_rgba(0,232,255,0.3)] hover:scale-[1.02] active:scale-[0.98]">
                   Save Changes
                 </button>
               </div>

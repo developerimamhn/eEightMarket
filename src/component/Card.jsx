@@ -69,7 +69,6 @@ const Card = () => {
                         <GlowBlob />
                         <GlowEllipse />
                     </div>
-
                     {/* Content */}
                     <div className='p-6'>
                         <div className='flex items-center justify-between'>
@@ -87,8 +86,6 @@ const Card = () => {
                                 />
                             </div>
                         </div>
-
-                        {/* <div className='grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6 mt-6'> */}
                         <div className='flex items-center justify-center gap-6 mt-6'>
                             {cardData.map((item, index) => (
                                 <div key={index} className="relative rounded-2xl overflow-hidden">

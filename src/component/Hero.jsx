@@ -38,9 +38,6 @@ const Hero = () => {
   return (
     <div className="w-full px-3 sm:px-5 py-3">
       
-      {/* Mobile: Logo উপরে center এ, Tabs নিচে full width */}
-      {/* Desktop: Logo বামে, Tabs ডানে একই row এ */}
-      
       <div className="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-0">
         
         {/* Logo */}
