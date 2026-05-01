@@ -1,5 +1,4 @@
 import { Outlet } from "react-router-dom";
-import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 
 const MainLayout = () => {
@@ -8,8 +7,6 @@ const MainLayout = () => {
             <Sidebar />
 
             <div className="flex-1">
-                <Navbar />
-
                 {/* page render */}
                 <div className="">
                     <Outlet />

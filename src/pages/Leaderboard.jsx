@@ -7,24 +7,26 @@ import Card2 from '../components/Card2';
 
 const Leaderboard = () => {
     return (
-        <div className="text-stone-50 max-w-6xl mx-auto">
-            <div className='flex items-center justify-between'>
+        <div className="text-stone-50 max-w-6xl mx-auto px-4 mt-10">
+            <div className='flex flex-col md:flex-row items-center justify-between gap-4'>
                 <div className='flex items-center gap-[7.76px]'>
-                    <img src={Frame_1} alt="logo" className="w-11 h-11" />
-                    <p className='font-medium text-[17.46px] leading-[160%] tracking-normal bg-[linear-gradient(180deg,#FFFFFF_28.57%,#999999_100%)] bg-clip-text text-transparent'>Leaderboard</p>
+                    <img src={Frame_1} alt="logo" className="w-6 h-6 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-11 lg:h-11" />
+                    <p className='font-medium text-[13px] sm:text-[14px] md:text-[15px] lg:text-[16px] xl:text-[17px] 2xl:text-[18px] leading-[160%] tracking-normal bg-[linear-gradient(180deg,#FFFFFF_28.57%,#999999_100%)] bg-clip-text text-transparent'>
+                        Leaderboard
+                    </p>
                 </div>
 
-                <div className="flex w-84.75 h-11.5 bg-[#FFFFFF0D] rounded-2xl border border-[#FFFFFF1A] p-0.75">
+                <div className="flex bg-[#FFFFFF0D] rounded-2xl border border-[#FFFFFF1A] p-0.5 md:p-1">
                     {/* First Button (SVG) */}
-                    <FancySvgButton className="w-1/2 font-normal text-[13.58px] leading-[150%">
-                        <button className='flex items-center gap-1 font-normal text-[13.58px] text-white leading-[150%] tracking-normal'>
-                            <img src={icon} alt="icon" className="w-[15.52px] h-[15.52px]" />
+                    <FancySvgButton>
+                        <button className='flex items-center gap-1 font-normal text-[10px] sm:text-[12px] md:text-[13.58px] text-white leading-[150%] tracking-normal'>
+                            <img src={icon} alt="icon" className="w-3 h-3 md:w-[15.52px] md:h-[15.52px]" />
                             Global Leaderboard
                         </button>
                     </FancySvgButton>
 
                     {/* Second Button */}
-                    <button className="w-1/2 flex items-center justify-center font-normal text-[13.58px] leading-[150%] text-white/70 rounded-2xl">
+                    <button className="w-28 md:w-35 lg:w-38.25 flex items-center justify-center font-normal text-[10px] sm:text-[12px] md:text-[13.58px] leading-[150%] text-white/70 rounded-2xl">
                         Analysis of Volume
                     </button>
                 </div>

@@ -74,21 +74,17 @@ const Card = () => {
 
                     {/* Content */}
                     <div className='p-6'>
-                        <div className='flex items-center justify-between'>
+                        <div className='flex flex-col md:flex-row items-center justify-center md:justify-between gap-2'>
                             <div className="relative z-10 flex items-center gap-2">
-                                <img src={Frame_3} alt="logo" className="w-9 h-9" />
-                                <p className='font-medium text-[16px] leading-[160%] tracking-[0%] bg-[linear-gradient(180deg,#FFFFFF_30.77%,#999999_100%)] bg-clip-text text-transparent'>
+                                <img src={Frame_3} alt="logo" className="w-6 h-6 sm:w-8 sm:h-8 md:w-9 md:h-9" />
+                                <p className='font-medium text-[13px] sm:text-[14px] md:text-[15px] lg:text-[16px] leading-[160%] tracking-[0%] bg-[linear-gradient(180deg,#FFFFFF_30.77%,#999999_100%)] bg-clip-text text-transparent'>
                                     Highest Payout
                                 </p>
                             </div>
 
                             <div className="">
-                                {/* <GradientButton
-                                    text="In past 30 days"
-                                    className="w-1/2 font-normal text-[13.58px] leading-[150%]"
-                                /> */}
                                 <GradientButton>
-                                    <span className='font-normal text-[13.58px] text-white leading-[150%]'>
+                                    <span className='font-normal text-[10px] sm:text-[12px] md:text-[13.58px] text-white leading-[150%]'>
                                         In past 30 days
                                     </span>
                                 </GradientButton>
@@ -96,15 +92,15 @@ const Card = () => {
                         </div>
 
                         {/* <div className='grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6 mt-6'> */}
-                        <div className='flex items-center justify-center gap-6 mt-6'>
+                        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 mt-6 justify-items-center'>
                             {cardData.map((item, index) => (
-                                <div key={index} className="relative rounded-2xl overflow-hidden">
+                                <div key={index} className="relative w-full max-w-63.5 rounded-2xl overflow-hidden">
 
                                     {/* Image */}
                                     <img
                                         src={item.bg}
                                         alt="bg"
-                                        className="w-full h-full object-cover"
+                                        className="w-66 h-65.75 object-cover"
                                     />
 
                                     {/* Top Overlay */}

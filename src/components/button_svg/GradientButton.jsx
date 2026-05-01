@@ -3,7 +3,7 @@ const GradientButton = ({ children }) => {
         <div className="relative inline-block">
 
             {/* SVG BACKGROUND */}
-            <svg width="134" height="40" viewBox="0 0 134 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg className="w-24 md:w-28 lg:w-33.5" viewBox="0 0 134 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="134" height="40" rx="14" fill="url(#paint0_linear_174_468)" fill-opacity="0.8" />
                 <rect x="0.5" y="0.5" width="133" height="39" rx="13.5" stroke="url(#paint1_linear_174_468)" stroke-opacity="0.5" />
                 <defs>

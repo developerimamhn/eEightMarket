@@ -40,15 +40,15 @@ const Card2 = () => {
   ];
 
   return (
-    <div className="flex items-center justify-between gap-4 mt-10 mb-20">
+    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mt-10 mb-20 justify-items-center">
       {users.map((user) => (
-        <div key={user.id} className="relative rounded-2xl overflow-hidden">
+        <div key={user.id} className="relative w-full max-w-89.25 items-center justify-between rounded-2xl overflow-hidden">
 
           {/* Background Image */}
           <img
             src={Group_1}
             alt="Group"
-            className="w-full h-full object-cover"
+            className="w-89.25 h-105 object-cover"
           />
 
           {/* Overlay Content */}
@@ -111,8 +111,8 @@ const Card2 = () => {
               </div>
 
               {/* Button */}
-              <div className="flex items-center justify-center w-79.25 h-12 rounded-2xl border border-white/20 bg-[linear-gradient(73.24deg,rgba(0,232,255,0.4)_41.01%,rgba(3,33,40,0.04)_143.13%)] overflow-hidden">
-                <button className='font-normal text-[16px] leading-[150%] tracking-[0%] text-[#FFFFFF]'>
+              <div className="flex justify-center mb-2">
+                <button className="w-full h-12 rounded-2xl border border-white/20 bg-[linear-gradient(73.24deg,rgba(0,232,255,0.4)_41.01%,rgba(3,33,40,0.04)_143.13%)] text-white text-[16px]">
                   View Dashboard
                 </button>
               </div>
