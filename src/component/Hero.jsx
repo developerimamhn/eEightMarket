@@ -36,7 +36,7 @@ const Hero = () => {
   const [active, setActive] = useState("General");
 
   return (
-    <div className="w-full px-3 sm:px-5 py-3">
+    <div className="w-full  px-3 sm:px-5 py-3">
       
       <div className="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-0">
         
