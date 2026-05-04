@@ -4,7 +4,7 @@
 import { useState, useId } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 
-import logo from "../assets/E8_Markets.png";
+import logo from "../assets/E8_Markets.svg";
 import bgImage from "../assets/bg_3.png";
 
 import Dashboard from "../assets/dashboard.png";
@@ -156,7 +156,8 @@ const Sidebar = ({ mobileOpen, setMobileOpen }) => {
         <div className="absolute inset-0 bg-[#03151A]/90" />
 
         <div className="relative z-10 flex flex-col h-full p-4">
-          <img src={logo} className="h-6 mb-6" />
+          <img src={logo} className="h-6 mb-6 self-start" />
+          
 
           <div className="flex-1 overflow-y-auto space-y-4">
             {navGroups.map((group) => (

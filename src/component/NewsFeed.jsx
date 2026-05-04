@@ -164,7 +164,7 @@ export default function NewsFeed() {
     : newsData.slice(0, 2);
 
   return (
-    <div className="w-full max-w-[1104px] mx-auto flex flex-col gap-[12px] sm:gap-[16px] px-[12px] sm:px-[16px] lg:px-0">
+    <div className="w-full  flex flex-col gap-[12px] sm:gap-[16px] px-[12px] sm:px-[16px] lg:px-0">
 
       {/* BANNER */}
       <div
