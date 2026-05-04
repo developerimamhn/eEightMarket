@@ -9,6 +9,7 @@ import Calendar_Logo from "../assets/EC_Logo.png";
 import CurrencyLogo from "../assets/Currency_Logo2.png";
 import ImpactLogo from "../assets/Impact_Logo.png";
 import RestrictedIcon from "../assets/Restrictd_Icon.png";
+import IconArrow from "../assets/IconArrow.png";
 
 const SAMPLE_EVENTS = [
   { id: 1, name: "Retail Sales m/m", impact: "high", currency: "GBP", date: "25/04/2025 12:00:00", forecast: "-0.4%", previous: "1.0%" },
@@ -36,10 +37,10 @@ const CURRENCY_LOGOS = {
 };
 
 const IMPACT_STYLES = {
-  high:    { dot: "bg-red-400",     badge: "bg-red-500/15 text-red-400",         label: "High" },
-  medium:  { dot: "bg-yellow-400",  badge: "bg-yellow-500/15 text-yellow-400",   label: "Medium" },
-  low:     { dot: "bg-emerald-400", badge: "bg-emerald-500/15 text-emerald-400", label: "Low" },
-  holiday: { dot: "bg-violet-400",  badge: "bg-violet-500/15 text-violet-400",   label: "Holiday" },
+  high: { dot: "bg-red-400", badge: "bg-red-500/15 text-red-400", label: "High" },
+  medium: { dot: "bg-yellow-400", badge: "bg-yellow-500/15 text-yellow-400", label: "Medium" },
+  low: { dot: "bg-emerald-400", badge: "bg-emerald-500/15 text-emerald-400", label: "Low" },
+  holiday: { dot: "bg-violet-400", badge: "bg-violet-500/15 text-violet-400", label: "Holiday" },
 };
 
 function ImpactBadge({ impact }) {
@@ -93,11 +94,10 @@ function Pagination({ current, total, onChange }) {
         <button
           key={p}
           onClick={() => onChange(p)}
-          className={`w-7 h-7 flex items-center justify-center rounded text-[11px] font-semibold transition-colors ${
-            p === current
+          className={`w-7 h-7 flex items-center justify-center rounded text-[11px] font-semibold transition-colors ${p === current
               ? "bg-slate-800 text-slate-100 border border-slate-600"
               : "text-slate-500 hover:text-slate-300"
-          }`}
+            }`}
         >
           {String(p).padStart(2, "0")}
         </button>
@@ -184,32 +184,32 @@ function MobileEventRow({ event }) {
 }
 
 const TABLE_COLS = [
-  { label: "Event",    sortable: true  },
-  { label: "Impact",   sortable: true  },
+  { label: "Event", sortable: true },
+  { label: "Impact", sortable: true },
   { label: "Currency", sortable: false },
-  { label: "Date",     sortable: true  },
+  { label: "Date", sortable: true },
   { label: "Forecast", sortable: false },
   { label: "Previous", sortable: false },
 ];
 
 export function EconomicCalendar() {
-  const [selectedImpact, setSelectedImpact]     = useState("all");
-  const [activeDay, setActiveDay]               = useState("Friday");
+  const [selectedImpact, setSelectedImpact] = useState("all");
+  const [activeDay, setActiveDay] = useState("Friday");
   const [selectedCurrency, setSelectedCurrency] = useState("All");
-  const [page, setPage]                         = useState(1);
+  const [page, setPage] = useState(1);
   const rowsPerPage = 10;
 
   const filtered = SAMPLE_EVENTS.filter((e) => {
     const currencyMatch = selectedCurrency === "All" ? true : e.currency === selectedCurrency;
-    const impactMatch   = selectedImpact   === "all" ? true : e.impact   === selectedImpact;
+    const impactMatch = selectedImpact === "all" ? true : e.impact === selectedImpact;
     return currencyMatch && impactMatch;
   });
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / rowsPerPage));
-  const paged      = filtered.slice((page - 1) * rowsPerPage, page * rowsPerPage);
+  const paged = filtered.slice((page - 1) * rowsPerPage, page * rowsPerPage);
 
   const handleCurrencyClick = (cur) => { setSelectedCurrency(cur); setPage(1); };
-  const handleImpactClick   = (key) => { setSelectedImpact(key);   setPage(1); };
+  const handleImpactClick = (key) => { setSelectedImpact(key); setPage(1); };
 
   return (
     <div className="p-3 sm:p-6">
@@ -228,11 +228,10 @@ export function EconomicCalendar() {
               <button
                 key={day}
                 onClick={() => setActiveDay(day)}
-                className={`px-3 py-1 rounded-md text-xs font-medium  ${
-                  activeDay === day
+                className={`px-3 py-1 rounded-md text-xs font-medium  ${activeDay === day
                     ? "bg-slate-800 border border-slate-700 text-slate-100"
                     : "text-slate-500 hover:text-slate-300"
-                }`}
+                  }`}
               >
                 {day}
               </button>
@@ -261,11 +260,10 @@ export function EconomicCalendar() {
                 <button
                   key={cur}
                   onClick={() => handleCurrencyClick(cur)}
-                  className={`shrink-0 inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full text-[11px] font-semibold border transition-all ${
-                    selectedCurrency === cur
+                  className={`shrink-0 inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full text-[11px] font-semibold border transition-all ${selectedCurrency === cur
                       ? "bg-slate-700 border-slate-500 text-white"
                       : "border-slate-800 text-slate-500 hover:text-slate-300 hover:border-slate-700"
-                  }`}
+                    }`}
                 >
                   {CURRENCY_LOGOS[cur] && (
                     <img src={CURRENCY_LOGOS[cur]} alt={cur} className="w-3.5 h-3.5 object-contain" />
@@ -285,11 +283,10 @@ export function EconomicCalendar() {
               </div>
               <button
                 onClick={() => handleImpactClick("all")}
-                className={`shrink-0 inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full text-[11px] font-semibold border transition-all ${
-                  selectedImpact === "all"
+                className={`shrink-0 inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full text-[11px] font-semibold border transition-all ${selectedImpact === "all"
                     ? "bg-slate-700 border-slate-500 text-white"
                     : "border-slate-800 text-slate-500 hover:border-slate-700"
-                }`}
+                  }`}
               >
                 All
               </button>
@@ -297,11 +294,10 @@ export function EconomicCalendar() {
                 <button
                   key={key}
                   onClick={() => handleImpactClick(key)}
-                  className={`shrink-0 inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full text-[11px] font-semibold border transition-all ${
-                    selectedImpact === key
+                  className={`shrink-0 inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full text-[11px] font-semibold border transition-all ${selectedImpact === key
                       ? "bg-slate-700 border-slate-500 text-white"
                       : "border-slate-800 text-slate-500 hover:border-slate-700"
-                  }`}
+                    }`}
                 >
                   <span className={`w-1.5 h-1.5 rounded-full ${s.dot}`} />
                   {s.label}
@@ -324,11 +320,10 @@ export function EconomicCalendar() {
                   <button
                     key={cur}
                     onClick={() => handleCurrencyClick(cur)}
-                    className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-medium border transition-all ${
-                      selectedCurrency === cur
+                    className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-medium border transition-all ${selectedCurrency === cur
                         ? "bg-slate-800 border-slate-600 text-slate-200"
                         : "border-transparent text-slate-600 hover:text-slate-400"
-                    }`}
+                      }`}
                   >
                     {CURRENCY_LOGOS[cur] && (
                       <img src={CURRENCY_LOGOS[cur]} alt={cur} className="w-3 h-3 object-contain" />
@@ -349,11 +344,10 @@ export function EconomicCalendar() {
                   <button
                     key={key}
                     onClick={() => handleImpactClick(key)}
-                    className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[13px] font-medium border transition-all ${
-                      selectedImpact === key
+                    className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[13px] font-medium border transition-all ${selectedImpact === key
                         ? "bg-slate-800 border-slate-600 text-slate-200"
                         : "border-transparent text-slate-600 hover:text-slate-400"
-                    }`}
+                      }`}
                   >
                     <span className={`w-2 h-2 rounded-full ${s.dot}`} />
                     {s.label}
@@ -395,7 +389,7 @@ export function EconomicCalendar() {
                         <button className="inline-flex items-center gap-2 px-[20px] py-[12px] cursor-pointer select-none whitespace-nowrap bg-transparent hover:bg-slate-800/50 transition-all w-full text-white text-[16px] font-medium leading-[150%] tracking-normal min-w-[44px]">
                           {col.label}
                           {col.sortable && (
-                            <span className="ml-auto text-[16px] font-medium">⇅</span>
+                            <img src={IconArrow} alt="sort" className="ml-auto w-3 h-3 object-contain " />
                           )}
                         </button>
                       </div>
@@ -451,20 +445,20 @@ export function EconomicCalendar() {
           </div>
 
           {/* ── Footer ── */}
-        
 
-<div className="flex items-center justify-between px-4 sm:px-5 py-3 border-t border-slate-800/60 bg-[#0a0f16]">
-  <div className="flex items-center gap-2 text-[11px]">
-    <img
-      src={RestrictedIcon}
-      alt="Restricted"
-      className="w-[24px] h-[24px] object-contain"
-    />
-    <span className="text-slate-500 text-[18px]">Restricted News.</span>
-    <button className="text-blue-400 hover:text-blue-300 transition-colors text-[18px]">More Info</button>
-  </div>
-  <Pagination current={page} total={totalPages} onChange={setPage} />
-</div>
+
+          <div className="flex items-center justify-between px-4 sm:px-5 py-3 border-t border-slate-800/60 bg-[#0a0f16]">
+            <div className="flex items-center gap-2 text-[11px]">
+              <img
+                src={RestrictedIcon}
+                alt="Restricted"
+                className="w-[24px] h-[24px] object-contain"
+              />
+              <span className="text-slate-500 text-[18px]">Restricted News.</span>
+              <button className="text-blue-400 hover:text-blue-300 transition-colors text-[18px]">More Info</button>
+            </div>
+            <Pagination current={page} total={totalPages} onChange={setPage} />
+          </div>
 
 
         </div>
