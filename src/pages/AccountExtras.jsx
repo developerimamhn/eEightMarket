@@ -185,7 +185,7 @@ const AccountExtras = () => {
                   {/* Left Button */}
                   <button
                     onClick={() => setActive("left")}
-                    className={`relative z-10 w-1/2 h-10 flex items-center justify-center gap-1 text-[10px] sm:text-[12px] md:text-[13.58px]
+                    className={`relative z-10 w-1/2 h-10 flex items-center justify-center gap-1 text-[10px] sm:text-[12px] md:text-[13.58px] cursor-pointer
                       ${active === "left" ? "text-white" : "text-[#FFFFFFB2]"}`}
                   >
                     <img src={icon_8} className="w-[15.52px] h-[15.52px]" />
@@ -195,7 +195,7 @@ const AccountExtras = () => {
                   {/* Right Button */}
                   <button
                     onClick={() => setActive("right")}
-                    className={`relative z-10 w-1/2 h-10 flex items-center justify-center text-[10px] sm:text-[12px] md:text-[13.58px]
+                    className={`relative z-10 w-1/2 h-10 flex items-center justify-center text-[10px] sm:text-[12px] md:text-[13.58px] cursor-pointer
                       ${active === "right" ? "text-white" : "text-[#FFFFFFB2]"}`}
                   >
                     Raw Spreads

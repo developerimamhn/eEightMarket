@@ -114,15 +114,15 @@ const Leaderboard = () => {
 
                 <div className="flex bg-[#FFFFFF0D] rounded-2xl border border-[#FFFFFF1A] p-0.5 md:p-1">
                     {/* First Button (SVG) */}
-                    <FancySvgButton>
-                        <button className='flex items-center gap-1 font-normal text-[10px] sm:text-[12px] md:text-[13.58px] text-white leading-[150%] tracking-normal'>
+                    <button className='flex items-center gap-1 font-normal text-[10px] sm:text-[12px] md:text-[13.58px] text-white leading-[150%] tracking-normal cursor-pointer'>
+                        <FancySvgButton>
                             <img src={icon} alt="icon" className="w-3 h-3 md:w-[15.52px] md:h-[15.52px]" />
                             Global Leaderboard
-                        </button>
-                    </FancySvgButton>
+                        </FancySvgButton>
+                    </button>
 
                     {/* Second Button */}
-                    <button className="w-28 md:w-35 lg:w-38.25 flex items-center justify-center font-normal text-[10px] sm:text-[12px] md:text-[13.58px] leading-[150%] text-white/70 rounded-2xl">
+                    <button className="w-28 md:w-35 lg:w-38.25 flex items-center justify-center font-normal text-[10px] sm:text-[12px] md:text-[13.58px] leading-[150%] text-white/70 rounded-2xl cursor-pointer">
                         Analysis of Volume
                     </button>
                 </div>
@@ -131,6 +131,7 @@ const Leaderboard = () => {
             <div>
                 <div className="p-px rounded-[20px] w-full h-full bg-[linear-gradient(252.84deg,#86B4B4_0.99%,rgba(58,78,78,0.1)_36.61%)] mt-10">
                     <div className="relative w-full h-full rounded-[20px] bg-[linear-gradient(180deg,#011314_0%,#011515_85%,rgba(9,42,45,0.7)_100%)]">
+
                         {/* Background Effects */}
                         <div className='absolute inset-0 flex justify-end h-full'>
                             <GlowBlob />
@@ -310,7 +311,7 @@ const Leaderboard = () => {
 
                                     {/* Button */}
                                     <div className="flex justify-center mb-2">
-                                        <button className="w-full h-12 rounded-2xl border border-white/20 bg-[linear-gradient(73.24deg,rgba(0,232,255,0.4)_41.01%,rgba(3,33,40,0.04)_143.13%)] text-white text-[16px]">
+                                        <button className="w-full h-12 rounded-2xl border border-white/20 bg-[linear-gradient(73.24deg,rgba(0,232,255,0.4)_41.01%,rgba(3,33,40,0.04)_143.13%)] text-white text-[16px] cursor-pointer">
                                             View Dashboard
                                         </button>
                                     </div>
