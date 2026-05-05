@@ -1,5 +1,5 @@
-import Hero from "../component/Hero";
-import BillingInfo from "../component/Billing";
+import Hero from "../UserSetting/Hero";
+import BillingInfo from "../UserSetting/Billing";
 
 const UserSetting = () => {
   return (

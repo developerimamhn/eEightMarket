@@ -1,9 +1,9 @@
 import { useState } from "react";
-import search from "../assets/searchIcon.png";
-import AiBtn from "../assets/AiButton.png";
-import userAvatar from "../assets/image.png";
-import Bell from "../assets/belIcon.png";
-import downArrow from "../assets/Down_Arrow.png";
+import search from "../../assets/img/searchIcon.png";
+import AiBtn from "../../assets/img/AiButton.png";
+import userAvatar from "../../assets/img/image.png";
+import Bell from "../../assets/img/belIcon.png";
+import downArrow from "../../assets/img/Down_Arrow.png";
 
 export default function Navbar({ onMenuClick }) {
   const [searchFocused, setSearchFocused] = useState(false);

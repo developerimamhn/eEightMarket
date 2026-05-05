@@ -1,5 +1,6 @@
+
 import { useState } from "react";
-import logo from "../assets/Logo.png";
+import logo from "../../assets/img/Logo.png";
 
 const BtnActiveBg = () => (
   <svg

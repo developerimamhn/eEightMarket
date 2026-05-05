@@ -4,20 +4,20 @@
 import { useState, useId } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 
-import logo from "../assets/E8_Markets.svg";
-import bgImage from "../assets/bg_3.png";
+import logo from "../../assets/img/E8_Markets.svg";
+import bgImage from "../../assets/img/bg_3.png";
 
-import Dashboard from "../assets/dashboard.png";
-import Analytics from "../assets/analytics.png";
-import Border from "../assets/border_full.png";
-import User from "../assets/user.png";
-import Mmentoring from "../assets/mentoring.png";
-import userStory from "../assets/user_story.png";
-import News from "../assets/news.png";
-import Calendar from "../assets/calendar.png";
-import Help from "../assets/help.png";
-import AiBrs from "../assets/ai_web_browsing.png";
-import Moon from "../assets/moon.png";
+import Dashboard from "../../assets/img/dashboard.png";
+import Analytics from "../../assets/img/analytics.png";
+import Border from "../../assets/img/border_full.png";
+import User from "../../assets/img/user.png";
+import Mmentoring from "../../assets/img/mentoring.png";
+import userStory from "../../assets/img/user_story.png";
+import News from "../../assets/img/news.png";
+import Calendar from "../../assets/img/calendar.png";
+import Help from "../../assets/img/help.png";
+import AiBrs from "../../assets/img/ai_web_browsing.png";
+import Moon from "../../assets/img/moon.png";
 
 // ───────── ICON ─────────
 const Ico = ({ src, alt }) => (
@@ -57,7 +57,7 @@ const BtnActiveBg = () => {
   const gradId = `grad${uid}`;
 
   return (
-    <svg className="absolute inset-0 w-full h-full" viewBox="0 0 260 48" fill="none">
+    <svg className="absolute inset-0 w-full h-full  " viewBox="6 0 260 48" fill="none">
       <defs>
         <linearGradient id={gradId}>
           <stop offset="0%" stopColor="#00E8FF" stopOpacity="0" />
@@ -77,7 +77,7 @@ const BtnActiveBg = () => {
         strokeWidth="4"
         strokeLinecap="round"
         style={{
-          filter: "drop-shadow(0 0 16px #00E8FF) drop-shadow(0 0 18px #00E8FF)",
+          filter: "drop-shadow(0 0 16px #00E8FF) ",
           strokeDasharray: "300 300",
           animation: "dash 6s linear infinite",
         }}

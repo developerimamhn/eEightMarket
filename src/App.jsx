@@ -5,17 +5,17 @@ import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
 
-import Navbar from './component/Navbar'
-import Sidebar from './component/Sidebar'
+import Navbar from './component/common/Navbar'
+import Sidebar from './component/common/sidebar'
 
 // Pages
 import Dashboard from './pages/Dashboard'
-import UserSettings from './pages/UserSettings'
+import UserSettings from './pages/UserSetting/UserSettings'
 import Account from './pages/Account'
 import Order from './pages/Order'
 import Leaderboard from './pages/Leaderboard'
 import Extras from './pages/Extras'
-import NewsFeed from './component/NewsFeed'
+import NewsFeed from './pages/NewsFeed'
 import EconomicCalendar from './pages/EconomicCalendar'
 
 function App() {

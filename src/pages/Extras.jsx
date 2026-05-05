@@ -2,27 +2,25 @@ import React, { useState } from 'react'
 
 // Custom components & assets import
 import ExactButton from '../component/ui/button/ExactButton';
-import Frame_1 from "../assets/Frame 427321461.svg";
-import icon from "../assets/new-job.svg";
-import background from "../assets/Card_back_frame.svg";
-import background_1 from "../assets/Card_back_frame1.svg";
+import Frame_1 from "../assets/img/Frame 427321461.svg";
+import icon from "../assets/img/new-job.svg";
 import GlowBlob from '../assets/svg/GlowBlob';
 import GlowEllipse from '../assets/svg/GlowEllipse';
-import icon_1 from "../assets/icon_1.png";
-import icon_2 from "../assets/icon_2.png";
-import icon_3 from "../assets/icon_3.png";
-import icon_4 from "../assets/icon_4.png";
-import icon_5 from "../assets/icon_5.png";
-import icon_6 from "../assets/icon_6.png";
-import icon_7 from "../assets/icon_7.png";
+import icon_1 from "../assets/img/icon_1.png";
+import icon_2 from "../assets/img/icon_2.png";
+import icon_3 from "../assets/img/icon_3.png";
+import icon_4 from "../assets/img/icon_4.png";
+import icon_5 from "../assets/img/icon_5.png";
+import icon_6 from "../assets/img/icon_6.png";
+import icon_7 from "../assets/img/icon_7.png";
 import WideButton200 from '../component/ui/button/WideButton200';
-import icon_8 from "../assets/icon_8.svg";
-import Union from "../assets/Union.png";
+import icon_8 from "../assets/img/icon_8.svg";
+import Union from "../assets/img/Union.png";
 import PurpleGlow from '../assets/svg/PurpleGlow';
 import CyanGlow from '../assets/svg/CyanGlow';
-import icon_9 from "../assets/icon_9.svg";
-import icon_10 from "../assets/icon_10.svg";
-import icon_11 from "../assets/icon_11.svg";
+import icon_9 from "../assets/img/icon_9.svg";
+import icon_10 from "../assets/img/icon_10.svg";
+import icon_11 from "../assets/img/icon_11.svg";
 
 // Tabs data
 const tabs = [

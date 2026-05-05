@@ -1,5 +1,5 @@
 
-import icon from "../../../assets/img/new-job.svg";
+import icon from "../../../assets/new-job.svg";
 
 const FancySvgButton = ({ text = "Button", className = "", }) => {
   return (

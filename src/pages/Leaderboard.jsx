@@ -1,5 +1,5 @@
 
-import Frame_1 from "../assets/Frame 427321461.svg";
+import Frame_1 from "../assets/img/Frame 427321461.svg";
 import FancySvgButton from '../component/ui/button/FancySvgButton';
 import Card from '../component/Card';
 import Card2 from '../component/Card2';

@@ -1,12 +1,12 @@
 
-import Group_1 from "../assets/Frame 427321454.svg";
-import man_image4 from "../assets/man_image4.png";
-import man_image5 from "../assets/man_image5.png";
-import man_image6 from "../assets/man_image6.png";
-import man_image7 from "../assets/man_image7.png";
-import man_image8 from "../assets/man_image8.png";
-import man_image9 from "../assets/man_image9.png";
-import circle from "../assets/circle-flags_us.svg";
+import Group_1 from "../assets/img/Frame 427321454.svg";
+import man_image4 from "../assets/img/man_image4.png";
+import man_image5 from "../assets/img/man_image5.png";
+import man_image6 from "../assets/img/man_image6.png";
+import man_image7 from "../assets/img/man_image7.png";
+import man_image8 from "../assets/img/man_image8.png";
+import man_image9 from "../assets/img/man_image9.png";
+import circle from "../assets/img/circle_flags_us.svg";
 
 const Card2 = () => {
   const users = [

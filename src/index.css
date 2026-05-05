@@ -33,3 +33,23 @@
     --angle: 360deg;
   }
 }
+
+
+
+/* Billing.jsx er style  */
+
+.billing-fieldset {
+  @apply m-0 box-border min-h-[56px] flex flex-col justify-center px-4 pt-[6px] pb-[14px] rounded-[14px];
+  border: 1.5px solid #ffffff59;
+}
+.billing-fieldset legend {
+  @apply px-1 text-[12px] leading-none text-white/60 mb-[3px];
+}
+
+.billing-empty {
+  @apply min-h-[54px] flex items-center px-4 pt-[6px] pb-[14px] border-[1.5px] border-white/35 rounded-[14px];
+}
+
+.billing-input {
+  @apply w-full h-full flex-1 bg-transparent outline-none border-none text-[14px] text-white/85 h-full leading-[1.2];
+}

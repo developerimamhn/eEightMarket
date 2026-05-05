@@ -1,13 +1,13 @@
 import { useState } from "react";
-import newsBg from "../assets/NewsBg.png";
-import cardBgTeal from "../assets/cardNews.png";
-import cardBgAmber from "../assets/cardNews_2.png";
-import forexliveLogo from "../assets/forexlive.png";
-import dailyfxLogo from "../assets/dailyfx.png";
-import fxstreetLogo from "../assets/fxstreet.png";
-import tikIcon from "../assets/tikIcon.png";
-import newsFeedHeaderLogo from "../assets/NewsFeedLogoCard.png";
-import dateIcon from "../assets/DateLogo.png";
+import newsBg from "../assets/img/NewsBg.png";
+import cardBgTeal from "../assets/img/News1st_card_bg.png";
+import cardBgAmber from "../assets/img/News2nd_card_bg.png";
+import forexliveLogo from "../assets/img/forexlive.png";
+import dailyfxLogo from "../assets/img/dailyfx.png";
+import fxstreetLogo from "../assets/img/fxstreet.png";
+import tikIcon from "../assets/img/tikIcon.png";
+import newsFeedHeaderLogo from "../assets/img/NewsFeedLogoCard.png";
+import dateIcon from "../assets/img/DateLogo.png";
 
 const sources = ["forexlive", "DAILYFX", "FXSTREET"];
 
@@ -16,12 +16,6 @@ const sourceLogos = {
   DAILYFX: dailyfxLogo,
   FXSTREET: fxstreetLogo,
 };
-
-// const sourceBadgeBorder = {
-//   forexlive: "border-[#00B8D9]/40",
-//   DAILYFX: "border-[#4CAF50]/40",
-//   FXSTREET: "border-[#FF9800]/40",
-// };
 
 const cardBgMap = {
   forexlive: cardBgTeal,
@@ -112,20 +106,25 @@ const NewsCard = ({ source, date, title, body, body2 }) => {
           <img src={sourceLogos[source]} className="h-[12px] sm:h-[16px] object-contain" alt={source} />
         </div>
 
-        <p className="text-white/70 text-[13px] sm:text-[14px] leading-[150%]">{body}</p>
+        <p className="text-[14px] leading-[150%] text-[#ffffffb2] font-medium">
+          {body}
+        </p>
 
         {body2 && (
-          <p className="text-white/70 text-[13px] sm:text-[14px] leading-[150%]">{body2}</p>
+           <p className="text-[14px] leading-[150%] text-[#ffffffb2] font-medium">
+          {body2}
+        </p>
         )}
       </div>
 
       <div className="mt-auto pt-[16px]">
-        <button className="group relative w-[110px] sm:w-[130px] h-[44px] sm:h-[51px] rounded-[16px] overflow-hidden">
-          {source === "FXSTREET" ? <BtnAmberBg /> : <BtnActiveBg />}
-          <span className="relative z-10 flex items-center justify-center w-full h-full text-[12px] sm:text-[13px] text-white group-hover:scale-[1.05] transition">
-            Read More
-          </span>
-        </button>
+        <button className="group relative w-[130px] h-[48px] rounded-[16px]  overflow-hidden">
+  {source === "FXSTREET" ? <BtnAmberBg /> : <BtnActiveBg />}
+
+  <span className="relative z-10 flex items-center justify-center w-full h-full text-[16px] leading-[150%] text-white font-normal group-hover:scale-[1.05] transition">
+    Read More
+  </span>
+</button>
       </div>
     </div>
   );
@@ -137,15 +136,15 @@ const newsData = [
     source: "forexlive",
     date: "26/04/2025 18:54:16",
     title: "Canada votes on Monday. What the polls are saying and what's at stake for the loonie.",
-    body: "At the turn of the year, it looked like a certainty that Conservatives would form a large majority.",
-    body2: "Unceasing 51st state talk shifted focus to sovereignty and economy pressure.",
+    body: "At the turn of the year, it looked like a certainty that Conservatives would form a large majority in this year's Canadian election but Trump changedeverything. His harsh tariffs on Canada .",
+    body2: "unceasing 51st state talk upended the focus on housing/culture and put it squarely on sovereignty. Conservative leader Pierre Poilievre struggled to strike theright chord on that issue",
   },
   {
     id: 2,
     source: "FXSTREET",
     date: "26/04/2025 03:16:20",
     title: "United Kingdom CFTC GBP NC Net Positions rose.",
-    body: "Net positions increased from previous 6.5K to 20.5K.",
+    body: "United Kingdom CFTC GBP NC Net Positions rose from previous f6.5K to 20.5K...",
   },
   {
     id: 3,
@@ -188,34 +187,34 @@ export default function NewsFeed() {
         </div>
       </div>
 
-{/* FILTER */}
-<div className="flex justify-between items-center gap-[12px]">
+      {/* FILTER */}
+      <div className="flex justify-between items-center gap-[12px]">
 
-  <div className="flex items-center gap-[8px] shrink-0">
-    <img src={newsFeedHeaderLogo} className="w-[32px] h-[32px] sm:w-[42px] sm:h-[42px] object-contain" alt="news feed icon" />
-    <span className="text-white text-[15px] sm:text-[17.46px] font-medium leading-[160%] tracking-normal opacity-100">
-      News Feed
-    </span>
-  </div>
+        <div className="flex items-center gap-[8px] shrink-0">
+          <img src={newsFeedHeaderLogo} className="w-[32px] h-[32px] sm:w-[42px] sm:h-[42px] object-contain" alt="news feed icon" />
+          <span className="text-white text-[15px] sm:text-[17.46px] font-medium leading-[160%] tracking-normal opacity-100">
+            News Feed
+          </span>
+        </div>
 
-  <div className="flex items-center gap-[0px] rounded-[10px] border border-white/10 bg-white/5 px-[4px] py-[4px] overflow-x-auto scrollbar-hide max-w-[60%] sm:max-w-none">
-    {sources.map((src) => (
-      <button
-        key={src}
-        onClick={() => setActiveSource(activeSource === src ? null : src)}
-        className={`flex items-center shrink-0 gap-[6px] sm:gap-[8px] px-[8px] sm:px-[12px] py-[5px] rounded-[8px] text-[11px] sm:text-[12px] transition
+        <div className="flex items-center gap-[0px] rounded-[10px] border border-white/10 bg-white/5 px-[4px] py-[4px] overflow-x-auto scrollbar-hide max-w-[60%] sm:max-w-none">
+          {sources.map((src) => (
+            <button
+              key={src}
+              onClick={() => setActiveSource(activeSource === src ? null : src)}
+              className={`flex items-center shrink-0 gap-[6px] sm:gap-[8px] px-[8px] sm:px-[12px] py-[5px] rounded-[8px] text-[11px] sm:text-[12px] transition
         ${activeSource === src
-          ? "bg-white/10 text-white"
-          : "text-white/60 hover:bg-white/10"
-        }`}
-      >
-        <img src={tikIcon} className="h-[12px] sm:h-[20px]" alt="" />
-        <img src={sourceLogos[src]} className="h-[8px] sm:h-[12px]" alt={src} />
-      </button>
-    ))}
-  </div>
+                  ? "bg-white/10 text-white"
+                  : "text-white/60 hover:bg-white/10"
+                }`}
+            >
+              <img src={tikIcon} className="h-[12px] sm:h-[20px]" alt="" />
+              <img src={sourceLogos[src]} className="h-[8px] sm:h-[12px]" alt={src} />
+            </button>
+          ))}
+        </div>
 
-</div>
+      </div>
 
       {/* CARDS */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-[12px] sm:gap-[16px]">

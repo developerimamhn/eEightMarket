@@ -3,8 +3,8 @@
 
 
 import { useState } from "react";
-import logo2 from "../assets/logo2.png";
-import bgImage from "../assets/Billing_bg.png";
+import logo2 from "../../assets/img/Billing_Info_Logo.svg";
+import bgImage from "../../assets/img/User_bg.png";
 
 const InputField = ({ label, value, onChange, placeholder = "" }) => {
   const [focused, setFocused] = useState(false);
@@ -55,58 +55,13 @@ const BillingInfo = () => {
 
   return (
     <>
-      <style>{`
-        .billing-fieldset {
-          margin: 0;
-          padding: 6px 16px 14px 16px;
-          box-sizing: border-box;
-          min-height: 54px;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          border: 1.5px solid rgba(255,255,255,0.35);
-          border-radius: 14px;
-        }
-
-        .billing-fieldset legend {
-          padding: 0 4px;
-          font-size: 11px;
-          line-height: 1;
-          color: rgba(255,255,255,0.6);
-          margin-bottom: 3px;
-          float: none;
-          width: auto;
-        }
-
-        .billing-empty {
-          box-sizing: border-box;
-          min-height: 54px;
-          display: flex;
-          align-items: center;
-          padding: 0 16px;
-          border: 1.5px solid rgba(255,255,255,0.35);
-          border-radius: 14px;
-        }
-
-        .billing-input {
-          width: 100%;
-          background: transparent;
-          outline: none;
-          border: none;
-          padding: 0;
-          font-size: 14px;
-          color: rgba(255,255,255,0.85);
-          line-height: 1;
-        }
-      `}</style>
-
       <div className="w-full rotating-border-wrapper w-full">
         <div
           className="relative w-full rounded-[20px]"
           style={{
             backgroundImage: `url(${bgImage})`,
             backgroundSize: "cover",
-            backgroundPosition: "top center",
+            backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
           }}
         >
@@ -116,9 +71,9 @@ const BillingInfo = () => {
             <div className="flex items-center gap-2 mb-8">
               <div
                 className="w-10 h-10 rounded-[10px] flex items-center justify-center shrink-0"
-                style={{ background: "rgba(255,255,255,0.06)", border: "1.5px solid rgba(255,255,255,0.35)" }}
+
               >
-                <img src={logo2} alt="logo" className="object-contain h-9 sm:h-11" />
+                <img src={logo2} alt="logo" className="w-[40px] h-[40px]" />
               </div>
               <p className="text-[16px] font-medium text-white leading-[1.6]">
                 Billing info

@@ -1,20 +1,20 @@
 import GlowBlob from '../assets/svg//GlowEllipse'
 import GlowEllipse from '../assets/svg/GlowBlob'
 import GradientButton from '../component/ui/button/GradientButton'
-import Frame_3 from "../assets/Frame 427321461 (2).svg";
-import Group_9 from "../assets/Group 9.svg";
-import Group_10 from "../assets/Group 10.svg";
-import Group_11 from "../assets/Group 11.svg";
-import Group_12 from "../assets/Group 12.svg";
-import Group_26 from "../assets/Group 26.svg";
-import circle from "../assets/circle-flags_de.svg";
-import circle2 from "../assets/Mask group.svg";
-import circle3 from "../assets/Mask group1.svg";
-import circle4 from "../assets/circle-flags_us.svg";
-import man_image from "../assets/man_image.png";
-import man_image1 from "../assets/man_image1.png";
-import man_image2 from "../assets/man_image2.png";
-import man_image3 from "../assets/man_image3.png";
+import Frame_3 from "../assets/img/Frame 427321461 (2).svg";
+import Group_9 from "../assets/img/Group 9.svg";
+import Group_10 from "../assets/img/Group 10.svg";
+import Group_11 from "../assets/img/Group 11.svg";
+import Group_12 from "../assets/img/Group 12.svg";
+import Group_26 from "../assets/img/Group 26.svg";
+import circle from "../assets/img/circle-flags_de.svg";
+import circle2 from "../assets/img/Mask group.svg";
+import circle3 from "../assets/img/Mask group1.svg";
+import circle4 from "../assets/img/circle_flags_us.svg";
+import man_image from "../assets/img/man_image.png";
+import man_image1 from "../assets/img/man_image1.png";
+import man_image2 from "../assets/img/man_image2.png";
+import man_image3 from "../assets/img/man_image3.png";
 
 const cardData = [
     {
