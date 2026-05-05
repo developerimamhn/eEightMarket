@@ -1,3 +1,67 @@
 @import "tailwindcss";
 
 
+/* gradient border */
+.stat-card-border {
+    background: linear-gradient(180.85deg,
+            rgba(255, 255, 255, 0.3) 0.88%,
+            rgba(255, 255, 255, 0.18) 17.77%,
+            rgba(255, 255, 255, 0.03) 49.68%);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+/* icon gradient border */
+.icon-box-border {
+    background: linear-gradient(180deg,
+            rgba(255, 255, 255, 0.6) 0%,
+            rgba(255, 255, 255, 0.042) 40.91%);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+
+/* gradient border — white fade top to transparent */
+.gradient-border-fade {
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: inherit;
+    background: linear-gradient(180deg,
+            rgba(255, 255, 255, 0.4) 0%,
+            rgba(255, 255, 255, 0) 59.09%);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+
+/* gradient border — 3-stop white fade */
+.gradient-border-card {
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    padding: 1px;
+    background: linear-gradient(180.85deg,
+            rgba(255, 255, 255, 0.3) 0.88%,
+            rgba(255, 255, 255, 0.18) 17.77%,
+            rgba(255, 255, 255, 0.03) 49.68%);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
