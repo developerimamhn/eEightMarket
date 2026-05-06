@@ -22,6 +22,16 @@ const SAMPLE_EVENTS = [
   { id: 8, name: "MPC Member Greene Speaks", impact: "low", currency: "GBP", date: "25/04/2025 20:00:00", forecast: "0", previous: "0" },
   { id: 9, name: "IMF Meeting", impact: "low", currency: "All", date: "25/04/2025 20:15:00", forecast: "0", previous: "0" },
   { id: 10, name: "IMF Meeting", impact: "low", currency: "All", date: "25/04/2025 20:15:00", forecast: "0", previous: "0" },
+  { id: 1, name: "Retail Sales m/m", impact: "high", currency: "GBP", date: "25/04/2025 12:00:00", forecast: "-0.4%", previous: "1.0%" },
+  { id: 2, name: "Italian Bank Holiday", impact: "holiday", currency: "EUR", date: "25/04/2025 12:03:00", forecast: "0", previous: "0" },
+  { id: 3, name: "SNB Chairman Schlegel Speaks", impact: "high", currency: "CHF", date: "25/04/2025 14:00:00", forecast: "0", previous: "0" },
+  { id: 4, name: "Core Retail Sales m/m", impact: "high", currency: "CAD", date: "25/04/2025 18:30:00", forecast: "0.0%", previous: "0.2%" },
+  { id: 5, name: "Retail Sales m/m", impact: "high", currency: "CAD", date: "25/04/2025 12:00:00", forecast: "-0.4%", previous: "-0.6%" },
+  { id: 6, name: "Revised UoM Inflation Expect", impact: "low", currency: "USD", date: "25/04/2025 20:00:00", forecast: "0", previous: "6.7%" },
+  { id: 7, name: "Revised UoM Consumer Sentiment", impact: "medium", currency: "USD", date: "25/04/2025 20:00:00", forecast: "50.8", previous: "50.8" },
+  { id: 8, name: "MPC Member Greene Speaks", impact: "low", currency: "GBP", date: "25/04/2025 20:00:00", forecast: "0", previous: "0" },
+  { id: 9, name: "IMF Meeting", impact: "low", currency: "All", date: "25/04/2025 20:15:00", forecast: "0", previous: "0" },
+  { id: 10, name: "IMF Meeting", impact: "low", currency: "All", date: "25/04/2025 20:15:00", forecast: "0", previous: "0" },
 ];
 
 const DAYS = ["Friday", "Saturday"];
