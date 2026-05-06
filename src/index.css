@@ -103,6 +103,8 @@
 }
 
 
+/* BillingInfo start */
+
 
 .billing-fieldset {
   font-family: 'Neue Haas Grotesk Text Pro';
@@ -154,33 +156,67 @@
 
 
 .nav-item {
-  @apply relative w-full flex items-center gap-[8px] px-[28px] py-2 rounded-lg overflow-hidden leading-[150%];
+  @apply relative w-full text-white flex items-center gap-[8px] px-[28px] py-2 rounded-lg overflow-hidden leading-[150%];
 }
 
 
 
 
 .logo-e8 {
-  font-family: 'Neue Haas Grotesk Text Pro';
-  font-weight: 500;
-  font-size: 32px;
-  line-height: 160%;
-  text-transform: uppercase;
-  color: white;
+  @apply font-bold text-[32px] leading-[160%] uppercase text-white;
 }
 
 .logo-markets {
+  @apply font-medium text-[12px] leading-[160%] uppercase text-white;
+}
+
+/* Navbar starts */
+
+
+
+.james-name {
   font-family: 'Neue Haas Grotesk Text Pro';
   font-weight: 500;
-  font-size: 12px;
-  line-height: 160%;
-  text-transform: uppercase;
-  color: white;
+  @apply  text-[16px] leading-[150%] text-white;
+}
+
+.E8-Accoun {
+  font-family: 'Neue Haas Grotesk Text Pro';
+  font-weight: 500;
+  @apply  text-[16px] leading-[150%] text-white;
 }
 
 
-.sidebar {
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  transform-style: preserve-3d;
+.gmail {
+  font-family: 'Neue Haas Grotesk Text Pro';
+  font-weight: 400;
+}
+
+
+
+
+/* Billing */
+.user {
+   font-family: 'Neue Haas Grotesk Text Pro';
+  font-weight: 500;
+}
+
+
+
+/* EconomicCalendar */
+.filter-label {
+  font-family: 'Neue Haas Grotesk Text Pro';
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  color: #FFFFFFB2;
+  
+}
+.table-header {
+  font-family: 'Neue Haas Grotesk Text Pro';
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: white;
+  -webkit-font-smoothing: antialiased;
 }

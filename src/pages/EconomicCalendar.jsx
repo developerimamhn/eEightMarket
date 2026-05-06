@@ -95,27 +95,45 @@ function Pagination({ current, total, onChange }) {
   };
 
   return (
-    <div className="flex items-center gap-1">
+    <div className="flex items-center gap-[6px]">
+      {/* Prev */}
       <button
         onClick={() => onChange(Math.max(1, current - 1))}
-        className="w-7 h-7 flex items-center justify-center rounded text-slate-500 hover:text-slate-300 text-base transition-colors"
-      >‹</button>
+        className="w-9 h-9 flex items-center justify-center rounded-[10px] bg-white/[0.02] border border-white/10 text-white/70 hover:text-white"
+      >
+        <svg width="6" height="14" viewBox="0 0 6 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5.957 12.5999L0.524 7.1666C-0.118 6.5249-0.118 5.4749 0.524 4.8332L5.957 -0.600098" stroke="white" strokeOpacity="0.7" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </button>
+
       {getPages().map((p) => (
         <button
           key={p}
           onClick={() => onChange(p)}
-          className={`w-7 h-7 flex items-center justify-center rounded text-[11px] font-semibold transition-colors ${p === current
-            ? "bg-slate-800 text-slate-100 border border-slate-600"
-            : "text-slate-500 hover:text-slate-300"
-            }`}
+          className="w-9 h-9 flex items-center justify-center rounded-[10px] text-[12px] font-medium "
+          style={p === current ? {
+            background: "linear-gradient(180deg, #01322D 0%, #047271 100%)",
+            boxShadow: "inset 0 0 0 1px rgba(140,175,181,0.6)",
+            color: "white",
+          } : {
+            background: "rgba(255,255,255,0.02)",
+            border: "1px solid rgba(255,255,255,0.1)",
+            color: "rgba(255,255,255,0.7)",
+          }}
         >
           {String(p).padStart(2, "0")}
         </button>
       ))}
+
+      {/* Next */}
       <button
         onClick={() => onChange(Math.min(total, current + 1))}
-        className="w-7 h-7 flex items-center justify-center rounded text-slate-500 hover:text-slate-300 text-base transition-colors"
-      >›</button>
+        className="w-9 h-9 flex items-center justify-center rounded-[10px] bg-white/[0.02] border border-white/10 text-white/70 hover:text-white transition-all"
+      >
+        <svg width="6" height="14" viewBox="0 0 6 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0.043 -0.600098L5.476 4.8332C6.118 5.4749 6.118 6.5249 5.476 7.1666L0.043 12.5999" stroke="white" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </button>
     </div>
   );
 }
@@ -223,32 +241,29 @@ export function EconomicCalendar() {
 
   return (
     <div className="p-3 sm:p-6">
-      <div className="w-full rounded-[19px] bg-[linear-gradient(180deg,#011314_0%,#011515_85%,rgba(9,42,45,0.7)_100%)]">
 
-        {/* ── Top header ── */}
-        <div className="flex items-center justify-between pb-4">
-          <div className="flex items-center gap-2">
-            <img src={Calendar_Logo} alt="calendar" className="w-9 h-9 sm:w-[43px] sm:h-[43px] object-contain" />
-            <span className="text-[15px] sm:text-[17px] font-medium text-white">
-              Economic Calendar
-            </span>
-          </div>
-          <div className="flex items-center gap-1 bg-white/[0.03] border border-slate-800 rounded-lg p-1">
-            {DAYS.map((day) => (
-              <button
-                key={day}
-                onClick={() => setActiveDay(day)}
-                className={`px-3 py-1 rounded-md text-xs font-medium  ${activeDay === day
-                  ? "bg-slate-800 border border-slate-700 text-slate-100"
-                  : "text-slate-500 hover:text-slate-300"
-                  }`}
-              >
-                {day}
-              </button>
-            ))}
-          </div>
+
+      {/* ── Top header ── */}
+      <div className="flex items-center justify-between pb-[25px]">
+        <div className="flex items-center gap-2">
+          <img src={Calendar_Logo} alt="calendar" className=" h-[42px] sm:w-[42px] sm:h-[42px] rounded-[16px] object-contain" />
+          <span className="user text-[17px] sm:text-[17px]  text-white">
+            Economic Calendar
+          </span>
         </div>
-
+        <div className="flex items-center h-[45px] gap-1 bg-white/[0.03] border border-slate-800 rounded-lg p-3">
+          {DAYS.map((day) => (
+            <button
+              key={day}
+              onClick={() => setActiveDay(day)}
+              className="user px-3 py-1 rounded-[16px] text-[14px] text-white/70"
+            >
+              {day}
+            </button>
+          ))}
+        </div>
+      </div>
+      <div className="w-full rounded-[19px] bg-[linear-gradient(180deg,#011314_0%,#011515_85%,rgba(9,42,45,0.7)_100%)]">
         {/* ── Main card ── */}
         <div className="w-full bg-[#0d1117] rounded-2xl border border-slate-800 overflow-hidden shadow-2xl">
           <div className="w-full p-[1px] bg-[linear-gradient(252.84deg,#86B4B4_0.99%,rgba(58,78,78,0.1)_36.61%)]" />
@@ -289,17 +304,9 @@ export function EconomicCalendar() {
               style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
             >
               <div className="shrink-0 flex items-center">
-                <img src={ImpactLogo} alt="impact" className="w-5 h-5 object-contain opacity-60" />
+                <img src={ImpactLogo} alt="impact" className=" h-[36px] rounded-[14px] object-contain opacity-60" />
               </div>
-              <button
-                onClick={() => handleImpactClick("all")}
-                className={`shrink-0 inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full text-[11px] font-semibold border transition-all ${selectedImpact === "all"
-                  ? "bg-slate-700 border-slate-500 text-white"
-                  : "border-slate-800 text-slate-500 hover:border-slate-700"
-                  }`}
-              >
-                All
-              </button>
+
               {Object.entries(IMPACT_STYLES).map(([key, s]) => (
                 <button
                   key={key}
@@ -319,53 +326,54 @@ export function EconomicCalendar() {
           {/* ════════════════════════════════
               DESKTOP filters
           ════════════════════════════════ */}
-          <div className="hidden sm:flex items-start justify-between gap-4 bg-[#0a0f16] px-4 py-3">
-            <div className="flex flex-col gap-2">
+
+          {/* Desktop filters */}
+          <div className="hidden sm:flex items-start justify-between bg-[#0a0f16] px-[20px] pt-[20px] pb-[24px]">
+
+            {/* Currency */}
+            <div className="flex flex-col gap-[16px]">
               <div className="flex items-center gap-2">
-                <img src={CurrencyLogo} alt="currency" className="w-[36px] h-[36px] object-contain" />
-                <span className="text-[16px] font-medium text-white">Currency</span>
+                <img src={CurrencyLogo} alt="currency" className="w-[36px] h-[36px] rounded-[14px] object-contain" />
+                <span className="user text-[16px] leading-[160%] text-white">Currency</span>
               </div>
-              <div className="flex items-center gap-1.5 flex-wrap">
+              <div className="flex items-center gap-[6px]">
                 {CURRENCIES.map((cur) => (
                   <button
                     key={cur}
                     onClick={() => handleCurrencyClick(cur)}
-                    className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-medium border transition-all ${selectedCurrency === cur
-                      ? "bg-slate-800 border-slate-600 text-slate-200"
-                      : "border-transparent text-slate-600 hover:text-slate-400"
+                    className={`shrink-0 inline-flex items-center gap-1.5 px-[8px] py-[3px] rounded-[8px] border border-white/10 bg-white/5 transition-all ${selectedCurrency === cur ? "text-white" : "text-slate-500 hover:text-slate-300"
                       }`}
                   >
-                    {CURRENCY_LOGOS[cur] && (
-                      <img src={CURRENCY_LOGOS[cur]} alt={cur} className="w-3 h-3 object-contain" />
-                    )}
-                    {cur}
+                    {CURRENCY_LOGOS[cur] && <img src={CURRENCY_LOGOS[cur]} alt={cur} className="w-[12px] h-[12px] rounded-[3px] object-contain" />}
+                    <span className="filter-label">{cur}</span>
                   </button>
                 ))}
               </div>
             </div>
 
-            <div className="flex flex-col gap-2 items-end">
+            {/* Impact */}
+            <div className="flex flex-col gap-[16px] items-end">
               <div className="flex items-center gap-2">
                 <img src={ImpactLogo} alt="impact" className="w-[36px] h-[36px] object-contain" />
-                <span className="text-[16px] font-medium text-white">Impact</span>
+                <span className="user text-[16px] leading-[160%] text-white">Impact</span>
               </div>
-              <div className="flex items-center gap-1.5 flex-wrap justify-end">
+              <div className="flex items-center gap-[6px]">
                 {Object.entries(IMPACT_STYLES).map(([key, s]) => (
                   <button
                     key={key}
                     onClick={() => handleImpactClick(key)}
-                    className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[13px] font-medium border transition-all ${selectedImpact === key
-                      ? "bg-slate-800 border-slate-600 text-slate-200"
-                      : "border-transparent text-slate-600 hover:text-slate-400"
+                    className={`inline-flex items-center gap-1.5 px-[8px] py-[3px] rounded-[8px] border border-white/10 bg-white/5 transition-all ${selectedImpact === key ? "text-white" : "text-slate-600 hover:text-slate-400"
                       }`}
                   >
-                    <span className={`w-2 h-2 rounded-full ${s.dot}`} />
-                    {s.label}
+                    <span className={`w-[12px] h-[12px] rounded-[120px] ${s.dot}`} />
+                    <span className="filter-label">{s.label}</span>
                   </button>
                 ))}
               </div>
             </div>
+
           </div>
+
 
           {/* ════════════════════════════════
               MOBILE: Accordion list
@@ -385,28 +393,28 @@ export function EconomicCalendar() {
           ════════════════════════════════ */}
           <div className="hidden sm:block px-4">
             <table className="w-full border-collapse" style={{ minWidth: "600px" }}>
-              <thead>
-                <tr>
-                  {TABLE_COLS.map((col, idx, arr) => (
-                    <th
-                      key={col.label}
-                      className={`px-0 py-0 text-left bg-white/[0.03]
-                        ${idx === 0 ? "rounded-l-[16px]" : ""}
-                        ${idx === arr.length - 1 ? "rounded-r-[16px]" : ""}
-                      `}
-                    >
-                      <div className={`flex items-center ${idx < arr.length - 1 ? "border-r border-slate-700/60" : ""}`}>
-                        <button className="inline-flex items-center gap-2 px-[20px] py-[12px] cursor-pointer select-none whitespace-nowrap bg-transparent hover:bg-slate-800/50 transition-all w-full text-white text-[16px] font-medium leading-[150%] tracking-normal min-w-[44px]">
-                          {col.label}
-                          {col.sortable && (
-                            <img src={IconArrow} alt="sort" className="ml-auto w-3 h-3 object-contain " />
-                          )}
-                        </button>
-                      </div>
-                    </th>
-                  ))}
-                </tr>
-              </thead>
+             <thead>
+  <tr>
+    {TABLE_COLS.map((col, idx, arr) => (
+      <th
+        key={col.label}
+        className={`px-0 py-0 text-left bg-white/[0.03]
+          ${idx === 0 ? "rounded-l-[16px]" : ""}
+          ${idx === arr.length - 1 ? "rounded-r-[16px]" : ""}
+        `}
+      >
+        <div className={`flex items-center ${idx < arr.length - 1 ? "border-r border-slate-700/60" : ""}`}>
+          <button className="table-header inline-flex items-center gap-2 px-[20px] py-[12px] cursor-pointer select-none whitespace-nowrap bg-transparent hover:rounded-[16px] hover:bg-slate-800/50 transition-all w-full leading-[150%] tracking-normal min-w-[44px]">
+            {col.label}
+            {col.sortable && (
+              <img src={IconArrow} alt="sort" className="ml-auto w-3 h-3 object-contain" />
+            )}
+          </button>
+        </div>
+      </th>
+    ))}
+  </tr>
+</thead>
               <tbody>
                 {paged.length === 0 ? (
                   <tr>

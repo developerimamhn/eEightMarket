@@ -102,12 +102,24 @@ const Toggle = ({ on, onClick }) => (
 
 // ───────── NAV ITEM ─────────
 const NavItem = ({ src, label, active, onClick }) => (
-  <button onClick={onClick} className="nav-item">
+  <button onClick={onClick} className="nav-item ">
     {active && <BtnActiveBg />}
-    <span className={`relative z-10 shrink-0 ${active ? "brightness-0 invert" : "opacity-40"}`}>
+
+    <span
+      className={`relative z-10 shrink-0 text-white transition ${
+        active ? "brightness-0 invert" : "opacity-40"
+      }`}
+    >
       <Ico src={src} alt={label} />
     </span>
-    <span className="label-span whitespace-nowrap">{label}</span>
+
+    <span
+      className={`label-span whitespace-nowrap transition ${
+        active ? "text-white" : "text-white/70"
+      }`}
+    >
+      {label}
+    </span>
   </button>
 );
 
