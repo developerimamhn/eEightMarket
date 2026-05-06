@@ -220,3 +220,101 @@
   color: white;
   -webkit-font-smoothing: antialiased;
 }
+
+.stat-card-border {
+  background: linear-gradient(180.85deg,
+      rgba(255, 255, 255, 0.3) 0.88%,
+      rgba(255, 255, 255, 0.18) 17.77%,
+      rgba(255, 255, 255, 0.03) 49.68%);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* icon gradient border */
+.icon-box-border {
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.6) 0%,
+      rgba(255, 255, 255, 0.042) 40.91%);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+
+/* gradient border — white fade top to transparent */
+.gradient-border-fade {
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.4) 0%,
+      rgba(255, 255, 255, 0) 59.09%);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* gradient border — 3-stop white fade */
+.gradient-border-card {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 1px;
+  background: linear-gradient(180.85deg,
+      rgba(255, 255, 255, 0.3) 0.88%,
+      rgba(255, 255, 255, 0.18) 17.77%,
+      rgba(255, 255, 255, 0.03) 49.68%);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Cyan Gradient Button */
+.btn-cyan {
+  background: linear-gradient(70.93deg,
+      rgba(0, 232, 255, 0.4) 8.29%,
+      rgba(3, 33, 40, 0.04) 65.83%);
+  border: none;
+  cursor: pointer;
+}
+
+/* gradient border */
+.btn-cyan__border {
+  background: linear-gradient(267.18deg,
+      rgba(233, 251, 255, 0.2) 2.14%,
+      rgba(255, 255, 255, 0.15) 96.58%);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* gradient border — 3-stop cyan-white fade horizontal */
+.gradient-border-panel {
+  background: linear-gradient(265.37deg,
+      rgba(157, 238, 255, 0.15) 3.39%,
+      rgba(255, 255, 255, 0.09) 35.69%,
+      rgba(255, 255, 255, 0.045) 96.72%);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
