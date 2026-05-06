@@ -23,7 +23,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="min-h-screen w-full flex bg-[#060F10]">
+      <div className="h-screen w-full flex bg-[#060F10] overflow-hidden">
 
         {/* Sidebar */}
         <Sidebar
@@ -31,18 +31,18 @@ function App() {
           setMobileOpen={setSidebarOpen}
         />
 
-        {/* Main */}
+        {/* MAIN WRAPPER */}
         <div className="flex flex-col flex-1 overflow-hidden">
 
-          <Navbar onMenuClick={() => setSidebarOpen(true)} />
+          {/* Navbar fixed height */}
+          <div className="shrink-0">
+            <Navbar onMenuClick={() => setSidebarOpen(true)} />
+          </div>
 
-          <div className="flex-1 overflow-y-auto p-[24px]">
-
+          {/* 🔥 ONLY THIS SHOULD SCROLL */}
+          <main className="flex-1 overflow-y-auto p-[24px]">
             <Routes>
-
-              {/* 🔥 IMPORTANT: default route */}
               <Route path="/" element={<Dashboard />} />
-
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/settings" element={<UserSettings />} />
               <Route path="/account" element={<Account />} />
@@ -51,15 +51,13 @@ function App() {
               <Route path="/extras" element={<Extras />} />
               <Route path="/news" element={<NewsFeed />} />
               <Route path="/calendar" element={<EconomicCalendar />} />
-
             </Routes>
-
-          </div>
+          </main>
 
         </div>
       </div>
     </BrowserRouter>
-  )
+  );
 }
 
 export default App

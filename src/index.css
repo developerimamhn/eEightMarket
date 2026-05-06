@@ -35,21 +35,152 @@
 }
 
 
+@font-face {
+  font-family: "Neue Haas Grotesk Text Pro";
+  src: url("./assets/font/NeueHaasDisplayXXThin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
 
-/* Billing.jsx er style  */
+@font-face {
+  font-family: "Neue Haas Grotesk Text Pro";
+  src: url("./assets/font/NeueHaasDisplayXThin.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Neue Haas Grotesk Text Pro";
+  src: url("./assets/font/NeueHaasDisplayThin.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Neue Haas Grotesk Text Pro";
+  src: url("./assets/font/NeueHaasDisplayLight.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Neue Haas Grotesk Text Pro";
+  src: url("./assets/font/NeueHaasDisplayRoman.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Neue Haas Grotesk Text Pro";
+  src: url("./assets/font/NeueHaasDisplayMedium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Neue Haas Grotesk Text Pro";
+  src: url("./assets/font/NeueHaasDisplayBold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Neue Haas Grotesk Text Pro";
+  src: url("./assets/font/NeueHaasDisplayBlack.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+
+.text-base-haas {
+  font-family: 'Neue Haas Grotesk Text Pro';
+  @apply font-normal text-[14px] tracking-[0%] bg-transparent placeholder:text-white/25 text-left focus:outline-hidden outline-hidden! border-none leading-[150%] text-[#ffffffd9] w-full;
+}
+
+.billing-fieldset legend {
+  font-family: 'Neue Haas Grotesk Text Pro';
+  @apply font-normal text-[12px] leading-[150%] tracking-[0%] text-white;
+}
+
+
 
 .billing-fieldset {
-  @apply m-0 box-border min-h-[56px] flex flex-col justify-center px-4 pt-[6px] pb-[14px] rounded-[14px];
+  font-family: 'Neue Haas Grotesk Text Pro';
+  @apply m-0 box-border min-h-14 flex flex-col justify-center px-4 pt-1.5 pb-3.5 rounded-[14px];
   border: 1.5px solid #ffffff59;
 }
 .billing-fieldset legend {
+  font-family: 'Neue Haas Grotesk Text Pro';
   @apply px-1 text-[12px] leading-none text-white/60 mb-[3px];
 }
 
 .billing-empty {
-  @apply min-h-[54px] flex items-center px-4 pt-[6px] pb-[14px] border-[1.5px] border-white/35 rounded-[14px];
+  font-family: 'Neue Haas Grotesk Text Pro';
+  @apply min-h-[54px] flex items-center px-4 pt-[6px] pb-[14px] border-[1.5px] border-white/35 rounded-[14px] ;
 }
 
 .billing-input {
+  font-family: 'Neue Haas Grotesk Text Pro';
   @apply w-full h-full flex-1 bg-transparent outline-none border-none text-[14px] text-white/85 h-full leading-[1.2];
+}
+
+
+
+
+
+/* sidebar start */
+
+.label-span {
+  font-family: 'Neue Haas Grotesk Text Pro';
+  @apply relative z-10 font-normal;
+  color: #FFFFFFB2;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0px;
+}
+
+
+
+.group-label {
+  font-family: 'Neue Haas Grotesk Text Pro';
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 160%;
+  color: #FFFFFF80;
+  text-transform: uppercase;
+  
+}
+
+
+
+.nav-item {
+  @apply relative w-full flex items-center gap-[8px] px-[28px] py-2 rounded-lg overflow-hidden leading-[150%];
+}
+
+
+
+
+.logo-e8 {
+  font-family: 'Neue Haas Grotesk Text Pro';
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 160%;
+  text-transform: uppercase;
+  color: white;
+}
+
+.logo-markets {
+  font-family: 'Neue Haas Grotesk Text Pro';
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 160%;
+  text-transform: uppercase;
+  color: white;
+}
+
+
+.sidebar {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
 }

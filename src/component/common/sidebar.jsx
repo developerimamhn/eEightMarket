@@ -3,10 +3,7 @@
 
 import { useState, useId } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-
-import logo from "../../assets/img/E8_Markets.svg";
 import bgImage from "../../assets/img/bg_3.png";
-
 import Dashboard from "../../assets/img/dashboard.png";
 import Analytics from "../../assets/img/analytics.png";
 import Border from "../../assets/img/border_full.png";
@@ -21,7 +18,7 @@ import Moon from "../../assets/img/moon.png";
 
 // ───────── ICON ─────────
 const Ico = ({ src, alt }) => (
-  <img src={src} alt={alt} className="w-5 h-5 object-contain" />
+  <img src={src} alt={alt} className="w-[20px] h-[20px] object-contain" />
 );
 
 // ───────── DATA ─────────
@@ -57,7 +54,7 @@ const BtnActiveBg = () => {
   const gradId = `grad${uid}`;
 
   return (
-    <svg className="absolute inset-0 w-full h-full  " viewBox="6 0 260 48" fill="none">
+    <svg className="absolute inset-0 w-full h-full" viewBox="20 0 200 48" fill="none">
       <defs>
         <linearGradient id={gradId}>
           <stop offset="0%" stopColor="#00E8FF" stopOpacity="0" />
@@ -77,7 +74,7 @@ const BtnActiveBg = () => {
         strokeWidth="4"
         strokeLinecap="round"
         style={{
-          filter: "drop-shadow(0 0 16px #00E8FF) ",
+          filter: "drop-shadow(0 0 16px #00E8FF)",
           strokeDasharray: "300 300",
           animation: "dash 6s linear infinite",
         }}
@@ -105,17 +102,12 @@ const Toggle = ({ on, onClick }) => (
 
 // ───────── NAV ITEM ─────────
 const NavItem = ({ src, label, active, onClick }) => (
-  <button
-    onClick={onClick}
-    className="relative w-full flex items-center gap-3 px-3 py-2 rounded-lg overflow-hidden"
-  >
+  <button onClick={onClick} className="nav-item">
     {active && <BtnActiveBg />}
-
-    <span className={`relative z-10 ${active ? "brightness-0 invert" : "opacity-40"}`}>
+    <span className={`relative z-10 shrink-0 ${active ? "brightness-0 invert" : "opacity-40"}`}>
       <Ico src={src} alt={label} />
     </span>
-
-    <span className="relative z-10 text-sm text-white/80">{label}</span>
+    <span className="label-span whitespace-nowrap">{label}</span>
   </button>
 );
 
@@ -132,7 +124,6 @@ const Sidebar = ({ mobileOpen, setMobileOpen }) => {
 
   return (
     <>
-      {/* overlay */}
       {mobileOpen && (
         <div
           className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden"
@@ -140,14 +131,14 @@ const Sidebar = ({ mobileOpen, setMobileOpen }) => {
         />
       )}
 
-      {/* sidebar */}
       <div
-        className={`
-          fixed top-0 left-0 h-screen z-50
-          w-[240px] transition-transform duration-300
-          ${mobileOpen ? "translate-x-0" : "-translate-x-full"}
-          md:translate-x-0 md:static
-        `}
+         className={`
+    sidebar fixed top-0 left-0 h-screen w-[240px] z-50
+  md:static
+  transform-gpu will-change-transform
+    ${mobileOpen ? "translate-x-0" : "-translate-x-full"}
+    md:translate-x-0 md:static
+  `}
         style={{
           backgroundImage: `url(${bgImage})`,
           backgroundSize: "cover",
@@ -155,14 +146,17 @@ const Sidebar = ({ mobileOpen, setMobileOpen }) => {
       >
         <div className="absolute inset-0 bg-[#03151A]/90" />
 
-        <div className="relative z-10 flex flex-col h-full p-4">
-          <img src={logo} className="h-6 mb-6 self-start" />
-          
+        <div className="relative z-10 flex flex-col h-full p-4 overflow-hidden">
+          <div className="flex items-baseline gap-[6px] mb-[15px]">
+            <span className="logo-e8">E8</span>
+            <span className="logo-markets">Markets</span>
+          </div>
 
-          <div className="flex-1 overflow-y-auto space-y-4">
+          {/* NO SCROLL */}
+          <div className="flex-1 space-y-4 overflow-hidden">
             {navGroups.map((group) => (
               <div key={group.label}>
-                <p className="text-white/30 text-xs mb-2">{group.label}</p>
+                <p className="group-label mb-[12px] px-[20px]">{group.label}</p>
 
                 {group.items.map((item) => (
                   <NavItem
@@ -186,8 +180,7 @@ const Sidebar = ({ mobileOpen, setMobileOpen }) => {
               />
             ))}
 
-            {/* Dark Mode */}
-            <div className="flex items-center gap-[10px] px-3 py-[10px]">
+            <div className="flex items-center gap-[10px] px-[28px] py-[10px]">
               <span className="opacity-50"><Ico src={Moon} alt="Moon" /></span>
               <span className="text-[13.5px] text-white/50 flex-1">Dark Mode</span>
               <Toggle on={darkMode} onClick={() => setDarkMode(!darkMode)} />
