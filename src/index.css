@@ -218,5 +218,19 @@
   font-size: 16px;
   line-height: 150%;
   color: white;
-  -webkit-font-smoothing: antialiased;
+}
+
+
+/* NewsFeed */
+
+.News_p {
+  font-family: 'Neue Haas Grotesk Text Pro';
+  @apply text-[14px] leading-[150%] text-white/70 font-normal;
+  
+}
+
+.News_Date {
+  font-family: 'Neue Haas Grotesk Text Pro';
+  @apply text-[14px] leading-[160%] text-white font-normal;
+  
 }

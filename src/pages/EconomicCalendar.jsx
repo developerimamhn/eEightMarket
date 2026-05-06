@@ -398,7 +398,7 @@ export function EconomicCalendar() {
     {TABLE_COLS.map((col, idx, arr) => (
       <th
         key={col.label}
-        className={`px-0 py-0 text-left bg-white/[0.03]
+        className={`px-0 py-0 text-left bg-[#FFFFFF08]
           ${idx === 0 ? "rounded-l-[16px]" : ""}
           ${idx === arr.length - 1 ? "rounded-r-[16px]" : ""}
         `}

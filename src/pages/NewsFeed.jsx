@@ -84,7 +84,7 @@ const BtnAmberBg = () => (
 const NewsCard = ({ source, date, title, body, body2 }) => {
   return (
     <div
-      className="relative rounded-[16px] border border-white/10 overflow-hidden flex flex-col p-[16px] sm:p-[20px] min-h-[320px] sm:min-h-[390px] transition-transform duration-300 hover:scale-[1.01]"
+      className="relative rounded-[16px] border border-white/10 overflow-hidden flex flex-col p-[16px] sm:p-[20px] min-h-[320px] sm:min-h-[390px] transition-transform duration-300 "
       style={{
         backgroundImage: `url(${cardBgMap[source]})`,
         backgroundSize: "cover",
@@ -92,26 +92,26 @@ const NewsCard = ({ source, date, title, body, body2 }) => {
       }}
     >
       <div className="flex flex-col gap-[12px] sm:gap-[14px] flex-1">
-        <h3 className="text-white text-[14px] sm:text-[16px] leading-[160%] font-[500]">
+        <h3 className="user text-white text-[16px] sm:text-[16px] leading-[160%]">
           {title}
         </h3>
 
         <div className="flex flex-wrap items-center gap-[8px] sm:gap-[40px]">
           <div className="flex items-center gap-[7px]">
-            <img src={dateIcon} className="w-[28px] h-[28px] sm:w-[36px] sm:h-[36px] object-contain" alt="date icon" />
-            <span className="text-white text-[12px] sm:text-[14px] font-normal leading-[160%] tracking-normal opacity-100">
+            <img src={dateIcon} className="w-[28px] h-[28px] rounded-[14px] sm:w-[36px] sm:h-[36px] object-contain" alt="date icon" />
+            <span className="News_Date">
               {date}
             </span>
           </div>
           <img src={sourceLogos[source]} className="h-[12px] sm:h-[16px] object-contain" alt={source} />
         </div>
 
-        <p className="text-[14px] leading-[150%] text-[#ffffffb2] font-medium">
+        <p className="News_p">
           {body}
         </p>
 
         {body2 && (
-           <p className="text-[14px] leading-[150%] text-[#ffffffb2] font-medium">
+           <p className="News_p">
           {body2}
         </p>
         )}
@@ -163,50 +163,46 @@ export default function NewsFeed() {
     : newsData.slice(0, 2);
 
   return (
-    <div className="w-full  flex flex-col gap-[12px] sm:gap-[16px] px-[12px] sm:px-[16px] lg:px-0">
+    <div className="w-full  flex flex-col gap-[12px]  sm:gap-[16px] px-[12px] sm:px-[16px] lg:px-0">
 
       {/* BANNER */}
       <div
-        className="h-[160px] sm:h-[200px] md:h-[220px] rounded-[16px] sm:rounded-[24px] overflow-hidden relative"
+        className="h-[160px] sm:h-[200px] md:h-[220px]  rounded-[16px] sm:rounded-[24px] overflow-hidden relative"
         style={{
           backgroundImage: `url(${newsBg})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
-        <div className="h-full flex items-center justify-center px-4">
-          <h1 className="text-white font-medium text-[22px] sm:text-[28px] md:text-[34px] leading-[120%] text-center">
+        <div className="h-full flex items-center justify-center ">
+          <h1 className="user text-white text-[34px] sm:text-[34px] md:text-[34px] leading-[120%] text-center">
             Latest World News on <br /> International Trade
           </h1>
         </div>
 
-        <div className="absolute bottom-[12px] right-[16px] flex items-center gap-[8px] sm:gap-[12px]">
-          <img src={forexliveLogo} className="h-[7px] sm:h-[9px] object-contain" alt="forexlive" />
-          <img src={dailyfxLogo} className="h-[7px] sm:h-[9px] object-contain" alt="dailyfx" />
-          <img src={fxstreetLogo} className="h-[7px] sm:h-[9px] object-contain" alt="fxstreet" />
+        <div className="absolute bottom-[19px] right-[19px] flex items-center gap-[8px] sm:gap-[12px]">
+          <img src={forexliveLogo} className="h-[7px] sm:h-[10px] object-contain" alt="forexlive" />
+          <img src={dailyfxLogo} className="h-[7px] sm:h-[10px] object-contain" alt="dailyfx" />
+          <img src={fxstreetLogo} className="h-[7px] sm:h-[10px] object-contain" alt="fxstreet" />
         </div>
       </div>
 
       {/* FILTER */}
-      <div className="flex justify-between items-center gap-[12px]">
+      <div className="flex justify-between items-center gap-[12px] py-[24px] ">
 
         <div className="flex items-center gap-[8px] shrink-0">
-          <img src={newsFeedHeaderLogo} className="w-[32px] h-[32px] sm:w-[42px] sm:h-[42px] object-contain" alt="news feed icon" />
-          <span className="text-white text-[15px] sm:text-[17.46px] font-medium leading-[160%] tracking-normal opacity-100">
+          <img src={newsFeedHeaderLogo} className="w-[32px] h-[32px] rounded-[14px] sm:w-[43px] sm:h-[43px] object-contain" alt="news feed icon" />
+          <span className="user text-white text-[15px] sm:text-[17.46px] font-medium leading-[160%] tracking-normal opacity-100">
             News Feed
           </span>
         </div>
 
-        <div className="flex items-center gap-[0px] rounded-[10px] border border-white/10 bg-white/5 px-[4px] py-[4px] overflow-x-auto scrollbar-hide max-w-[60%] sm:max-w-none">
+        <div className="flex items-center gap-[8px] rounded-[10px] border border-white/10 bg-white/5 px-[20px] py-[12px] overflow-x-auto scrollbar-hide max-w-[60%] sm:max-w-none">
           {sources.map((src) => (
             <button
               key={src}
               onClick={() => setActiveSource(activeSource === src ? null : src)}
-              className={`flex items-center shrink-0 gap-[6px] sm:gap-[8px] px-[8px] sm:px-[12px] py-[5px] rounded-[8px] text-[11px] sm:text-[12px] transition
-        ${activeSource === src
-                  ? "bg-white/10 text-white"
-                  : "text-white/60 hover:bg-white/10"
-                }`}
+              className="flex items-center shrink-0 gap-[6px] sm:gap-[8px] px-[8px] sm:px-[12px] py-[5px] rounded-[6px] text-[11px] sm:text-[12px] transition"
             >
               <img src={tikIcon} className="h-[12px] sm:h-[20px]" alt="" />
               <img src={sourceLogos[src]} className="h-[8px] sm:h-[12px]" alt={src} />
