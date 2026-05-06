@@ -66,7 +66,7 @@ const Extras = () => {
   const [active, setActive] = useState("left");
 
   return (
-    <div className='max-w-6xl mx-auto'>
+    <div className='mx-auto'>
       <div className='flex flex-col md:flex-row items-center justify-between gap-4 px-4 mt-6'>
         <div className='flex items-center gap-1 md:gap-[7.76px]'>
           <img src={Frame_1} alt="logo" className="w-6 h-6 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-11 lg:h-11" />
@@ -74,13 +74,9 @@ const Extras = () => {
             Leaderboard
           </p>
         </div>
-
-        {/* Tabs */}
         <div className="flex gap-1 md:gap-2 rounded-2xl border border-[#FFFFFF1A] p-1 pr-2 bg-[#FFFFFF0D]">
-
           {tabs.map((item) => {
             const isActive = activeTab === item.name;
-
             const button = (
               <button
                 onClick={() => setActiveTab(item.name)}
@@ -93,14 +89,12 @@ const Extras = () => {
                 {item.name}
               </button>
             );
-
             return (
               <div key={item.name} className="flex items-center justify-center">
                 {isActive ? <ExactButton>{button}</ExactButton> : button}
               </div>
             );
           })}
-
         </div>
       </div>
       <div className='px-4 2xl:px-0'>

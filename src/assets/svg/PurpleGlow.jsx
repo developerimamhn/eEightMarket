@@ -14,7 +14,6 @@ const PurpleGlow = ({ className = "" }) => {
             fillOpacity="0.45"
           />
         </g>
-
         <defs>
           <filter
             id="blurPurple"
