@@ -97,10 +97,6 @@
   @apply font-normal text-[14px] tracking-[0%] bg-transparent placeholder:text-white/25 text-left focus:outline-hidden outline-hidden! border-none leading-[150%] text-[#ffffffd9] w-full;
 }
 
-.billing-fieldset legend {
-  font-family: 'Neue Haas Grotesk Text Pro';
-  @apply font-normal text-[12px] leading-[150%] tracking-[0%] text-white;
-}
 
 
 /* BillingInfo start */
