@@ -116,7 +116,7 @@
 
 .billing-empty {
   font-family: 'Neue Haas Grotesk Text Pro';
-  @apply min-h-[54px] flex items-center px-4 pt-[6px] pb-[14px] border-[1.5px] border-white/35 rounded-[14px] ;
+  @apply min-h-13.5 flex items-center px-4 pt-[6px] pb-[14px] border-[1.5px] border-white/35 rounded-[14px] ;
 }
 
 .billing-input {
