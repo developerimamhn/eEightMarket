@@ -166,14 +166,15 @@ export default function NewsFeed() {
     <div className="w-full  flex flex-col gap-[12px]  sm:gap-[16px] px-[12px] sm:px-[16px] lg:px-0">
 
       {/* BANNER */}
-      <div
-        className="h-[160px] sm:h-[200px] md:h-[220px]  rounded-[16px] sm:rounded-[24px] overflow-hidden relative"
-        style={{
-          backgroundImage: `url(${newsBg})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
+    <div
+  className="w-full h-full sm:h-[240px] md:h-[260px] rounded-[24px] sm:rounded-[24px] overflow-hidden relative"
+  style={{
+    backgroundImage: `url(${newsBg})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+  }}
+>
         <div className="h-full flex items-center justify-center ">
           <h1 className="user text-white text-[34px] sm:text-[34px] md:text-[34px] leading-[120%] text-center">
             Latest World News on <br /> International Trade

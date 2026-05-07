@@ -1,15 +1,16 @@
 import { useState, useRef, useCallback } from "react";
+import Candle from "./Candle"
 
-import icon from "../assets/img/trade-up.svg"
-import icon2 from "../assets/img/trade-down.svg"
-import icon3 from "../assets/img/exchange-02.svg"
-import icon4 from "../assets/img/medal-01.svg"
-import icon5 from "../assets/img/analysis-text-link.svg"
-import icon6 from "../assets/img/auto-conversations.svg"
-import icon7 from "../assets/img/profit.svg"
-import icon8 from "../assets/img/auto-conversations (1).svg"
-import icon9 from "../assets/img/chart-down.svg"
-import Group_26 from "../assets/img/Group 26.svg";
+import icon from "../../assets/img/trade-up.svg"
+import icon2 from "../../assets/img/trade-down.svg"
+import icon3 from "../../assets/img/exchange-02.svg"
+import icon4 from "../../assets/img/medal-01.svg"
+import icon5 from "../../assets/img/analysis-text-link.svg"
+import icon6 from "../../assets/img/auto-conversations.svg"
+import icon7 from "../../assets/img/profit.svg"
+import icon8 from "../../assets/img/auto-conversations (1).svg"
+import icon9 from "../../assets/img/chart-down.svg"
+import Group_26 from "../../assets/img/Group 26.svg";
 
 const stats = [
   {
@@ -110,9 +111,13 @@ const Dashboard = () => {
 
   return (
     <div className=''>
-
-      <div className='flex flex-col justify-between relative z-0 w-[340px] h-[406px] rounded-[20px] bg-[#121212] opacity-100 mb-10 overflow-hidden p-5'>
+      
+       <div className="flex justify-start items center gap-0
+      ">
+        <Candle/>
+      <div className='flex flex-col justify-between relative z-0 w-1/4 min-h-[446px]  rounded-[20px] bg-[#121212] opacity-100 mb-6 overflow-hidden p-5'>
         {/* SVG Right Side */}
+        
         <div className='absolute top-0 right-0 z-0 pointer-events-none'>
           <svg width="276" height="288" viewBox="0 0 276 288" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g filter="url(#filter0_f_1318_639)">
@@ -128,7 +133,12 @@ const Dashboard = () => {
           </svg>
         </div>
 
+
+
+       
+
         <div className='relative flex items-center gap-[7.75px] z-10'>
+          
           <div className='flex items-center justify-center relative w-11 h-11 rounded-2xl bg-[#FFFFFF12] overflow-hidden'>
             {/* Gradient border */}
             <div className="gradient-border-fade" />
@@ -161,6 +171,7 @@ const Dashboard = () => {
             </p>
           </div>
         </div>
+        
 
         <div className="flex rounded-2xl border border-[#FFFFFF1A] p-0.75 bg-[#FFFFFF08]">
           {/* Max Recorded Button */}
@@ -202,7 +213,7 @@ const Dashboard = () => {
 
         </div>
 
-        <div className='relative w-[300px] h-[94px] rounded-[16px] bg-[#FFFFFF08] p-3'>
+        <div className='relative w-full  rounded-[16px] bg-[#FFFFFF08] p-3'>
           {/* Gradient border */}
           <div className='gradient-border-panel absolute inset-0 rounded-2xl p-px' />
           {/* icon top glowing line */}
@@ -268,7 +279,7 @@ const Dashboard = () => {
           </div>
         </div>
 
-        <div className='relative w-[300px] h-[94px] rounded-[16px] bg-[#FFFFFF08] p-3'>
+        <div className='relative w-full  rounded-[16px] bg-[#FFFFFF08] p-3'>
           {/* Gradient border */}
           <div className='gradient-border-panel absolute inset-0 rounded-2xl p-px' />
           {/* icon top glowing line */}
@@ -313,6 +324,8 @@ const Dashboard = () => {
         </div>
 
       </div>
+       
+       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {stats.map((item) => (

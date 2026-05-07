@@ -9,7 +9,7 @@ import Navbar from './component/common/Navbar'
 import Sidebar from './component/common/sidebar'
 
 // Pages
-import Dashboard from './pages/Dashboard'
+import Dashboard from './pages/Dashboard/index'
 import UserSettings from './pages/UserSetting/UserSettings'
 import Account from './pages/Account'
 import Order from './pages/Order'
