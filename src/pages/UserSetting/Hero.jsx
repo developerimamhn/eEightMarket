@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import logo from "../../assets/img/Logo.png";
+import logo from "../../assets/img/User_Logo.svg";
 
 const BtnActiveBg = () => (
   <svg
@@ -42,17 +42,18 @@ const Hero = () => {
       <div className="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-0">
         
         {/* Logo */}
-        <div className="flex items-center self-start sm:self-auto">
+        <div className="flex items-center self-start sm:self-auto gap-[8px]">
           <img
             src={logo}
             alt="logo"
-            className="object-contain h-[32px] sm:h-[40px]"
+            className="object-contain h-[44px] sm:h-[44px] rounded-[16px]"
           />
+          <span className="user text-[18px] text-white leading-160% ">User Setting</span>
         </div>
 
         {/* Tabs — mobile এ full width, desktop এ auto */}
         <div
-          className="flex items-center p-[4px] rounded-[14px] w-full sm:w-auto"
+          className="flex items-center p-[4px] rounded-[16px] w-full sm:w-auto"
           style={{
             background: "rgba(255, 255, 255, 0.05)",
             border: "1px solid rgba(255, 255, 255, 0.1)",
@@ -62,7 +63,7 @@ const Hero = () => {
             <button
               key={tab}
               onClick={() => setActive(tab)}
-              className="relative flex flex-1 sm:flex-none justify-center items-center px-3 sm:px-4 py-[8px] sm:py-[9px] text-[11px] sm:text-[13px] whitespace-nowrap z-10 rounded-[10px]"
+              className="relative flex flex-1 sm:flex-none justify-center items-center px-3 sm:px-4 py-[8px] sm:py-[9px] text-[11px] sm:text-[14px] whitespace-nowrap z-10 rounded-[14px] leading-150% text-white/70"
               style={{
                 fontFamily: "'Neue Haas Grotesk Text Pro', sans-serif",
                 color: active === tab ? "#fff" : "rgba(255,255,255,0.5)",
