@@ -67,24 +67,24 @@ const Extras = () => {
 
   return (
     <div className='mx-auto'>
-      <div className='flex flex-col md:flex-row items-center justify-between gap-4 px-4 mt-6'>
+      <div className='flex flex-col lg:flex-row items-center justify-between gap-4 lg:gap-0'>
         <div className='flex items-center gap-1 md:gap-[7.76px]'>
           <img src={Frame_1} alt="logo" className="w-6 h-6 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-11 lg:h-11" />
           <p className='font-medium text-[13px] sm:text-[14px] md:text-[15px] lg:text-[16px] xl:text-[17px] 2xl:text-[18px] leading-[160%] text-white'>
             Leaderboard
           </p>
         </div>
-        <div className="flex gap-1 md:gap-2 rounded-2xl border border-[#FFFFFF1A] p-1 pr-2 bg-[#FFFFFF0D]">
+        <div className="flex rounded-lg sm:rounded-xl md:rounded-2xl border border-[#FFFFFF1A] p-0.5 md:p-1 bg-[#FFFFFF0D]">
           {tabs.map((item) => {
             const isActive = activeTab === item.name;
             const button = (
               <button
                 onClick={() => setActiveTab(item.name)}
-                className={`flex items-center justify-center gap-0.5 px-1 sm:px-2 md:px-3 rounded-xl text-[10px] sm:text-[12px] md:text-[13.58px] leading-[150%] cursor-pointer 
+                className={`flex items-center justify-center gap-0.5 w-14 sm:w-18 md:w-20 lg:w-26.25 rounded-xl text-[10px] sm:text-[12px] md:text-[13.58px] leading-[150%] cursor-pointer 
                   ${isActive ? "text-white" : "text-[#FFFFFFB2]"}`}
               >
                 {item.icon && (
-                  <img src={item.icon} alt="icon" className="w-[15.52px] h-[15.52px]" />
+                  <img src={item.icon} alt="icon" className="w-2 h-2 sm:w-3 sm:h-3 md:w-4 md:h-4" />
                 )}
                 {item.name}
               </button>
@@ -97,8 +97,8 @@ const Extras = () => {
           })}
         </div>
       </div>
-      <div className='px-4 2xl:px-0'>
-        <div className="w-full mx-auto p-px rounded-3xl bg-[linear-gradient(252.84deg,#86B4B4_0.99%,rgba(58,78,78,0.1)_36.61%)] mt-16 mb-10">
+      <div className=''>
+        <div className="w-full mx-auto p-px rounded-3xl bg-[linear-gradient(252.84deg,#86B4B4_0.99%,rgba(58,78,78,0.1)_36.61%)] mt-8">
           <div className="p-4 sm:p-5 relative w-full h-full rounded-[23px] bg-[linear-gradient(180deg,#011314_0%,#011515_85%,rgba(9,42,45,0.65)_100%)]">
             <div className='absolute inset-0 flex justify-end h-full'>
               <GlowBlob />
@@ -130,15 +130,13 @@ const Extras = () => {
                   </div>
                 </div>
               </div>
+              {/* Center section */}
               <div className='flex flex-col items-center justify-center gap-5 mt-6'>
                 <h3 className='font-medium text-[16px] md:text-[17px] lg:text-[18px] xl:text-[19px] 2xl:text-[20px] leading-[160%] tracking-[0%] text-center text-[#FFFFFF]'>
                   Nasdaq 100 Index
                 </h3>
-
                 {/* Toggle switch */}
                 <div className="relative flex items-center w-full max-w-[405.82px] h-[45.22px] rounded-2xl border border-[#FFFFFF33] p-[2.91px] bg-[#172020]">
-
-                  {/* Sliding Background */}
                   <div
                     className={`flex items-center justify-center absolute h-10 w-1/2 transition-all duration-300`}
                     style={{
@@ -147,51 +145,40 @@ const Extras = () => {
                   >
                     <WideButton200 />
                   </div>
-
-                  {/* Left Button */}
                   <button
                     onClick={() => setActive("left")}
-                    className={`relative z-10 w-1/2 h-10 flex items-center justify-center gap-1 text-[10px] sm:text-[12px] md:text-[13.58px]
+                    className={`relative z-10 w-1/2 h-10 flex items-center justify-center gap-1 text-[10px] sm:text-[12px] md:text-[13.58px] cursor-pointer
                       ${active === "left" ? "text-white" : "text-[#FFFFFFB2]"}`}
                   >
                     <img src={icon_8} className="w-[15.52px] h-[15.52px]" />
                     No Commissions
                   </button>
-
-                  {/* Right Button */}
                   <button
                     onClick={() => setActive("right")}
-                    className={`relative z-10 w-1/2 h-10 flex items-center justify-center text-[10px] sm:text-[12px] md:text-[13.58px]
+                    className={`relative z-10 w-1/2 h-10 flex items-center justify-center text-[10px] sm:text-[12px] md:text-[13.58px] cursor-pointer
                       ${active === "right" ? "text-white" : "text-[#FFFFFFB2]"}`}
                   >
                     Raw Spreads
                   </button>
-
                 </div>
               </div>
-
               {/* Bottom section (two cards) */}
               <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 mt-10'>
-
                 {/* Trading Hours card */}
                 <div className="w-full p-px rounded-2xl bg-[linear-gradient(180.85deg,rgba(255,255,255,0.3)_0.88%,rgba(255,255,255,0.18)_17.77%,rgba(255,255,255,0.03)_49.68%)]">
                   <div className="relative w-full h-full rounded-[15px] bg-[#091A1B] overflow-hidden">
-
                     {/* Background */}
                     <img
                       src={Union}
                       alt=""
                       className="absolute inset-0 w-full h-full object-cover"
                     />
-
                     {/* Purple Glow */}
                     <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                       <PurpleGlow className="w-full h-full object-cover" />
                     </div>
-
                     {/* Content Layer */}
                     <div className="relative z-10 p-5">
-
                       {/* Content */}
                       <div className='flex items-center gap-[7.76px]'>
                         <img src={icon_9} alt="icon" className="w-6 h-6 sm:w-8 sm:h-8 md:w-9 md:h-9" />
@@ -199,9 +186,7 @@ const Extras = () => {
                           Trading Hours
                         </p>
                       </div>
-
                       <div className="flex flex-col gap-3 mt-5">
-
                         {/* Schedule list */}
                         {schedule.map((item, index) => (
                           <div
@@ -226,7 +211,6 @@ const Extras = () => {
                                 maskComposite: "exclude",
                               }}
                             />
-
                             <p className="relative z-10 p-4 font-normal text-[13px]  sm:text-[14px]  md:text-[15px]  lg:text-[16px] leading-[150%] text-[#FFFFFFB2]">
                               {item.day}
                             </p>
@@ -236,7 +220,6 @@ const Extras = () => {
                             </p>
                           </div>
                         ))}
-
                         {/* Footer note */}
                         <div className="flex items-center gap-1 mt-2">
                           <img src={icon_11} alt="icon" className="w-6 h-6" />
@@ -244,29 +227,24 @@ const Extras = () => {
                             All times are in UTC timezone
                           </p>
                         </div>
-
                       </div>
                     </div>
-
                   </div>
                 </div>
 
                 {/* Info card */}
                 <div className="w-full p-px rounded-2xl bg-[linear-gradient(180.85deg,rgba(255,255,255,0.3)_0.88%,rgba(255,255,255,0.18)_17.77%,rgba(255,255,255,0.03)_49.68%)]">
                   <div className="relative w-full h-full rounded-[15px] bg-[#091A1B] overflow-hidden">
-
                     {/* Background Image */}
                     <img
                       src={Union}
                       alt=""
                       className="absolute inset-0 w-full h-full object-cover"
                     />
-
                     {/* Purple Glow */}
                     <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                       <CyanGlow className="w-full h-full object-cover" />
                     </div>
-
                     {/* Content Layer */}
                     <div className="relative z-10 p-5">
                       <div className='flex items-center gap-[7.76px]'>
@@ -275,9 +253,7 @@ const Extras = () => {
                           Information
                         </p>
                       </div>
-
                       <div className="flex flex-col gap-3 mt-5">
-
                         {/* Info list */}
                         {schedule_2.map((item, index) => (
                           <div
