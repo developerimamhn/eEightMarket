@@ -1,5 +1,5 @@
 
-
+import { useState, useRef, useEffect } from "react";
 import search from "../../assets/img/searchIcon.png";
 import AiBtn from "../../assets/img/AiButton.png";
 import userAvatar from "../../assets/img/image.png";
