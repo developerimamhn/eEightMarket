@@ -14,7 +14,7 @@ const InputField = ({ label, value, onChange, placeholder = "" }) => {
         onFocus={() => setFocused(true)}
         onBlur={() => setFocused(false)}
         placeholder={lifted ? placeholder : ""}
-        className="billing-input w-full min-h-[54px] px-4 rounded-[14px] transition-all duration-300"
+        className="billing-input w-full min-h-13.5 px-4 rounded-[14px] transition-all duration-300"
         style={{
           border: focused
             ? "1.5px solid rgba(255,255,255,0.35)"

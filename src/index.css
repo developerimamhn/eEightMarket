@@ -186,17 +186,11 @@
 }
 
 
-
-
-/* Billing */
 .user {
    font-family: 'Neue Haas Grotesk Text Pro';
   font-weight: 500;
 }
 
-
-
-/* EconomicCalendar */
 .filter-label {
   font-family: 'Neue Haas Grotesk Text Pro';
   font-weight: 400;
@@ -214,8 +208,6 @@
 }
 
 
-/* NewsFeed */
-
 .News_p {
   font-family: 'Neue Haas Grotesk Text Pro';
   @apply text-[14px] leading-[150%] text-white/70 font-normal;
@@ -229,8 +221,6 @@
 }
 
 
-
-/* Dashboard */
 .stat-card-border {
   background: linear-gradient(180.85deg,
       rgba(255, 255, 255, 0.3) 0.88%,
@@ -244,7 +234,7 @@
   pointer-events: none;
 }
 
-/* icon gradient border */
+
 .icon-box-border {
   background: linear-gradient(180deg,
       rgba(255, 255, 255, 0.6) 0%,
@@ -258,7 +248,6 @@
 }
 
 
-/* gradient border — white fade top to transparent */
 .gradient-border-fade {
   position: absolute;
   inset: 0;
@@ -275,7 +264,7 @@
   pointer-events: none;
 }
 
-/* gradient border — 3-stop white fade */
+
 .gradient-border-card {
   position: absolute;
   inset: 0;
@@ -293,7 +282,7 @@
   pointer-events: none;
 }
 
-/* Cyan Gradient Button */
+
 .btn-cyan {
   background: linear-gradient(70.93deg,
       rgba(0, 232, 255, 0.4) 8.29%,
