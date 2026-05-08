@@ -5,7 +5,7 @@ const ExactButton = ({ children }) => {
         viewBox="0 0 105 40"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="w-18 sm:w-20 md:w-26.25"
+        className="w-14 sm:w-18 md:w-20 lg:w-26.25"
       >
         {/* Background */}
         <path

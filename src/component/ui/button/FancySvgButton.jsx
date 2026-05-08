@@ -1,11 +1,8 @@
-
-import icon from "../../../assets/img/new-job.svg";
-
-const FancySvgButton = ({ text = "Button", className = "", }) => {
+const FancySvgButton = ({ children, className = "", }) => {
   return (
     <div className={`w-fit ${className}`}>
       <svg
-        className="w-45.25 h-10"
+        className="w-34 h-8 md:w-42 md:h-9 lg:w-45.25 lg:h-10"
         viewBox="0 0 181 40"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -25,13 +22,6 @@ const FancySvgButton = ({ text = "Button", className = "", }) => {
         />
 
         {/* Text */}
-        <image
-          href={icon}
-          x="10"
-          y="12"
-          width="16"
-          height="16"
-        />
         <text
           x="50%"
           y="55%"
@@ -39,8 +29,7 @@ const FancySvgButton = ({ text = "Button", className = "", }) => {
           dominantBaseline="middle"
           className={`fill-white ${className}`}
         >
-          {/* <img src={icon} alt="icon" className="w-4 h-4" /> */}
-          {text}
+          {children}
         </text>
 
         {/* Gradients */}

@@ -1,6 +1,6 @@
-const GradientButton = ({ text = "Button" }) => {
+const GradientButton = ({ children }) => {
     return (
-        <div className="relative w-33.5 h-10">
+        <div className="relative w-24 h-8 sm:w-30 sm:h-9 md:w-33.5 md:h-10">
 
             {/* SVG BACKGROUND */}
             <svg
@@ -44,7 +44,7 @@ const GradientButton = ({ text = "Button" }) => {
             {/* CONTENT */}
             <div className="relative z-10 flex items-center justify-center gap-2 w-full h-full">
                 <span className="text-white text-[13px] font-medium">
-                    {text}
+                    {children}
                 </span>
             </div>
 

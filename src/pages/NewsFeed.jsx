@@ -84,26 +84,26 @@ const BtnAmberBg = () => (
 const NewsCard = ({ source, date, title, body, body2 }) => {
   return (
     <div
-      className="relative rounded-[16px] border border-white/10 overflow-hidden flex flex-col p-[16px] sm:p-[20px] min-h-[320px] sm:min-h-[390px] transition-transform duration-300 "
+      className="relative rounded-2xl border border-white/10 overflow-hidden flex flex-col p-4 sm:p-5 min-h-80 sm:min-h-97.5 transition-transform duration-300 "
       style={{
         backgroundImage: `url(${cardBgMap[source]})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
-      <div className="flex flex-col gap-[12px] sm:gap-[14px] flex-1">
+      <div className="flex flex-col gap-3 sm:gap-3.5 flex-1">
         <h3 className="user text-white text-[16px] sm:text-[16px] leading-[160%]">
           {title}
         </h3>
 
-        <div className="flex flex-wrap items-center gap-[8px] sm:gap-[40px]">
-          <div className="flex items-center gap-[7px]">
-            <img src={dateIcon} className="w-[28px] h-[28px] rounded-[14px] sm:w-[36px] sm:h-[36px] object-contain" alt="date icon" />
+        <div className="flex flex-wrap items-center gap-2 sm:gap-10">
+          <div className="flex items-center gap-1.75">
+            <img src={dateIcon} className="w-7 h-7 rounded-[14px] sm:w-9 sm:h-9 object-contain" alt="date icon" />
             <span className="News_Date">
               {date}
             </span>
           </div>
-          <img src={sourceLogos[source]} className="h-[12px] sm:h-[16px] object-contain" alt={source} />
+          <img src={sourceLogos[source]} className="h-3 sm:h-4 object-contain" alt={source} />
         </div>
 
         <p className="News_p">
@@ -111,20 +111,20 @@ const NewsCard = ({ source, date, title, body, body2 }) => {
         </p>
 
         {body2 && (
-           <p className="News_p">
-          {body2}
-        </p>
+          <p className="News_p">
+            {body2}
+          </p>
         )}
       </div>
 
-      <div className="mt-auto pt-[16px]">
-        <button className="group relative w-[130px] h-[48px] rounded-[16px]  overflow-hidden">
-  {source === "FXSTREET" ? <BtnAmberBg /> : <BtnActiveBg />}
+      <div className="mt-auto pt-4">
+        <button className="group relative w-32.5 h-12 rounded-2xl  overflow-hidden">
+          {source === "FXSTREET" ? <BtnAmberBg /> : <BtnActiveBg />}
 
-  <span className="relative z-10 flex items-center justify-center w-full h-full text-[16px] leading-[150%] text-white font-normal group-hover:scale-[1.05] transition">
-    Read More
-  </span>
-</button>
+          <span className="relative z-10 flex items-center justify-center w-full h-full text-[16px] leading-[150%] text-white font-normal group-hover:scale-[1.05] transition">
+            Read More
+          </span>
+        </button>
       </div>
     </div>
   );
@@ -163,15 +163,16 @@ export default function NewsFeed() {
     : newsData.slice(0, 2);
 
   return (
-    <div className="w-full  flex flex-col gap-[12px]  sm:gap-[16px] px-[12px] sm:px-[16px] lg:px-0">
+    <div className="w-full  flex flex-col gap-3  sm:gap-4 px-3 sm:px-4 lg:px-0">
 
       {/* BANNER */}
       <div
-        className="h-[160px] sm:h-[200px] md:h-[220px]  rounded-[16px] sm:rounded-[24px] overflow-hidden relative"
+        className="w-full h-full sm:h-60 md:h-65 rounded-3xl sm:rounded-3xl overflow-hidden relative"
         style={{
           backgroundImage: `url(${newsBg})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
         }}
       >
         <div className="h-full flex items-center justify-center ">
@@ -180,32 +181,32 @@ export default function NewsFeed() {
           </h1>
         </div>
 
-        <div className="absolute bottom-[19px] right-[19px] flex items-center gap-[8px] sm:gap-[12px]">
-          <img src={forexliveLogo} className="h-[7px] sm:h-[10px] object-contain" alt="forexlive" />
-          <img src={dailyfxLogo} className="h-[7px] sm:h-[10px] object-contain" alt="dailyfx" />
-          <img src={fxstreetLogo} className="h-[7px] sm:h-[10px] object-contain" alt="fxstreet" />
+        <div className="absolute bottom-4.75 right-4.75 flex items-center gap-2 sm:gap-3">
+          <img src={forexliveLogo} className="h-1.75 sm:h-2.5 object-contain" alt="forexlive" />
+          <img src={dailyfxLogo} className="h-1.75 sm:h-2.5 object-contain" alt="dailyfx" />
+          <img src={fxstreetLogo} className="h-1.75 sm:h-2.5 object-contain" alt="fxstreet" />
         </div>
       </div>
 
       {/* FILTER */}
-      <div className="flex justify-between items-center gap-[12px] py-[24px] ">
+      <div className="flex justify-between items-center gap-3 py-6 ">
 
-        <div className="flex items-center gap-[8px] shrink-0">
-          <img src={newsFeedHeaderLogo} className="w-[32px] h-[32px] rounded-[14px] sm:w-[43px] sm:h-[43px] object-contain" alt="news feed icon" />
+        <div className="flex items-center gap-2 shrink-0">
+          <img src={newsFeedHeaderLogo} className="w-8 h-8 rounded-[14px] sm:w-10.75 sm:h-10.75 object-contain" alt="news feed icon" />
           <span className="user text-white text-[15px] sm:text-[17.46px] font-medium leading-[160%] tracking-normal opacity-100">
             News Feed
           </span>
         </div>
 
-        <div className="flex items-center gap-[8px] rounded-[10px] border border-white/10 bg-white/5 px-[20px] py-[12px] overflow-x-auto scrollbar-hide max-w-[60%] sm:max-w-none">
+        <div className="flex items-center gap-2 rounded-[10px] border border-white/10 bg-white/5 px-5 py-3 overflow-x-auto scrollbar-hide max-w-[60%] sm:max-w-none">
           {sources.map((src) => (
             <button
               key={src}
               onClick={() => setActiveSource(activeSource === src ? null : src)}
-              className="flex items-center shrink-0 gap-[6px] sm:gap-[8px] px-[8px] sm:px-[12px] py-[5px] rounded-[6px] text-[11px] sm:text-[12px] transition"
+              className="flex items-center shrink-0 gap-1.5 sm:gap-2 px-2 sm:px-3 py-1.25 rounded-md text-[11px] sm:text-[12px] transition"
             >
-              <img src={tikIcon} className="h-[12px] sm:h-[20px]" alt="" />
-              <img src={sourceLogos[src]} className="h-[8px] sm:h-[12px]" alt={src} />
+              <img src={tikIcon} className="h-3 sm:h-5" alt="" />
+              <img src={sourceLogos[src]} className="h-2 sm:h-3" alt={src} />
             </button>
           ))}
         </div>
@@ -213,7 +214,7 @@ export default function NewsFeed() {
       </div>
 
       {/* CARDS */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-[12px] sm:gap-[16px]">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
         {filtered.map((n) => (
           <NewsCard key={n.id} {...n} />
         ))}
