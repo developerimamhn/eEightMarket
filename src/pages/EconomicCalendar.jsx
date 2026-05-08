@@ -99,7 +99,7 @@ function Pagination({ current, total, onChange }) {
       {/* Prev */}
       <button
         onClick={() => onChange(Math.max(1, current - 1))}
-        className="w-9 h-9 flex items-center justify-center rounded-[10px] bg-white/[0.02] border border-white/10 text-white/70 hover:text-white"
+        className="w-9 h-9 flex items-center justify-center rounded-[10px] bg-white/2 border border-white/10 text-white/70 hover:text-white"
       >
         <svg width="6" height="14" viewBox="0 0 6 14" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M5.957 12.5999L0.524 7.1666C-0.118 6.5249-0.118 5.4749 0.524 4.8332L5.957 -0.600098" stroke="white" strokeOpacity="0.7" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
@@ -244,9 +244,9 @@ export function EconomicCalendar() {
 
 
       {/* ── Top header ── */}
-      <div className="flex items-center justify-between pb-[25px]">
+      <div className="flex items-center justify-between pb-6.25">
         <div className="flex items-center gap-2">
-          <img src={Calendar_Logo} alt="calendar" className=" h-[42px] sm:w-[42px] sm:h-[42px] rounded-[16px] object-contain" />
+          <img src={Calendar_Logo} alt="calendar" className=" h-10.5 sm:w-10.5 sm:h-10.5 rounded-2xl object-contain" />
           <span className="user text-[17px] sm:text-[17px]  text-white">
             Economic Calendar
           </span>
