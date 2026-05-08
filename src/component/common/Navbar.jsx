@@ -1,4 +1,3 @@
-
 import { useState, useRef, useEffect } from "react";
 import search from "../../assets/img/searchIcon.png";
 import AiBtn from "../../assets/img/AiButton.png";
@@ -77,30 +76,13 @@ export default function Navbar({ onMenuClick, sidebarOpen }) {
         <div className="flex items-center gap-1.5 sm:gap-3">
 
           {/* Bell */}
-
-          <button className="w-12 h-12 flex items-center justify-center">
-            <img src={Bell} className="w-12 h-12 object-contain" />
-          </button>
-
-          {/* GAP 16px */}
-          <div className="w-4" />
-
-          {/* Account */}
           <button
-            className="
-                        hidden md:flex items-center justify-between
-                        w-[242px] h-[48px]
-                        rounded-[16px]
-                        bg-[#161817]
-                        px-[20px]
-                        py-[12px]
-                        gap-[12px]
-                        border border-transparent
-                        [background:linear-gradient(#161817,#161817)_padding-box,linear-gradient(198.73deg,rgba(244,253,255,0.5)_5.95%,rgba(255,255,255,0)_43.28%)_border-box]
-                      "
-
+            className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12
+                       rounded-[14px] sm:rounded-[16px] bg-white/[0.04]
+                       hover:bg-white/[0.08] transition-colors active:scale-95"
+            aria-label="Notifications"
           >
-            <img src={Bell} alt="bell" className="w-8 h-8 sm:w-[48px] sm:h-[48px] object-cover" />
+            <img src={Bell} alt="bell" className="w-6 h-6 sm:w-7 sm:h-7 object-contain" />
           </button>
 
           {/* Account Selector — md+ */}
@@ -116,7 +98,7 @@ export default function Navbar({ onMenuClick, sidebarOpen }) {
                 style={{ background: "linear-gradient(198.73deg, rgba(244,253,255,0.5) 5.95%, rgba(255,255,255,0) 43.28%)" }}>
                 <span className="w-full h-full block rounded-[16px] bg-[#161817]" />
               </span>
-              <span className="user leading-[150%] text-[13px] lg:text-[16px] font-normal text-white relative z-10 truncate mr-2">
+              <span className="text-[13px] lg:text-[15px] font-normal text-white relative z-10 truncate mr-2">
                 E8 Account 2110113586
               </span>
               <img
@@ -152,16 +134,16 @@ export default function Navbar({ onMenuClick, sidebarOpen }) {
             >
               <img
                 src={userAvatar} alt="James Carter"
-                className="w-8 h-8 sm:w-[42px] sm:h-[42px] rounded-[16px] object-cover object-center
+                className="w-8 h-8 sm:w-[42px] sm:h-[42px] rounded-xl object-cover object-center
                            flex-shrink-0 shadow-[0_-1px_0_rgba(255,255,255,0.8)]"
               />
               <div className="hidden sm:block text-left">
-                <div className="user text-[16px] text-white/85 leading-[150%] whitespace-nowrap">James Carter</div>
-                <div className="user text-[10px] text-white/35 leading-[160%] whitespace-nowrap">james.carter@example.com</div>
+                <div className="text-[12.5px] font-medium text-white/85 leading-tight whitespace-nowrap">James Carter</div>
+                <div className="text-[10.5px] text-white/35 leading-tight whitespace-nowrap">james.carter@example.com</div>
               </div>
               <img
                 src={downArrow} alt="expand"
-                className={`hidden sm:block w-[20px] h-[20px] object-contain shrink-0 transition-transform duration-200
+                className={`hidden sm:block w-4 h-4 object-contain shrink-0 transition-transform duration-200
                   ${userOpen ? "rotate-180" : ""}`}
               />
             </button>
@@ -251,4 +233,3 @@ export default function Navbar({ onMenuClick, sidebarOpen }) {
     </>
   );
 }
-
