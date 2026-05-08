@@ -77,12 +77,12 @@ export default function Navbar({ onMenuClick, sidebarOpen }) {
 
           {/* Bell */}
           <button
-            className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12
+            className="flex items-center justify-center w-8 h-8 sm:w-12 sm:h-12
                        rounded-[14px] sm:rounded-[16px] bg-white/[0.04]
                        hover:bg-white/[0.08] transition-colors active:scale-95"
             aria-label="Notifications"
           >
-            <img src={Bell} alt="bell" className="w-6 h-6 sm:w-7 sm:h-7 object-contain" />
+            <img src={Bell} alt="bell" className="w-8 h-8 sm:w-12 sm:h-12 object-contain" />
           </button>
 
           {/* Account Selector — md+ */}
@@ -98,7 +98,7 @@ export default function Navbar({ onMenuClick, sidebarOpen }) {
                 style={{ background: "linear-gradient(198.73deg, rgba(244,253,255,0.5) 5.95%, rgba(255,255,255,0) 43.28%)" }}>
                 <span className="w-full h-full block rounded-[16px] bg-[#161817]" />
               </span>
-              <span className="text-[13px] lg:text-[15px] font-normal text-white relative z-10 truncate mr-2">
+              <span className="user-koma text-[13px] lg:text-[15px] font-normal text-white relative z-10 truncate mr-2">
                 E8 Account 2110113586
               </span>
               <img
@@ -138,8 +138,8 @@ export default function Navbar({ onMenuClick, sidebarOpen }) {
                            flex-shrink-0 shadow-[0_-1px_0_rgba(255,255,255,0.8)]"
               />
               <div className="hidden sm:block text-left">
-                <div className="text-[12.5px] font-medium text-white/85 leading-tight whitespace-nowrap">James Carter</div>
-                <div className="text-[10.5px] text-white/35 leading-tight whitespace-nowrap">james.carter@example.com</div>
+                <div className="user text-[12.5px] text-white/85 leading-[150%] whitespace-nowrap">James Carter</div>
+                <div className="user-koma text-[10.5px] text-white/35 leading-[160%] whitespace-nowrap">james.carter@example.com</div>
               </div>
               <img
                 src={downArrow} alt="expand"
