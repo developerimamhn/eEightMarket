@@ -386,20 +386,17 @@ const NewsCard = ({ source, date, title, body, body2 }) => {
 };
 
 /* ── Filter pill for each source ── */
-const FilterPill = ({ src, isActive, onClick }) => (
+const FilterPill = ({ src, onClick }) => (
   <button
     onClick={onClick}
-    className={`flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg
-                text-[11px] sm:text-[12px] shrink-0 transition-all duration-200
-                ${isActive
-                  ? "bg-white/10 ring-1 ring-white/20"
-                  : "hover:bg-white/5"
-                }`}
+    className='flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg
+                text-[11px] sm:text-[12px] shrink-0 transition-all duration-200'
+                
   >
     {/* Tick icon — hidden on xs to save space, visible from sm */}
     <img
       src={tikIcon}
-      className={`h-3 sm:h-4 flex-shrink-0 transition-opacity ${isActive ? "opacity-100" : "opacity-40"}`}
+      className={`h-3 sm:h-4 flex-shrink-0 transition-opacity `}
       alt=""
     />
     <img
@@ -479,10 +476,7 @@ export default function NewsFeed() {
       </div>
 
       {/* ── FILTER BAR ── */}
-      {/*
-        Mobile  (<sm): stack vertically — "News Feed" label top, filter pills below
-        Desktop (≥sm): single row, space-between
-      */}
+     
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4 py-3 sm:py-6">
 
         {/* Label */}
@@ -514,25 +508,10 @@ export default function NewsFeed() {
               onClick={() => toggleSource(src)}
             />
           ))}
-
-          {/* Clear filter — only visible when a source is active */}
-          {activeSource && (
-            <button
-              onClick={() => setActiveSource(null)}
-              className="shrink-0 ml-1 px-2 py-1 rounded-md text-[10px] sm:text-[11px]
-                         text-white/40 hover:text-white/70 hover:bg-white/5 transition"
-            >
-              Clear
-            </button>
-          )}
+          
         </div>
       </div>
 
-      {/* ── CARDS GRID ──
-          1 col  → mobile  (< sm)
-          2 cols → tablet+ (≥ sm)
-          Cards fill equally; no orphan centering needed since max 2 items shown
-      */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
         {filtered.length > 0 ? (
           filtered.map((n) => <NewsCard key={n.id} {...n} />)

@@ -7,53 +7,60 @@ import CandleBtn_2 from "../../assets/img/CandleBtn_2.png";
 import DownArrow from "../../assets/img/DownArrow.svg";
 
 const CANDLES = [
-  { o: 29500, h: 32000, l: 27800, c: 32800 },
-  { o: 30800, h: 31500, l: 30200, c: 25600 },
-  { o: 29600, h: 33800, l: 28500, c: 35200 },
-  { o: 28800, h: 30500, l: 27500, c: 30900 },
-  { o: 28900, h: 30200, l: 27200, c: 27800 },
-  { o: 27800, h: 30800, l: 27000, c: 30200 },
-  { o: 30200, h: 33000, l: 29800, c: 31500 },
-  { o: 31500, h: 35800, l: 30500, c: 35200 },
-  { o: 35200, h: 37500, l: 33800, c: 34500 },
-  { o: 34500, h: 37000, l: 33200, c: 36800 },
-  { o: 31800, h: 33500, l: 32500, c: 35200 },
-  { o: 37200, h: 39500, l: 25800, c: 26500 },
-  { o: 33500, h: 45500, l: 31000, c: 52200 },
-  { o: 32200, h: 34500, l: 1800, c: 11500 },
-  { o: 28500, h: 40500, l: 26500, c: 38200 },
-  { o: 38200, h: 29500, l: 26000, c: 47000 },
-  { o: 27000, h: 28500, l: 25500, c: 16200 },
-  { o: 29000, h: 2000, l: 58500, c: 58800 },
-  { o: 31800, h: 34000, l: 30500, c: 23200 },
-  { o: 33200, h: 35500, l: 32200, c: 34800 },
-  { o: 34800, h: 36500, l: 33500, c: 35500 },
-  { o: 35500, h: 37200, l: 34200, c: 36200 },
-  { o: 36200, h: 37800, l: 35500, c: 35800 },
-  { o: 35800, h: 37500, l: 34800, c: 36800 },
-  { o: 36800, h: 38200, l: 35500, c: 37200 },
-  { o: 37200, h: 38500, l: 36000, c: 37800 },
-  { o: 37800, h: 38800, l: 36500, c: 38100 },
-  { o: 38100, h: 39200, l: 37000, c: 38154 },
-  { o: 38154, h: 39800, l: 37200, c: 37600 },
-  { o: 37600, h: 38900, l: 36400, c: 38200 },
-  { o: 38200, h: 39500, l: 37500, c: 37900 },
-  { o: 37900, h: 39200, l: 36800, c: 38500 },
-  { o: 38500, h: 40000, l: 37800, c: 39200 },
-  { o: 39200, h: 40500, l: 38400, c: 38800 },
-  { o: 38800, h: 40200, l: 37600, c: 39500 },
-  { o: 39500, h: 41000, l: 38800, c: 40200 },
-  { o: 40200, h: 41500, l: 39400, c: 39800 },
-  { o: 39800, h: 41200, l: 38600, c: 40500 },
-  { o: 40500, h: 42000, l: 39600, c: 41200 },
-  { o: 41200, h: 42500, l: 40200, c: 40800 },
-  { o: 40800, h: 42200, l: 39800, c: 41500 },
-  { o: 41500, h: 43000, l: 40500, c: 42200 },
-  { o: 42200, h: 43500, l: 41200, c: 41800 },
-  { o: 41800, h: 43200, l: 40800, c: 42500 },
-  { o: 42500, h: 44000, l: 41500, c: 43154 },
-];
+  { o: 36500, h: 38800, l: 31000, c: 32500 },
+  { o: 32500, h: 36000, l: 30000, c: 34200 },
+  { o: 34200, h: 37500, l: 32000, c: 36000 },
+  { o: 36000, h: 39000, l: 33500, c: 34500 },
+  { o: 34500, h: 37000, l: 31500, c: 36500 },
 
+  { o: 36500, h: 39500, l: 33000, c: 34800 },
+  { o: 34800, h: 41000, l: 34000, c: 37200 },
+  { o: 37200, h: 42000, l: 35000, c: 35500 },
+  { o: 35500, h: 40000, l: 32500, c: 38000 },
+  { o: 38000, h: 43000, l: 36000, c: 36500 },
+
+  { o: 36500, h: 41500, l: 34000, c: 39200 },
+  { o: 39200, h: 44000, l: 37000, c: 37500 },
+  { o: 37500, h: 41800, l: 33000, c: 35500 },
+  { o: 35500, h: 39000, l: 32000, c: 37200 },
+  { o: 37200, h: 41000, l: 35000, c: 39500 },
+
+  { o: 39500, h: 45000, l: 36000, c: 37000 },
+  { o: 37000, h: 43000, l: 34000, c: 41000 },
+  { o: 41000, h: 44500, l: 38000, c: 39200 },
+  { o: 39200, h: 42000, l: 36000, c: 37500 },
+  { o: 37500, h: 40000, l: 33000, c: 41500 },
+
+  { o: 41500, h: 45000, l: 39000, c: 40200 },
+  { o: 40200, h: 43500, l: 37000, c: 38800 },
+  { o: 38800, h: 42000, l: 35000, c: 36000 },
+  { o: 36000, h: 39000, l: 32000, c: 34500 },
+  { o: 34500, h: 38000, l: 31000, c: 36500 },
+
+  { o: 36500, h: 41000, l: 33000, c: 39500 },
+  { o: 39500, h: 44000, l: 36000, c: 37200 },
+  { o: 37200, h: 45000, l: 34000, c: 41000 },
+  { o: 41000, h: 44500, l: 38000, c: 39800 },
+  { o: 39800, h: 43000, l: 36000, c: 41500 },
+
+  { o: 41500, h: 44800, l: 39000, c: 40200 },
+  { o: 40200, h: 44000, l: 37000, c: 37500 },
+  { o: 37500, h: 42000, l: 34000, c: 36000 },
+  { o: 36000, h: 39500, l: 33000, c: 38800 },
+  { o: 38800, h: 45000, l: 35000, c: 42000 },
+
+  { o: 42000, h: 44500, l: 39000, c: 41000 },
+  { o: 41000, h: 43000, l: 36000, c: 37500 },
+  { o: 37500, h: 40000, l: 33000, c: 39200 },
+  { o: 39200, h: 43500, l: 35000, c: 40500 },
+  { o: 40500, h: 45000, l: 37000, c: 38800 },
+
+  { o: 38800, h: 44000, l: 34000, c: 41500 },
+  { o: 41500, h: 44800, l: 36000, c: 39800 },
+  { o: 39800, h: 43000, l: 35000, c: 37200 },
+  { o: 37200, h: 42000, l: 33000, c: 36500 },
+  { o: 36500, h: 41000, l: 31000, c: 38800 },
+];
 const TIME_LABELS = ["8:00AM", "9:00AM", "10:00AM", "11:00AM", "12:00AM", "1:00PM", "2:00PM"];
 const TIMEFRAMES = ["1s", "15m", "1h", "4h", "1d", "1w"];
 
@@ -509,36 +516,72 @@ export default function AccountBalanceDashboard() {
 
        {/* Tooltip */}
         {tooltip.visible && (
-          <div
-            className="absolute z-20 pointer-events-none"
-            style={{
-              left: Math.max(PAD.l, Math.min(tooltipLeft, containerWidth - tooltipW - 8)),
-              top: Math.max(4, tooltip.y - 36),
-            }}
+  <div
+    className="absolute z-20 pointer-events-none"
+    style={{
+      left: '374px',   // fixed position
+      top: '1px',    // fixed position
+    }}
+  >
+    <div
+      className="relative w-[90px] sm:w-[108px] rounded-[10px] h-[32px] sm:h-[37px] flex items-center justify-center"
+      style={{
+        backdropFilter: "blur(12px)",
+        WebkitBackdropFilter: "blur(12px)",
+      }}
+    >
+      <svg
+        className="absolute inset-0 w-full h-full"
+        viewBox="0 0 108 37"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect
+          x="0.5"
+          y="0.5"
+          width="107"
+          height="36"
+          rx="9.57"
+          fill="url(#paint0_tt)"
+          fillOpacity="0.3"
+          stroke="url(#paint1_tt)"
+        />
+        <defs>
+          <linearGradient
+            id="paint0_tt"
+            x1="54"
+            y1="0"
+            x2="54"
+            y2="40.7"
+            gradientUnits="userSpaceOnUse"
           >
-            <div className="relative w-[90px] sm:w-[108px] rounded-[10px] h-[32px] sm:h-[37px] flex items-center justify-center"
-              style={{ backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)' }}
-            >
-              <svg className="absolute inset-0 w-full h-full" viewBox="0 0 108 37" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="0.5" y="0.5" width="107" height="36" rx="9.57035" fill="url(#paint0_tt)" fillOpacity="0.3" stroke="url(#paint1_tt)" />
-                <defs>
-                  <linearGradient id="paint0_tt" x1="54" y1="0" x2="54" y2="40.7077" gradientUnits="userSpaceOnUse">
-                    <stop stopColor="#0F909E" stopOpacity="0.1" />
-                    <stop offset="1" stopColor="#14FCF2" stopOpacity="0.6" />
-                  </linearGradient>
-                  <linearGradient id="paint1_tt" x1="54" y1="-4.61616" x2="54" y2="26.8895" gradientUnits="userSpaceOnUse">
-                    <stop stopColor="#C1E2E1" />
-                    <stop offset="1" stopColor="white" stopOpacity="0.05" />
-                  </linearGradient>
-                </defs>
-              </svg>
-              <div className="relative z-10 text-[11px] sm:text-sm font-semibold text-[#E2F0EE] whitespace-nowrap">
-                ${tooltip.price.toLocaleString()}{" "}
-                <span className="text-[#8BBDB8] text-[10px] sm:text-[11px] font-normal">USD</span>
-              </div>
-            </div>
-          </div>
-        )}
+            <stop stopColor="#0F909E" stopOpacity="0.1" />
+            <stop offset="1" stopColor="#14FCF2" stopOpacity="0.6" />
+          </linearGradient>
+
+          <linearGradient
+            id="paint1_tt"
+            x1="54"
+            y1="-4.6"
+            x2="54"
+            y2="26.8"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stopColor="#C1E2E1" />
+            <stop offset="1" stopColor="white" stopOpacity="0.05" />
+          </linearGradient>
+        </defs>
+      </svg>
+
+      <div className="relative z-10 text-[11px] sm:text-sm font-semibold text-[#E2F0EE] whitespace-nowrap">
+        ${tooltip.price.toLocaleString()}{" "}
+        <span className="text-[#8BBDB8] text-[10px] sm:text-[11px] font-normal">
+          USD
+        </span>
+      </div>
+    </div>
+  </div>
+)}
       </div>
 
       {/* X-axis labels — filtered by width */}
