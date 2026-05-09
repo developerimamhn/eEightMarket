@@ -277,7 +277,7 @@ export default function AccountBalanceDashboard() {
           </span>
         </div>
 
-        <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0">
+        <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0 scale-80 sm:scale-100 origin-left">
           <button className="w-9 h-9 sm:w-[38px] sm:h-[38px] rounded-[10px] hover:bg-[#1a3d38] transition-all cursor-pointer flex items-center justify-center">
             <img src={CandleBtn} alt="Line chart" className="w-full h-full object-contain" />
           </button>

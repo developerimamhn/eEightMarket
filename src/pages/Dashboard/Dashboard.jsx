@@ -632,11 +632,7 @@ const Dashboard = () => {
     <div className="w-full">
 
       {/* ── Top section: Candle chart + Side panel ── */}
-      {/*
-        Mobile  (< lg) : stack vertically  → flex-col
-        Desktop (≥ lg) : side by side      → flex-row
-        Side panel: full width on mobile, fixed ~300px on xl, auto on lg
-      */}
+      
       <div className="flex flex-col lg:flex-row gap-4 lg:gap-0 items-stretch mb-6">
 
         {/* Candle chart — grows to fill remaining space */}
