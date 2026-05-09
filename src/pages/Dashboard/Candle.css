@@ -1,0 +1,216 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@reference "../../index.css";
+
+@layer components {
+    .dashboard-container,
+    .dashboard-wrapper {
+        @apply min-h-screen bg-[#050a0a] text-white p-8 font-sans selection:bg-cyan-500/30 overflow-x-hidden;
+    }
+
+    .glass-panel,
+    .glass-card {
+        @apply bg-[#111818]/40 backdrop-blur-xl border border-white/10 rounded-[32px] overflow-hidden shadow-2xl;
+    }
+
+    .chart-panel-with-bg {
+        @apply relative col-span-12 lg:col-span-8 rounded-[32px] overflow-hidden border border-white/10 shadow-2xl bg-[#0b1414];
+    }
+
+    .analysis-panel {
+        @apply col-span-12 lg:col-span-4 bg-[#111818]/60 backdrop-blur-xl border border-white/10 rounded-[32px] p-8 flex flex-col;
+    }
+
+    .inner-card-wrapper {
+        @apply relative z-10 w-full h-full rounded-[31px] overflow-hidden bg-[#0b1414];
+    }
+
+    .search-container {
+        @apply flex items-center bg-[#111818]/60 border border-white/5 rounded-2xl px-4 py-2.5 focus-within:border-cyan-500/30 transition-all;
+    }
+
+    .search-input {
+        @apply w-full bg-[#111818]/40 border border-white/5 rounded-xl py-2.5 pl-11 pr-4 focus:outline-none focus:border-cyan-500/50 transition-all placeholder:text-gray-600;
+    }
+
+    .btn-icon,
+    .icon-button {
+        @apply p-2 bg-white/5 border border-white/10 rounded-xl text-gray-400 hover:bg-white/10 hover:text-white transition-all m-auto;
+    }
+
+    .limit-card {
+        @apply bg-black/40 border border-white/5 rounded-2xl p-5 space-y-4;
+    }
+
+    .progress-track {
+        @apply h-3.5 w-full bg-[#1a1a1a] rounded-full overflow-hidden relative border border-white/5;
+    }
+
+    .stripes,
+    .progress-stripes,
+    .progress-track-pattern {
+        @apply absolute inset-0 opacity-20 pointer-events-none;
+        background-image: repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 10px,
+            rgba(255, 255, 255, 0.1) 10px,
+            rgba(255, 255, 255, 0.2) 20px
+        );
+    }
+
+    .bg-image-layer {
+        @apply absolute inset-0 w-full h-full object-cover opacity-80 z-0 pointer-events-none;
+    }
+
+    .content-overlay {
+        @apply relative z-10 p-8 h-full flex flex-col;
+    }
+
+    .gradient-border {
+        border: 1px solid transparent;
+        border-radius: 16px;
+        background:
+            linear-gradient(#0b1414, #0b1414) padding-box,
+            linear-gradient(252.84deg, #86B4B4 0.99%, rgba(58, 78, 78, 0.1) 36.61%) border-box;
+    }
+
+    .animated-chart-card {
+        @apply relative overflow-hidden rounded-[32px] p-[1.5px] bg-white/5;
+    }
+
+    .animated-chart-card::before {
+        content: '';
+        @apply absolute top-[-50%] left-[-50%] w-[200%] h-[200%];
+        background: conic-gradient(
+            from 0deg,
+            transparent 0%,
+            #86B4B4 15%,
+            transparent 30%,
+            transparent 50%,
+            #86B4B4 65%,
+            transparent 80%,
+            transparent 100%
+        );
+        animation: border-rotate 5s linear infinite;
+        z-index: 0;
+    }
+
+    @keyframes border-rotate {
+        from { transform: rotate(0deg); }
+        to   { transform: rotate(360deg); }
+    }
+}
+
+@layer utilities {
+    .bg-box-gradient {
+        background: linear-gradient(135deg, #0A252A 0%, #1E7582 50%, #163337 100%);
+    }
+
+    .scrollbar-none {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .scrollbar-none::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+/* ── Border utilities ── */
+.border-user {
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-border {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.premium-glass-border {
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* ── Timeframe buttons ── */
+.time-btn {
+    width: 52px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.03);
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.time-btn.active {
+    background: linear-gradient(180deg, #0D6665 0%, #063A39 100%);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.4),
+        inset 0 0 10px rgba(204, 242, 240, 0.1);
+}
+
+.time-btn.active::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 15%;
+    right: 15%;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.8) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    z-index: 2;
+}
+
+.time-btn:hover:not(.active) {
+    background: rgba(217, 217, 217, 0.1);
+    color: #ffffff;
+}
+
+.time-btn:active {
+    transform: scale(0.95);
+}
+
+/* ── Timeline labels ── */
+.timeline-container {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    gap: 48px;
+    background: transparent;
+    overflow-x: auto;
+    white-space: nowrap;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.timeline-container::-webkit-scrollbar {
+    display: none;
+}
+
+.time-label {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+    font-weight: 400;
+    font-family: sans-serif;
+    letter-spacing: 0.5px;
+    cursor: default;
+    transition: color 0.2s ease;
+}
+
+.time-label:hover {
+    color: #ffffff;
+}
