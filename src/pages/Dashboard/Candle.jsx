@@ -517,7 +517,7 @@ export default function AccountBalanceDashboard() {
        {/* Tooltip */}
         {tooltip.visible && (
   <div
-    className="absolute z-20 pointer-events-none hidden"
+    className="hidden md:block absolute z-20 pointer-events-none "
     style={{
       left: '374px',   // fixed position
       top: '1px',    // fixed position

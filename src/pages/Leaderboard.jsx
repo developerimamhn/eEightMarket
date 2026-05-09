@@ -1,16 +1,11 @@
 import React, { useState } from 'react'
-import Frame_1 from "../assets/img/Frame 427321461.svg";
+import Frame_1 from "../assets/img/mentoring.svg";
+import Frame_2 from "../assets/img/credit-card-validation.svg";
 import FancySvgButton from '../component/ui/button/FancySvgButton';
 import icon from "../assets/img/new-job.svg";
 import GlowBlob from '../assets/svg/GlowBlob'
 import GlowEllipse from '../assets/svg/GlowEllipse'
 import GradientButton from '../component/ui/button/GradientButton'
-import Frame_3 from "../assets/img/Frame 427321461 (2).svg";
-import Group_9 from "../assets/img/Group 9.svg";
-import Group_10 from "../assets/img/Group 10.svg";
-import Group_11 from "../assets/img/Group 11.svg";
-import Group_12 from "../assets/img/Group 12.svg";
-import image from "../assets/img/Frame 427321475.svg";
 import Group_26 from "../assets/img/Group 26.svg";
 import circle from "../assets/img/circle-flags_de.svg";
 import circle2 from "../assets/img/Mask group.svg";
@@ -35,7 +30,6 @@ const cardData = [
         account: "E8TRACK",
         size: "$266,262.25",
         country: "DE",
-        bg: Group_9,
         flag: circle,
         image: man_image,
         glowColor: "#00E8FF",
@@ -46,7 +40,6 @@ const cardData = [
         account: "E8ONE",
         size: "$500,000.00",
         country: "IN",
-        bg: Group_10,
         flag: circle2,
         image: man_image1,
         glowColor: "#BF0CFF",
@@ -57,7 +50,6 @@ const cardData = [
         account: "E8FTURES1",
         size: "$100,000.00",
         country: "GB",
-        bg: Group_11,
         flag: circle3,
         image: man_image2,
         glowColor: "#EEEEEE",
@@ -68,7 +60,6 @@ const cardData = [
         account: "E8ONE",
         size: "$500,000.00",
         country: "US",
-        bg: Group_12,
         flag: circle4,
         image: man_image3,
         glowColor: "#00FFE1",
@@ -111,12 +102,38 @@ const Leaderboard = () => {
     return (
         <div className="text-stone-50 mx-auto px-">
             <div className='flex flex-col lg:flex-row items-center justify-between gap-4'>
-                <div className='flex items-center gap-[7.76px]'>
-                    <img src={Frame_1} alt="logo" className="w-6 h-6 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-11 lg:h-11" />
-                    <p className='font-medium text-[13px] sm:text-[14px] md:text-[15px] lg:text-[16px] xl:text-[17px] 2xl:text-[18px] leading-[160%] tracking-normal bg-[linear-gradient(180deg,#FFFFFF_28.57%,#999999_100%)] bg-clip-text text-transparent'>
-                        Leaderboard
-                    </p>
+                <div className='relative flex items-center gap-[7.75px] z-10'>
+                    <div className='flex items-center justify-center relative w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-lg sm:rounded-xl md:rounded-2xl bg-[#FFFFFF12] overflow-hidden'>
+                        {/* Gradient border */}
+                        <div className="gradient-border-fade" />
+                        {/* icon top glowing line */}
+                        <div className="absolute top-0 left-1/2 -translate-x-1/2 z-10">
+                            <div className="w-5.5 h-px bg-linear-to-r from-transparent via-white to-transparent"></div>
+                        </div>
+                        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-0 pointer-events-none">
+                            <svg width="44" height="15" viewBox="0 0 44 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g filter="url(#filter0_f_1318_841)">
+                                    <ellipse cx="22.5" cy="14" rx="14.5" ry="4" fill="#CCF2F0" fill-opacity="0.65" />
+                                </g>
+                                <defs>
+                                    <filter id="filter0_f_1318_841" x="-2" y="0" width="49" height="28" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                                        <feGaussianBlur stdDeviation="5" result="effect1_foregroundBlur_1318_841" />
+                                    </filter>
+                                </defs>
+                            </svg>
+                        </div>
+                        {/* content */}
+                        <img src={Frame_1} alt="icon" className="w-3 h-3 sm:w-4 sm:h-4 md:w-4.5 md:h-4.5" />
+                    </div>
+                    <div>
+                        <p className='font-medium text-[13px] sm:text-[14px] md:text-[15px] lg:text-[16px] xl:text-[17px] 2xl:text-[18px] leading-[160%] tracking-normal bg-[linear-gradient(180deg,#FFFFFF_28.57%,#999999_100%)] bg-clip-text text-transparent'>
+                            Leaderboard
+                        </p>
+                    </div>
                 </div>
+
                 {/* Toggle switch */}
                 <div className="relative flex items-center rounded-xl md:rounded-2xl border border-[#FFFFFF33] p-px md:p-[2.91px] bg-[#172020]">
                     <div
@@ -151,13 +168,38 @@ const Leaderboard = () => {
                             <GlowBlob />
                             <GlowEllipse />
                         </div>
-                        <div className='p-6'>
+                        <div className='p-4 sm:p-5 md:p-6'>
                             <div className='flex flex-col md:flex-row items-center justify-center md:justify-between gap-2'>
-                                <div className="relative z-10 flex items-center gap-2">
-                                    <img src={Frame_3} alt="logo" className="w-6 h-6 sm:w-8 sm:h-8 md:w-9 md:h-9" />
-                                    <p className='font-medium text-[13px] sm:text-[14px] md:text-[15px] lg:text-[16px] leading-[160%] tracking-[0%] bg-[linear-gradient(180deg,#FFFFFF_30.77%,#999999_100%)] bg-clip-text text-transparent'>
-                                        Highest Payout
-                                    </p>
+                                <div className='relative flex items-center gap-[7.75px] z-10'>
+                                    <div className='flex items-center justify-center relative w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 rounded-lg sm:rounded-xl md:rounded-[14px] bg-[#FFFFFF12] overflow-hidden'>
+                                        {/* Gradient border */}
+                                        <div className="gradient-border-fade" />
+                                        {/* icon top glowing line */}
+                                        <div className="absolute top-0 left-1/2 -translate-x-1/2 z-10">
+                                            <div className="w-5.5 h-px bg-linear-to-r from-transparent via-white to-transparent"></div>
+                                        </div>
+                                        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-0 pointer-events-none">
+                                            <svg width="44" height="15" viewBox="0 0 44 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g filter="url(#filter0_f_1318_841)">
+                                                    <ellipse cx="22.5" cy="14" rx="14.5" ry="4" fill="#CCF2F0" fill-opacity="0.65" />
+                                                </g>
+                                                <defs>
+                                                    <filter id="filter0_f_1318_841" x="-2" y="0" width="49" height="28" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                                                        <feGaussianBlur stdDeviation="5" result="effect1_foregroundBlur_1318_841" />
+                                                    </filter>
+                                                </defs>
+                                            </svg>
+                                        </div>
+                                        {/* content */}
+                                        <img src={Frame_2} alt="icon" className="w-3 h-3 md:w-4 md:h-4" />
+                                    </div>
+                                    <div>
+                                        <p className='font-medium text-[13px] sm:text-[14px] md:text-[15px] lg:text-[16px] leading-[160%] tracking-[0%] bg-[linear-gradient(180deg,#FFFFFF_30.77%,#999999_100%)] bg-clip-text text-transparent'>
+                                            Highest Payout
+                                        </p>
+                                    </div>
                                 </div>
                                 <div className="">
                                     <GradientButton>
@@ -194,7 +236,7 @@ const Leaderboard = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className='relative w-full h-53.75 rounded-2xl border border-transparent bg-[#FFFFFF08] overflow-hidden'>
+                                        <div className='relative w-full h-48 sm:h-53.75 rounded-2xl border border-transparent bg-[#FFFFFF08] overflow-hidden'>
                                             {/* Gradient border */}
                                             <div className='gradient-border-card' />
                                             {/* Grid / background SVG */}
@@ -224,27 +266,27 @@ const Leaderboard = () => {
                                                 </svg>
                                             </div>
                                             {/* Bottom Section */}
-                                            <div className="absolute inset-0 z-20 p-4">
+                                            <div className="flex flex-col justify-between absolute inset-0 z-20 p-4">
                                                 <div className="flex flex-col gap-1.5">
-                                                    <p className="text-[16px] text-[#FFFFFFB2]">Profit</p>
-                                                    <p className="text-white font-medium text-[28px]">
+                                                    <p className="text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px] text-[#FFFFFFB2]">Profit</p>
+                                                    <p className="text-white font-medium text-[14px] sm:text-[15px] md:text-[16px] lg:text-[20px] xl:text-[24px] 2xl:text-[28px]">
                                                         {item.profit}
                                                     </p>
                                                 </div>
-                                                <div className="flex flex-col gap-3 mt-4">
+                                                <div className="flex flex-col gap-3 ">
                                                     <div className="flex justify-between">
-                                                        <p className="text-[#FFFFFFB2] text-[14px]">Account</p>
-                                                        <p className="text-white text-[14px]">{item.account}</p>
+                                                        <p className="text-[#FFFFFFB2] text-[12px] md:text-[13px] lg:text-[14px]">Account</p>
+                                                        <p className="text-white text-[12px] md:text-[13px] lg:text-[14px]">{item.account}</p>
                                                     </div>
                                                     <div className="flex justify-between">
-                                                        <p className="text-[#FFFFFFB2] text-[14px]">Size</p>
-                                                        <p className="text-white text-[14px]">{item.size}</p>
+                                                        <p className="text-[#FFFFFFB2] text-[12px] md:text-[13px] lg:text-[14px]">Size</p>
+                                                        <p className="text-white text-[12px] md:text-[13px] lg:text-[14px]">{item.size}</p>
                                                     </div>
                                                     <div className="flex justify-between">
-                                                        <p className="text-[#FFFFFFB2] text-[14px]">Country</p>
+                                                        <p className="text-[#FFFFFFB2] text-[12px] md:text-[13px] lg:text-[14px]">Country</p>
                                                         <div className="flex items-center gap-1.5">
                                                             <img src={item.flag} alt="flag" className="w-4 h-4" />
-                                                            <p className="text-white text-[14px]">{item.country}</p>
+                                                            <p className="text-white text-[12px] md:text-[13px] lg:text-[14px]">{item.country}</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -273,8 +315,8 @@ const Leaderboard = () => {
                             <div className="relative z-10 flex flex-col gap-4 p-4 h-full">
                                 {/* Top User Info */}
                                 <div className="flex items-center gap-2">
-                                    <div className="w-11 h-11 p-px rounded-2xl bg-linear-to-b from-white/60 to-white/10">
-                                        <div className="w-full h-full rounded-[15px] bg-[#FFFFFF08] flex items-center justify-center overflow-hidden">
+                                    <div className="w-6 md:w-8 lg:w-9 xl:w-10 2xl:w-11 h-6 md:h-8 lg:h-9 xl:h-10 2xl:h-11 p-px rounded-[7px] md:rounded-[11px] lg:rounded-[15px] bg-linear-to-b from-white/60 to-white/10">
+                                        <div className="w-full h-full rounded-[7px] md:rounded-[11px] lg:rounded-[15px] bg-[#FFFFFF08] flex items-center justify-center overflow-hidden">
                                             <img
                                                 src={user.profile}
                                                 alt="profile"
@@ -283,10 +325,10 @@ const Leaderboard = () => {
                                         </div>
                                     </div>
                                     <div>
-                                        <p className="text-[10px] text-[#FFFFFFB2] leading-[160%]">
+                                        <p className="text-[9px] sm:text-[10px] text-[#FFFFFFB2] leading-[160%]">
                                             {user.name}
                                         </p>
-                                        <h3 className="text-[16px] text-white font-medium leading-[160%]">
+                                        <h3 className="text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px] text-white font-medium leading-[160%]">
                                             {user.time}
                                         </h3>
                                     </div>
@@ -303,21 +345,23 @@ const Leaderboard = () => {
                                 {/* Info Section */}
                                 <div className="flex flex-col gap-3 grow">
                                     <div className="flex justify-between">
-                                        <p className="text-[14px] text-[#FFFFFFB2]">Account Size</p>
-                                        <p className="text-[14px] text-white font-medium">
+                                        <p className="text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] text-[#FFFFFFB2]">Account Size</p>
+                                        <p className="text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] text-white font-medium">
                                             {user.account}
                                         </p>
                                     </div>
                                     <div className="flex justify-between">
-                                        <p className="text-[14px] text-[#FFFFFFB2]">Country</p>
+                                        <p className="text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] text-[#FFFFFFB2]">Country</p>
                                         <div className="flex items-center gap-1.5">
                                             <img src={circle} alt="flag" className="w-4 h-4" />
-                                            <p className="text-white text-[12px]">{user.country}</p>
+                                            <p className="text-white text-[11px] sm:text-[12px]">{user.country}</p>
                                         </div>
                                     </div>
                                     {/* Button bottom aligned */}
-                                    <div className="mt-auto">
-                                        <button className="w-full h-12 rounded-2xl border border-white/20 bg-[linear-gradient(73deg,rgba(0,232,255,0.4)_40%,rgba(3,33,40,0.1)_140%)] text-white text-[16px]">
+                                    <div className="mt-auto relative">
+                                        {/* Top center border glow */}
+                                        <div className="absolute -top-px left-1/2 -translate-x-1/2 w-36 h-px bg-linear-to-r from-transparent via-white/70 to-transparent z-10" />
+                                        <button className="w-full h-12 rounded-2xl border border-white/20 bg-[linear-gradient(73deg,rgba(0,232,255,0.4)_40%,rgba(3,33,40,0.1)_140%)] text-white text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px] cursor-pointer">
                                             View Dashboard
                                         </button>
                                     </div>

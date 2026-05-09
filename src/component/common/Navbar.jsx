@@ -35,14 +35,14 @@ export default function Navbar({ onMenuClick, sidebarOpen }) {
   return (
     <>
       {/* ── Main nav bar ── */}
-      <nav className="w-full px-3 sm:px-5 py-3 flex items-center justify-between relative z-50">
+      <nav className="w-full px-3 sm:px-5 py-3 flex items-center justify-between relative z-20">
 
         {/* ────── LEFT: Search ────── */}
         {/* Desktop search — sm+ */}
         <div className="hidden sm:flex items-center">
           <div
-            className={`flex items-center rounded-[16px] pl-3 pr-1 py-1 transition-all duration-300
-              ${searchFocused ? "w-[280px] md:w-[396px]" : "w-[200px] md:w-[320px] lg:w-[396px]"}`}
+            className={`flex items-center rounded-2xl pl-3 pr-1 py-1 transition-all duration-300
+              ${searchFocused ? "w-70 md:w-99" : "w-50 md:w-[320px] lg:w-99"}`}
             style={{
               background: "linear-gradient(90deg, rgba(14,31,37,0.8) 0%, rgba(13,30,33,0.8) 55.43%)",
             }}

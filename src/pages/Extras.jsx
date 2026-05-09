@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 // Custom components & assets import
 import ExactButton from '../component/ui/button/ExactButton';
-import Frame_1 from "../assets/img/Frame 427321461.svg";
+import Frame_1 from "../assets/img/share-knowledge.svg";
 import icon from "../assets/img/new-job.svg";
 import GlowBlob from '../assets/svg/GlowBlob';
 import GlowEllipse from '../assets/svg/GlowEllipse';
@@ -68,11 +68,36 @@ const Extras = () => {
   return (
     <div className='mx-auto'>
       <div className='flex flex-col lg:flex-row items-center justify-between gap-4 lg:gap-0'>
-        <div className='flex items-center gap-1 md:gap-[7.76px]'>
-          <img src={Frame_1} alt="logo" className="w-6 h-6 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-11 lg:h-11" />
-          <p className='font-medium text-[13px] sm:text-[14px] md:text-[15px] lg:text-[16px] xl:text-[17px] 2xl:text-[18px] leading-[160%] text-white'>
-            Leaderboard
-          </p>
+        <div className='relative flex items-center gap-[7.75px] z-10'>
+          <div className='flex items-center justify-center relative w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-lg sm:rounded-xl md:rounded-2xl bg-[#FFFFFF12] overflow-hidden'>
+            {/* Gradient border */}
+            <div className="gradient-border-fade" />
+            {/* icon top glowing line */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 z-10">
+              <div className="w-5.5 h-px bg-linear-to-r from-transparent via-white to-transparent"></div>
+            </div>
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-0 pointer-events-none">
+              <svg width="44" height="15" viewBox="0 0 44 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g filter="url(#filter0_f_1318_841)">
+                  <ellipse cx="22.5" cy="14" rx="14.5" ry="4" fill="#CCF2F0" fill-opacity="0.65" />
+                </g>
+                <defs>
+                  <filter id="filter0_f_1318_841" x="-2" y="0" width="49" height="28" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                    <feGaussianBlur stdDeviation="5" result="effect1_foregroundBlur_1318_841" />
+                  </filter>
+                </defs>
+              </svg>
+            </div>
+            {/* content */}
+            <img src={Frame_1} alt="icon" className="w-3 h-3 sm:w-4 sm:h-4 md:w-4.5 md:h-4.5" />
+          </div>
+          <div>
+            <p className='font-medium text-[13px] sm:text-[14px] md:text-[15px] lg:text-[16px] xl:text-[17px] 2xl:text-[18px] leading-[160%] text-white'>
+              Trading Instruments
+            </p>
+          </div>
         </div>
         <div className="flex rounded-lg sm:rounded-xl md:rounded-2xl border border-[#FFFFFF1A] p-0.5 md:p-1 bg-[#FFFFFF0D]">
           {tabs.map((item) => {
@@ -136,9 +161,9 @@ const Extras = () => {
                   Nasdaq 100 Index
                 </h3>
                 {/* Toggle switch */}
-                <div className="relative flex items-center w-full max-w-[405.82px] h-[45.22px] rounded-2xl border border-[#FFFFFF33] p-[2.91px] bg-[#172020]">
+                <div className="relative flex items-center rounded-xl md:rounded-2xl border border-[#FFFFFF33] p-px md:p-[2.91px] bg-[#172020]">
                   <div
-                    className={`flex items-center justify-center absolute h-10 w-1/2 transition-all duration-300`}
+                    className={`flex items-center justify-center absolute  transition-all duration-300`}
                     style={{
                       left: active === "left" ? "2.91px" : "50%",
                     }}
@@ -147,15 +172,15 @@ const Extras = () => {
                   </div>
                   <button
                     onClick={() => setActive("left")}
-                    className={`relative z-10 w-1/2 h-10 flex items-center justify-center gap-1 text-[10px] sm:text-[12px] md:text-[13.58px] cursor-pointer
+                    className={`relative z-10 w-34 h-8 md:w-42 md:h-9 lg:w-50 lg:h-10 flex items-center justify-center gap-1 font-normal text-[10px] sm:text-[12px] md:text-[13.58px] leading-[150%] cursor-pointer
                       ${active === "left" ? "text-white" : "text-[#FFFFFFB2]"}`}
                   >
-                    <img src={icon_8} className="w-[15.52px] h-[15.52px]" />
+                    <img src={icon_8} alt="icon" className="w-3 h-3 md:w-[15.52px] md:h-[15.52px]" />
                     No Commissions
                   </button>
                   <button
                     onClick={() => setActive("right")}
-                    className={`relative z-10 w-1/2 h-10 flex items-center justify-center text-[10px] sm:text-[12px] md:text-[13.58px] cursor-pointer
+                    className={`z-10 w-34 h-8 md:w-42 md:h-9 lg:w-50 lg:h-10 flex items-center justify-center font-normal text-[10px] sm:text-[12px] md:text-[13.58px] leading-[150%] rounded-2xl cursor-pointer
                       ${active === "right" ? "text-white" : "text-[#FFFFFFB2]"}`}
                   >
                     Raw Spreads
