@@ -38,22 +38,19 @@ const Hero = () => {
 
   return (
     <div className="w-full  px-3 sm:px-5 py-3">
+      
 
       <div className="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-0">
-
-        {/* Logo */}
-        <div className="flex items-center self-start sm:self-auto gap-[8px]">
+        <div className="flex items-center self-start sm:self-auto gap-2">
           <img
             src={logo}
             alt="logo"
-            className="object-contain h-[44px] sm:h-[44px] rounded-[16px]"
+            className="object-contain h-11 sm:h-11 rounded-2xl"
           />
           <span className="user text-[18px] text-white leading-160% ">User Setting</span>
         </div>
-
-        {/* Tabs — mobile এ full width, desktop এ auto */}
         <div
-          className="flex items-center p-[4px] rounded-[16px] w-full sm:w-auto"
+          className="flex items-center p-1 rounded-2xl w-full sm:w-auto"
           style={{
             background: "rgba(255, 255, 255, 0.05)",
             border: "1px solid rgba(255, 255, 255, 0.1)",

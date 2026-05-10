@@ -255,8 +255,6 @@ const cardBgMap = {
   DAILYFX: cardBgTeal,
   FXSTREET: cardBgAmber,
 };
-
-/* ── SVG button backgrounds ── */
 const BtnActiveBg = () => (
   <svg
     className="absolute inset-0 w-full h-full"
@@ -315,14 +313,13 @@ const BtnAmberBg = () => (
   </svg>
 );
 
-/* ── Single news card ── */
 const NewsCard = ({ source, date, title, body, body2 }) => {
   const isAmber = source === "FXSTREET";
 
   return (
     <div
       className="relative rounded-2xl border border-white/10 overflow-hidden flex flex-col
-                 p-4 sm:p-5 min-h-[280px] sm:min-h-[360px] lg:min-h-[390px] transition-transform duration-300"
+      p-4 sm:p-5 min-h-70 sm:min-h-90 lg:min-h-97.5 transition-transform duration-300"
       style={{
         backgroundImage: `url(${cardBgMap[source]})`,
         backgroundSize: "cover",
@@ -330,8 +327,6 @@ const NewsCard = ({ source, date, title, body, body2 }) => {
       }}
     >
       <div className="flex flex-col gap-2.5 sm:gap-3.5 flex-1">
-
-        {/* Title */}
         <h3 className="user text-white text-[14px] sm:text-[15px] lg:text-[16px] leading-[160%] font-medium">
           {title}
         </h3>
@@ -393,7 +388,6 @@ const FilterPill = ({ src, onClick }) => (
                 text-[11px] sm:text-[12px] shrink-0 transition-all duration-200'
                 
   >
-    {/* Tick icon — hidden on xs to save space, visible from sm */}
     <img
       src={tikIcon}
       className={`h-3 sm:h-4 flex-shrink-0 transition-opacity `}
@@ -407,7 +401,6 @@ const FilterPill = ({ src, onClick }) => (
   </button>
 );
 
-/* ── News data ── */
 const newsData = [
   {
     id: 1,
@@ -445,12 +438,11 @@ export default function NewsFeed() {
     setActiveSource((prev) => (prev === src ? null : src));
 
   return (
-    <div className="w-full flex flex-col gap-3 sm:gap-4 px-3 sm:px-4 lg:px-0">
-
-      {/* ── BANNER ── */}
+    <div className="w-full flex flex-col gap-3 sm:gap-4 px-3 sm:px-4 lg:px-0 relative">
+      
       <div
         className="w-full rounded-2xl sm:rounded-3xl overflow-hidden relative
-                   min-h-[160px] sm:min-h-[220px] md:min-h-[260px] lg:min-h-[280px]"
+        min-h-40 sm:min-h-55 md:min-h-65 lg:min-h-70 border-[#ffffff33] border-px border"
         style={{
           backgroundImage: `url(${newsBg})`,
           backgroundSize: "cover",
@@ -458,11 +450,20 @@ export default function NewsFeed() {
           backgroundRepeat: "no-repeat",
         }}
       >
-        {/* Centred headline */}
+        <svg className="absolute top-0 right-0 w-1/2 h-px " viewBox="0 0 437 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="-4.37114e-08" y1="0.5" x2="437" y2="0.499962" stroke="url(#paint0_linear_2043_7469)"/>
+        <defs>
+        <linearGradient id="paint0_linear_2043_7469" x1="4.37114e-08" y1="1.5" x2="437" y2="1.49996" gradientUnits="userSpaceOnUse">
+        <stop stop-color="white" stop-opacity="0"/>
+        <stop offset="0.49" stop-color="white"/>
+        <stop offset="1" stop-color="white" stop-opacity="0"/>
+        </linearGradient>
+        </defs>
+        </svg>
         <div className="h-full flex items-center justify-center px-4 py-8 sm:py-12">
           <h1 className="user text-white text-[22px] sm:text-[28px] md:text-[32px] lg:text-[34px]
-                         leading-[130%] sm:leading-[120%] text-center max-w-lg">
-            Latest World News on <br className="hidden xs:block" /> International Trade
+            leading-[130%] sm:leading-[120%] text-center">
+            Latest World News on <br className="hidden sm:block" /> International Trade
           </h1>
         </div>
 

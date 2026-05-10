@@ -145,7 +145,7 @@ const Sidebar = ({ mobileOpen, setMobileOpen }) => {
 
       <div
          className={`
-    sidebar fixed top-0 left-0 h-screen w-[240px] z-50
+    sidebar fixed top-0 left-0 h-screen w-60 z-50
   md:static
   transform-gpu will-change-transform
     ${mobileOpen ? "translate-x-0" : "-translate-x-full"}
@@ -159,7 +159,7 @@ const Sidebar = ({ mobileOpen, setMobileOpen }) => {
         <div className="absolute inset-0 bg-[#03151A]/90" />
 
         <div className="relative z-10 flex flex-col h-full p-4 overflow-hidden">
-          <div className="flex items-baseline gap-[6px] mb-[15px]">
+          <div className="flex items-baseline gap-1.5 mb-3.75">
             <span className="logo-e8">E8</span>
             <span className="logo-markets">Markets</span>
           </div>
@@ -168,7 +168,7 @@ const Sidebar = ({ mobileOpen, setMobileOpen }) => {
           <div className="flex-1 space-y-4 overflow-hidden">
             {navGroups.map((group) => (
               <div key={group.label}>
-                <p className="group-label mb-[12px] px-[20px]">{group.label}</p>
+                <p className="group-label mb-3 px-5">{group.label}</p>
 
                 {group.items.map((item) => (
                   <NavItem

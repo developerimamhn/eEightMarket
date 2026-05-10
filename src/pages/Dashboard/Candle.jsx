@@ -261,24 +261,56 @@ export default function AccountBalanceDashboard() {
 
   return (
     <div
-      className="rounded-[20px] p-3  sm:p-5 border border-[#1a3532] w-full text-[#e2f0ee]"
-      style={{
-        backgroundImage: `url(${cardBgMap})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
+      className="rounded-[20px] p-3  sm:p-5 w-full text-[#e2f0ee] relative overflow-hidden bg-[linear-gradient(180deg,#011314_0%,#011515_85%,rgba(9,42,45,0.7)_100%)]"
     >
-      {/* Header */}
-      <div className="flex items-center justify-between mb-4 gap-2 flex-wrap">
+      <svg className='w-full h-fit absolute top-0 left-0 z-0' viewBox="0 0 653 364" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_f_2204_349)">
+<path d="M399.605 -91.2331C351.044 23.047 276.997 138.413 264.259 133C251.52 127.587 312.2 7.78015 360.761 -106.5C409.322 -220.78 451.728 -313.37 464.466 -307.957C477.205 -302.544 448.166 -205.513 399.605 -91.2331Z" fill="#14FCF2" fill-opacity="0.25"/>
+</g>
+<g filter="url(#filter1_f_2204_349)">
+<ellipse cx="562.058" cy="-111.411" rx="41.0681" ry="318.93" transform="rotate(23.0221 562.058 -111.411)" fill="#14FCF2" fill-opacity="0.25"/>
+</g>
+<path d="M0.838867 363.906H0V25.0205H0.838867V363.906ZM77.1836 363.906H76.3447V25.0205H77.1836V363.906ZM153.528 363.906H152.689V25.0205H153.528V363.906ZM229.873 363.906H229.034V25.0205H229.873V363.906ZM306.221 363.906H305.382V25.0205H306.221V363.906ZM382.555 363.906H381.555V25.0205H382.555V363.906ZM458.918 363.906H458.079V25.0205H458.918V363.906ZM535.263 363.906H534.424V25.0205H535.263V363.906Z" fill="url(#paint0_radial_2204_349)" fill-opacity="0.1"/>
+<defs>
+<filter id="filter0_f_2204_349" x="162.54" y="-408.183" width="404.923" height="641.366" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="50" result="effect1_foregroundBlur_2204_349"/>
+</filter>
+<filter id="filter1_f_2204_349" x="331.693" y="-505.386" width="460.73" height="787.95" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="50" result="effect1_foregroundBlur_2204_349"/>
+</filter>
+<radialGradient id="paint0_radial_2204_349" cx="0" cy="0" r="1" gradientTransform="matrix(-126.352 -138.5 226.241 -237.617 365.799 271.5)" gradientUnits="userSpaceOnUse">
+<stop stop-color="white"/>
+<stop offset="1" stop-opacity="0"/>
+</radialGradient>
+</defs>
+      </svg>
+      <div
+  class="absolute inset-0 block h-full w-full rounded-[inherit] p-px [mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] mask-subtract! [background:linear-gradient(252.84deg,#86B4B4_0.99%,rgba(58,78,78,0.1)_36.61%)]"
+></div>
+{/* <svg className='w-full h-fit absolute top-0 left-0 z-1' viewBox="0 0 740 406" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.5" y="0.5" width="739" height="405" rx="19.5" stroke="url(#paint0_linear_2202_50)"/>
+<defs>
+<linearGradient id="paint0_linear_2202_50" x1="733.5" y1="5.50001" x2="471.5" y2="153" gradientUnits="userSpaceOnUse">
+<stop stop-color="#86B4B4"/>
+<stop offset="1" stop-color="#3A4E4E" stop-opacity="0.1"/>
+</linearGradient>
+</defs>
+</svg> */}
+
+      <div className="flex items-center justify-between mb-4 gap-2 flex-wrap relative z-10">
         <div className="flex items-center gap-2 sm:gap-3 min-w-0">
-          <img src={dateIcon} alt="Data" className="flex-shrink-0 w-6 h-6 sm:w-auto sm:h-auto" />
-          <span className="text-[18px] sm:text-[22px] lg:text-[24px] leading-[150%] bg-gradient-to-b from-white via-white to-[#999999] bg-clip-text text-transparent truncate">
+          <img src={dateIcon} alt="Data" className="shrink-0 w-6 h-6 sm:w-auto sm:h-auto" />
+          <span className="text-[18px] sm:text-[22px] lg:text-[24px] leading-[150%] bg-linear-to-b from-white via-white to-[#999999] bg-clip-text text-transparent truncate">
             Account balance
           </span>
         </div>
 
-        <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0 scale-80 sm:scale-100 origin-left">
-          <button className="w-9 h-9 sm:w-[38px] sm:h-[38px] rounded-[10px] hover:bg-[#1a3d38] transition-all cursor-pointer flex items-center justify-center">
+        <div className="flex items-center gap-1 sm:gap-2 shrink-0 scale-80 sm:scale-100 origin-left">
+          <button className="w-9 h-9 sm:w-9.5 sm:h-9.5 rounded-[10px] hover:bg-[#1a3d38] transition-all cursor-pointer flex items-center justify-center">
             <img src={CandleBtn} alt="Line chart" className="w-full h-full object-contain" />
           </button>
           <button className="w-9 h-9 sm:w-[38px] sm:h-[38px] rounded-[10px] hover:bg-[#1a3d38] transition-all cursor-pointer flex items-center justify-center">
@@ -286,7 +318,7 @@ export default function AccountBalanceDashboard() {
           </button>
 
           {/* 7 Days button */}
-          <button className="relative flex items-center gap-1 sm:gap-1.5 px-3 sm:px-4 py-2 text-[#8bbdb8] text-[11px] sm:text-sm font-medium hover:text-[#3eddc2] transition-all cursor-pointer">
+          <button className="relative flex items-center gap-1 sm:gap-1.5 px-3 sm:px-4 py-2.25 text-[#8bbdb8] text-[11px] sm:text-sm font-medium hover:text-[#3eddc2] transition-all cursor-pointer">
             <svg width="86" height="38" viewBox="0 0 86 38" fill="none" xmlns="http://www.w3.org/2000/svg"
               className="absolute inset-0 w-full h-full" preserveAspectRatio="none">
               <g clipPath="url(#clip0_88_327b)">
@@ -318,13 +350,12 @@ export default function AccountBalanceDashboard() {
         </div>
       </div>
 
-      {/* Timeframe tabs — scrollable on very small screens */}
-      <div className="flex gap-1 sm:gap-1.5 mb-4 overflow-x-auto pb-1 scrollbar-none">
+      <div className="flex gap-1 sm:gap-1.5 mb-4 overflow-x-auto pb-1 scrollbar-none relative z-10">
         {TIMEFRAMES.map((tf) => (
           <button
             key={tf}
             onClick={() => setActiveTab(tf)}
-            className={`relative user_2 leading-[150%] flex-shrink-0 px-3 sm:px-4 py-1.5 sm:py-2 rounded-[9px] text-[11px] sm:text-[12px] font-normal transition-all cursor-pointer overflow-hidden
+            className={`relative user_2 leading-[150%] shrink-0 px-3 sm:px-4 py-1.5 sm:py-2 rounded-[9px] text-[11px] sm:text-[12px] font-normal transition-all cursor-pointer overflow-hidden
               ${activeTab === tf ? "text-white" : "text-white hover:text-[#3eddc2]"}`}
           >
             {activeTab !== tf && (
@@ -355,15 +386,14 @@ export default function AccountBalanceDashboard() {
           </button>
         ))}
       </div>
-
-      {/* Chart container — fluid height via ResizeObserver */}
+      
       <div
         ref={containerRef}
-        className="relative backdrop-blur-2 w-full rounded-[16px] pr-[40px] sm:pr-[48px]"
+        className="relative backdrop-blur-2 w-full rounded-2xl pr-10 sm:pr-12 relative z-10"
         style={{ height: containerWidth < 480 ? 200 : containerWidth < 768 ? 250 : 310 }}
       >
         {/* Y-axis labels */}
-        <div className="absolute right-0 top-[14px] bottom-[12px] w-[38px] sm:w-[48px] text-[#8B9D9B]
+        <div className="absolute right-0 top-3.5 bottom-3 w-9.5 sm:w-12 text-[#8B9D9B]
                         flex flex-col justify-between items-end text-[10px] sm:text-[13px] pointer-events-none">
           {Y_TICKS.slice().reverse().map((v) => (
             <span key={v}>{formatK(v)}</span>
@@ -585,7 +615,7 @@ export default function AccountBalanceDashboard() {
       </div>
 
       {/* X-axis labels — filtered by width */}
-      <div className="user_2 pt-4 sm:pt-6 mx-6 sm:mx-12 leading-[150%] text-[10px] sm:text-[13px] flex justify-between text-[#8B9D9B]">
+      <div className="user_2 pt-4 sm:pt-6 mx-6 sm:mx-12 leading-[150%] text-[10px] sm:text-[13px] flex justify-between text-[#8B9D9B] relative z-10">
         {labels.map((l) => (
           <span key={l}>{l}</span>
         ))}

@@ -311,6 +311,7 @@ const Leaderboard = () => {
                                 alt="Group"
                                 className="absolute inset-0 w-full h-full object-cover object-top"
                             />
+                            {/* <div class="absolute inset-0 block h-full w-full rounded-[inherit] p-px [mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] mask-subtract! [background:linear-gradient(180deg,#86B4B4_0.99%,rgba(58,78,78,0.1)_36.61%)]"></div> */}
                             {/* Overlay Content */}
                             <div className="relative z-10 flex flex-col gap-4 p-4 h-full">
                                 {/* Top User Info */}

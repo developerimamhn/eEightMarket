@@ -105,6 +105,7 @@
   border: 1.5px solid #ffffff59;
 }
 
+
 .billing-fieldset legend {
   font-family: 'Neue Haas Grotesk Text Pro';
   @apply px-1 text-[12px] leading-none text-white/60 mb-[2px];
@@ -120,11 +121,6 @@
   @apply w-full bg-transparent outline-none border-none text-[14px] text-white/85 leading-[1.2];
 }
 
-
-
-
-/* sidebar start */
-
 .label-span {
   font-family: 'Neue Haas Grotesk Text Pro';
   @apply relative z-10 font-normal;
@@ -133,8 +129,6 @@
   line-height: 150%;
   letter-spacing: 0px;
 }
-
-
 
 .group-label {
   font-family: 'Neue Haas Grotesk Text Pro';
@@ -146,14 +140,9 @@
   
 }
 
-
-
 .nav-item {
   @apply relative w-full text-white flex items-center gap-[8px] px-[28px] py-2 rounded-lg overflow-hidden leading-[150%];
 }
-
-
-
 
 .logo-e8 {
   @apply font-bold text-[32px] leading-[160%] uppercase text-white;
@@ -162,10 +151,6 @@
 .logo-markets {
   @apply font-medium text-[12px] leading-[160%] uppercase text-white;
 }
-
-/* Navbar starts */
-
-
 
 .james-name {
   font-family: 'Neue Haas Grotesk Text Pro';

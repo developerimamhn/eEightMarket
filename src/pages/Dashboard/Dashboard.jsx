@@ -121,9 +121,7 @@ const Dashboard = () => {
         <div className="w-full lg:flex-1 min-w-0">
           <Candle />
         </div>
-        {/* Side panel */}
         <div className="relative z-0 w-full lg:w-70 xl:w-75 2xl:w-[320px] shrink-0 rounded-[20px] bg-[#121212] overflow-hidden p-4 sm:p-5 flex flex-col justify-between gap-4 min-h-95 lg:min-h-111.5 lg:ml-0">
-          {/* SVG right-side ambient glow */}
           <div className="absolute top-0 right-0 z-0 pointer-events-none">
             <svg width="276" height="288" viewBox="0 0 276 288" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g filter="url(#filter0_f_1318_639)">

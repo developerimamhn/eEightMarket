@@ -8,6 +8,7 @@ const InputField = ({ label, value, onChange, placeholder = "" }) => {
 
   return (
     <div className="relative w-full min-h-13.5">
+       
       <input
         value={value}
         onChange={(e) => onChange(e.target.value)}
@@ -38,7 +39,7 @@ const InputField = ({ label, value, onChange, placeholder = "" }) => {
           background: lifted ? "rgba(13,24,20,0.3)" : "transparent",
           padding: lifted ? "0 5px" : "0",
           backdropFilter: lifted ? "blur(10px)" : "none",
-          lineHeight: 1,
+          lineHeight: 1.5,
           borderRadius: "3px",
         }}
       >
@@ -64,7 +65,7 @@ const BillingInfo = () => {
     setForm((prev) => ({ ...prev, [key]: val }));
 
   return (
-    <div className="w-full rotating-border-wrapper">
+    <div className="w-full rotating-border-wrapper relative">
       <div
         className="relative w-full rounded-[20px]"
         style={{
@@ -74,7 +75,10 @@ const BillingInfo = () => {
           backgroundRepeat: "no-repeat",
         }}
       >
-        <div className="relative z-10 p-[20px]">
+        <div
+          class="absolute inset-0 block h-full w-full rounded-[inherit] p-px [mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] mask-subtract! [background:linear-gradient(205.84deg,#86B4B4_0.99%,rgba(58,78,78,0.1)_36.61%)]"
+        ></div>
+        <div className="relative z-10 p-5">
 
           <div className="flex items-center gap-2 mb-8">
             <div className="w-10 h-10 rounded-[10px] flex items-center justify-center shrink-0">
