@@ -244,25 +244,35 @@ export function EconomicCalendar() {
 
 
       {/* ── Top header ── */}
-      <div className="flex items-center justify-between pb-6.25">
-        <div className="flex items-center gap-2">
-          <img src={Calendar_Logo} alt="calendar" className=" h-10.5 sm:w-10.5 sm:h-10.5 rounded-2xl object-contain" />
-          <span className="user text-[17px] sm:text-[17px]  text-white">
-            Economic Calendar
-          </span>
-        </div>
-        <div className="flex items-center h-[45px] gap-1 bg-white/[0.03] border border-slate-800 rounded-lg p-3">
-          {DAYS.map((day) => (
-            <button
-              key={day}
-              onClick={() => setActiveDay(day)}
-              className="user px-3 py-1 rounded-[16px] text-[14px] text-white/70"
-            >
-              {day}
-            </button>
-          ))}
-        </div>
-      </div>
+<div className="flex items-center justify-between gap-3 pb-6">
+
+  {/* Logo + Title */}
+  <div className="flex items-center gap-1.5 sm:gap-2 min-w-0">
+    <img
+      src={Calendar_Logo}
+      alt="calendar"
+      className="w-8 h-8 sm:w-10 sm:h-10 lg:w-11 lg:h-11 rounded-xl sm:rounded-2xl object-contain shrink-0"
+    />
+    <span className="user text-[15px] sm:text-[18px] text-white truncate">
+      Economic Calendar
+    </span>
+  </div>
+
+  {/* Day Switcher */}
+  <div className="shrink-0 flex items-center gap-[2px] h-[36px] sm:h-[40px] lg:h-[45px] bg-white/[0.03] border border-slate-800 rounded-[10px] p-1">
+    {DAYS.map((day) => (
+      <button
+        key={day}
+        onClick={() => setActiveDay(day)}
+        className={`user h-full text-white px-2.5 sm:px-3 rounded-[8px] text-[12px] sm:text-[14px] whitespace-nowrap transition-all duration-150`}
+      >
+        <span className="sm:hidden">{day.slice(0, 3)}</span>
+        <span className="hidden sm:inline">{day}</span>
+      </button>
+    ))}
+  </div>
+
+</div>
       <div className="w-full rounded-[19px] bg-[linear-gradient(180deg,#011314_0%,#011515_85%,rgba(9,42,45,0.7)_100%)]">
         {/* ── Main card ── */}
         <div className="w-full bg-[#0d1117] rounded-2xl border border-slate-800 overflow-hidden shadow-2xl">
@@ -279,7 +289,7 @@ export function EconomicCalendar() {
               style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
             >
               <div className="shrink-0 flex items-center">
-                <img src={CurrencyLogo} alt="currency" className="w-5 h-5 object-contain opacity-60" />
+                <img src={CurrencyLogo} alt="currency" className="hidden md:block w-5 h-5 object-contain opacity-60" />
               </div>
               {CURRENCIES.map((cur) => (
                 <button
@@ -304,7 +314,7 @@ export function EconomicCalendar() {
               style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
             >
               <div className="shrink-0 flex items-center">
-                <img src={ImpactLogo} alt="impact" className=" h-[36px] rounded-[14px] object-contain opacity-60" />
+                <img src={ImpactLogo} alt="impact" className="hidden md:block h-[36px] rounded-[14px] object-contain opacity-60" />
               </div>
 
               {Object.entries(IMPACT_STYLES).map(([key, s]) => (

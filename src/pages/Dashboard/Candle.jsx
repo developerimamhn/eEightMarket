@@ -519,8 +519,8 @@ export default function AccountBalanceDashboard() {
   <div
     className="hidden md:block absolute z-20 pointer-events-none "
     style={{
-      left: '374px',   // fixed position
-      top: '1px',    // fixed position
+      left: '490px',   // fixed position
+      top: '-20px',    // fixed position
     }}
   >
     <div
