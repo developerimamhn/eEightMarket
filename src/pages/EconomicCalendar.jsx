@@ -257,33 +257,24 @@ export function EconomicCalendar() {
       Economic Calendar
     </span>
   </div>
-
-  {/* Day Switcher */}
-  <div className="shrink-0 flex items-center gap-[2px] h-[36px] sm:h-[40px] lg:h-[45px] bg-white/[0.03] border border-slate-800 rounded-[10px] p-1">
+  <div className="shrink-0 flex items-center gap-0.5 h-9 sm:h-10 lg:h-11.25 bg-white/3 border border-slate-800 rounded-[10px] p-1">
     {DAYS.map((day) => (
       <button
         key={day}
         onClick={() => setActiveDay(day)}
-        className={`user h-full text-white px-2.5 sm:px-3 rounded-[8px] text-[12px] sm:text-[14px] whitespace-nowrap transition-all duration-150`}
+        className={`user h-full text-white px-2.5 sm:px-3 rounded-lg text-[12px] sm:text-[14px] whitespace-nowrap transition-all duration-150`}
       >
         <span className="sm:hidden">{day.slice(0, 3)}</span>
         <span className="hidden sm:inline">{day}</span>
       </button>
     ))}
   </div>
-
 </div>
       <div className="w-full rounded-[19px] bg-[linear-gradient(180deg,#011314_0%,#011515_85%,rgba(9,42,45,0.7)_100%)]">
         {/* ── Main card ── */}
         <div className="w-full bg-[#0d1117] rounded-2xl border border-slate-800 overflow-hidden shadow-2xl">
           <div className="w-full p-[1px] bg-[linear-gradient(252.84deg,#86B4B4_0.99%,rgba(58,78,78,0.1)_36.61%)]" />
-
-          {/* ════════════════════════════════
-              MOBILE filters
-          ════════════════════════════════ */}
           <div className="block sm:hidden  bg-[#0a0f16]">
-
-            {/* Currency chips */}
             <div
               className="flex items-center gap-2 px-3 pt-3 pb-2 overflow-x-auto"
               style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
@@ -307,8 +298,6 @@ export function EconomicCalendar() {
                 </button>
               ))}
             </div>
-
-            {/* Impact chips */}
             <div
               className="flex items-center gap-2 px-3 pb-3 overflow-x-auto"
               style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
