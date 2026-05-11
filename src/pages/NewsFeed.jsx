@@ -253,7 +253,7 @@ export default function NewsFeed() {
         <div className="flex items-center gap-2 shrink-0">
           <img
             src={newsFeedHeaderLogo}
-            className="w-8 h-8 sm:w-10 sm:h-10 lg:w-[43px] lg:h-[43px] rounded-[14px] object-contain flex-shrink-0"
+            className="w-8 h-8 sm:w-10 sm:h-10 lg:w-10.75 lg:h-10.75 rounded-[14px] object-contain shrink-0"
             alt="news feed icon"
           />
           <span className="user text-white text-[15px] sm:text-[16px] lg:text-[17.46px] leading-[160%] tracking-normal">

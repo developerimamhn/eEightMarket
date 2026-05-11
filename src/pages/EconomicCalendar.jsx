@@ -161,7 +161,7 @@ function MobileEventRow({ event }) {
             <img
               src={CURRENCY_LOGOS[event.currency]}
               alt={event.currency}
-              className="w-[12px] h-[12px] object-contain"
+              className="w-3 h-3 object-contain"
             />
           )}
           <span className="text-[11px] font-semibold text-slate-400">
@@ -244,39 +244,67 @@ export function EconomicCalendar() {
 
 
       {/* ── Top header ── */}
-<div className="flex items-center justify-between gap-3 pb-6">
+    <div className="flex items-center justify-between gap-3 pb-6">
 
-  {/* Logo + Title */}
-  <div className="flex items-center gap-1.5 sm:gap-2 min-w-0">
-    <img
-      src={Calendar_Logo}
-      alt="calendar"
-      className="w-8 h-8 sm:w-10 sm:h-10 lg:w-11 lg:h-11 rounded-xl sm:rounded-2xl object-contain shrink-0"
-    />
-    <span className="user text-[15px] sm:text-[18px] text-white truncate">
-      Economic Calendar
-    </span>
-  </div>
-  <div className="shrink-0 flex items-center gap-0.5 h-9 sm:h-10 lg:h-11.25 bg-white/3 border border-slate-800 rounded-[10px] p-1">
-    {DAYS.map((day) => (
-      <button
-        key={day}
-        onClick={() => setActiveDay(day)}
+      {/* Logo + Title */}
+      <div className="flex items-center gap-1.5 sm:gap-2 min-w-0">
+        <img
+          src={Calendar_Logo}
+          alt="calendar"
+          className="w-8 h-8 sm:w-10 sm:h-10 lg:w-11 lg:h-11 rounded-xl sm:rounded-2xl object-contain shrink-0"
+        />
+        <span className="user text-[15px] sm:text-[18px] text-white truncate">
+          Economic Calendar
+        </span>
+      </div>
+      <div className="shrink-0 flex items-center gap-0.5 h-9 sm:h-10 lg:h-11.25 bg-white/3 border border-white/10 rounded-[10px] p-1">
+        {DAYS.map((day) => (
+          <button
+            key={day}
+            onClick={() => setActiveDay(day)}
 
-        className='gmail h-full text-white/70 px-2.5 sm:px-3 rounded-[8px] text-[12px] sm:text-[13.58px] whitespace-nowrap transition-all duration-150'
+            className='gmail h-full text-white/70 px-2.5 sm:px-3 rounded-lg text-[12px] sm:text-[13.58px] whitespace-nowrap transition-all duration-150'
 
-      >
-        <span className="sm:hidden">{day.slice(0, 3)}</span>
-        <span className="hidden sm:inline">{day}</span>
-      </button>
-    ))}
-  </div>
-</div>
+          >
+            <span className="sm:hidden">{day.slice(0, 3)}</span>
+            <span className="hidden sm:inline">{day}</span>
+          </button>
+        ))}
+      </div>
+    </div>
       <div className="w-full rounded-[19px] bg-[linear-gradient(180deg,#011314_0%,#011515_85%,rgba(9,42,45,0.7)_100%)]">
-        {/* ── Main card ── */}
-        <div className="w-full bg-[#0d1117] rounded-2xl border border-slate-800 overflow-hidden shadow-2xl">
-          <div className="w-full p-[1px] bg-[linear-gradient(252.84deg,#86B4B4_0.99%,rgba(58,78,78,0.1)_36.61%)]" />
-          <div className="block sm:hidden  bg-[#0a0f16]">
+        <div className="w-full rounded-2xl  relative">
+          <div
+  class="absolute inset-0 block h-full w-full rounded-[inherit] p-px [mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] mask-subtract! [background:linear-gradient(252.84deg,#86B4B4_0.99%,rgba(58,78,78,0.1)_36.61%)]"
+></div>
+          <svg className="absolute top-0 left-0 w-full h-auto -z-px" viewBox="0 0 1104 811" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_2258_50)">
+            <g filter="url(#filter0_f_2258_50)">
+            <path d="M704.452 -91.2332C655.891 23.0469 581.844 138.413 569.105 133C556.367 127.587 617.047 7.78 665.608 -106.5C714.169 -220.78 756.574 -313.37 769.313 -307.957C782.052 -302.544 753.013 -205.513 704.452 -91.2332Z" fill="#14FCF2" fill-opacity="0.25"/>
+            </g>
+            <g filter="url(#filter1_f_2258_50)">
+            <ellipse cx="866.907" cy="-111.411" rx="41.0681" ry="318.93" transform="rotate(23.0221 866.907 -111.411)" fill="#14FCF2" fill-opacity="0.25"/>
+            </g>
+            </g>
+            <defs>
+            <filter id="filter0_f_2258_50" x="467.387" y="-408.183" width="404.923" height="641.366" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+            <feGaussianBlur stdDeviation="50" result="effect1_foregroundBlur_2258_50"/>
+            </filter>
+            <filter id="filter1_f_2258_50" x="636.542" y="-505.386" width="460.73" height="787.95" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+            <feGaussianBlur stdDeviation="50" result="effect1_foregroundBlur_2258_50"/>
+            </filter>
+            <clipPath id="clip0_2258_50">
+            <rect width="1104" height="811" rx="20" fill="white"/>
+            </clipPath>
+            </defs>
+            </svg>
+
+
+          <div className="block sm:hidden relative z-10">
             <div
               className="flex items-center gap-2 px-3 pt-3 pb-2 overflow-x-auto"
               style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
@@ -324,20 +352,15 @@ export function EconomicCalendar() {
             </div>
           </div>
 
-          {/* ════════════════════════════════
-              DESKTOP filters
-          ════════════════════════════════ */}
-
-          {/* Desktop filters */}
-          <div className="hidden sm:flex items-start justify-between bg-[#0a0f16] px-[20px] pt-[20px] pb-[24px]">
+          <div className="hidden sm:flex items-start justify-between p-3.5 lg:p-3.75 xl:p-4 2xl:p-5 relative z-10">
 
             {/* Currency */}
-            <div className="flex flex-col gap-[16px]">
+            <div className="flex flex-col gap-4">
               <div className="flex items-center gap-2">
-                <img src={CurrencyLogo} alt="currency" className="w-[36px] h-[36px] rounded-[14px] object-contain" />
+                <img src={CurrencyLogo} alt="currency" className="w-9 h-9 rounded-[14px] object-contain" />
                 <span className="user text-[16px] leading-[160%] text-white">Currency</span>
               </div>
-              <div className="flex items-center gap-[6px]">
+              <div className="flex items-center gap-1.5">
                 {CURRENCIES.map((cur) => (
                   <button
                     key={cur}
@@ -379,7 +402,7 @@ export function EconomicCalendar() {
           {/* ════════════════════════════════
               MOBILE: Accordion list
           ════════════════════════════════ */}
-          <div className="block sm:hidden">
+          <div className="block sm:hidden relative z-10">
             {paged.length === 0 ? (
               <p className="text-center py-10 text-slate-600 text-sm">No events found</p>
             ) : (
@@ -392,30 +415,30 @@ export function EconomicCalendar() {
           {/* ════════════════════════════════
               DESKTOP: Table
           ════════════════════════════════ */}
-          <div className="hidden sm:block px-4">
+          <div className="hidden sm:block px-4 relative z-10">
             <table className="w-full border-collapse" style={{ minWidth: "600px" }}>
              <thead>
-  <tr>
-    {TABLE_COLS.map((col, idx, arr) => (
-      <th
-        key={col.label}
-        className={`px-0 py-0 text-left bg-[#FFFFFF08]
-          ${idx === 0 ? "rounded-l-[16px]" : ""}
-          ${idx === arr.length - 1 ? "rounded-r-[16px]" : ""}
-        `}
-      >
-        <div className={`flex items-center ${idx < arr.length - 1 ? "border-r border-slate-700/60" : ""}`}>
-          <button className="table-header inline-flex items-center gap-2 px-[20px] py-[12px] cursor-pointer select-none whitespace-nowrap bg-transparent hover:rounded-[16px] hover:bg-slate-800/50 transition-all w-full leading-[150%] tracking-normal min-w-[44px]">
-            {col.label}
-            {col.sortable && (
-              <img src={IconArrow} alt="sort" className="ml-auto w-3 h-3 object-contain" />
-            )}
-          </button>
-        </div>
-      </th>
-    ))}
-  </tr>
-</thead>
+                <tr>
+                  {TABLE_COLS.map((col, idx, arr) => (
+                    <th
+                      key={col.label}
+                      className={`px-0 py-0 text-left bg-[#FFFFFF08]
+                        ${idx === 0 ? "rounded-l-2xl" : ""}
+                        ${idx === arr.length - 1 ? "rounded-r-2xl" : ""}
+                      `}
+                    >
+                      <div className={`flex items-center ${idx < arr.length - 1 ? "border-r border-slate-700/60" : ""}`}>
+                        <button className="table-header inline-flex items-center gap-2 px-5 py-3 cursor-pointer select-none whitespace-nowrap bg-transparent hover:rounded-2xl  transition-all w-full leading-[150%] tracking-normal min-w-11">
+                          {col.label}
+                          {col.sortable && (
+                            <img src={IconArrow} alt="sort" className="ml-auto w-3 h-3 object-contain" />
+                          )}
+                        </button>
+                      </div>
+                    </th>
+                  ))}
+                </tr>
+              </thead>
               <tbody>
                 {paged.length === 0 ? (
                   <tr>
@@ -427,7 +450,7 @@ export function EconomicCalendar() {
                   paged.map((event) => (
                     <tr
                       key={event.id}
-                      className="border-b border-slate-800/30 hover:bg-slate-800/20 transition-colors"
+                      className="border-b border-slate-800/30 hover:bg-slate-800/10 transition-colors"
                     >
                       <td className="px-4 py-2.5 text-slate-200 text-[16px] font-[450] whitespace-nowrap">
                         {event.name}
@@ -466,7 +489,7 @@ export function EconomicCalendar() {
           {/* ── Footer ── */}
 
 
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-0 px-4 sm:px-5 py-3 border-t border-slate-800/60 bg-[#0a0f16]">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-0 px-4 sm:px-5 py-3 border-t border-slate-800/60 ">
 
             {/* Left: Restricted info */}
             <div className="flex items-center gap-2">
