@@ -11,10 +11,7 @@ export default function Navbar({ onMenuClick, sidebarOpen }) {
 
   return (
     <>
-      {/* ── Main nav bar — desktop only (md+) ── */}
       <nav className="hidden md:flex w-full px-5 py-3 items-center justify-between relative z-20">
-
-        {/* ── LEFT: Search ── */}
         <div className="flex items-center">
           <div
             className={`flex items-center rounded-2xl pl-3 pr-1 py-1 transition-all duration-300
@@ -37,18 +34,12 @@ export default function Navbar({ onMenuClick, sidebarOpen }) {
             </button>
           </div>
         </div>
-
-        {/* ── RIGHT: Actions ── */}
         <DesktopRightActions />
       </nav>
-
-      {/* ── Mobile top bar — hamburger only (xs–sm) ── */}
       <MobileTopBar onMenuClick={onMenuClick} sidebarOpen={sidebarOpen} />
     </>
   );
 }
-
-/* ─── Desktop Right Actions ─── */
 function DesktopRightActions() {
   const [accountOpen, setAccountOpen] = useState(false);
   const [userOpen, setUserOpen] = useState(false);
@@ -66,7 +57,6 @@ function DesktopRightActions() {
 
   return (
     <div className="flex items-center gap-3">
-      {/* Bell */}
       <button
         className="flex items-center justify-center w-12 h-12 rounded-2xl bg-white/4
                    hover:bg-white/8 transition-colors active:scale-95"
@@ -74,8 +64,6 @@ function DesktopRightActions() {
       >
         <img src={Bell} alt="bell" className="w-12 h-12 object-contain" />
       </button>
-
-      {/* Account Selector */}
       <div ref={accountRef} className="relative">
         <button
           onClick={() => setAccountOpen((v) => !v)}
@@ -87,7 +75,7 @@ function DesktopRightActions() {
             style={{ background: "linear-gradient(198.73deg, rgba(244,253,255,0.5) 5.95%, rgba(255,255,255,0) 43.28%)" }}>
             <span className="w-full h-full block rounded-2xl bg-[#161817]" />
           </span>
-          <span className="user-koma text-[13px] lg:text-[15px] font-normal text-white relative z-10 truncate mr-2">
+          <span className="gmail text-[13px] lg:text-[15px] font-normal text-white relative z-10 truncate mr-2">
             E8 Account 2110113586
           </span>
           <img src={downArrow} alt="expand"
@@ -122,8 +110,8 @@ function DesktopRightActions() {
                        flex-shrink-0 shadow-[0_-1px_0_rgba(255,255,255,0.8)]"
           />
           <div className="text-left">
-            <div className="user text-[12.5px] text-white/85 leading-[150%] whitespace-nowrap">James Carter</div>
-            <div className="user-koma text-[10.5px] text-white/35 leading-[160%] whitespace-nowrap">james.carter@example.com</div>
+            <div className="james-name">James Carter</div>
+            <div className="gmail text-[10px] text-white/70 leading-[160%] whitespace-nowrap">james.carter@example.com</div>
           </div>
           <img src={downArrow} alt="expand"
             className={`w-4 h-4 object-contain shrink-0 transition-transform duration-200
@@ -157,8 +145,6 @@ function DesktopRightActions() {
     </div>
   );
 }
-
-/* ─── Mobile Top Bar ─── */
 function MobileTopBar({ onMenuClick, sidebarOpen }) {
   return (
     <nav className="md:hidden w-full px-4 py-3 flex items-center justify-between relative z-20">

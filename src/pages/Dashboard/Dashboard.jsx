@@ -159,7 +159,7 @@ const Dashboard = () => {
               </div>
               <img src={icon9} alt="icon" className="w-5 h-5" />
             </div>
-            <p className="font-medium text-[13px] sm:text-[14px] lg:text-[15px] leading-[160%] text-white">
+            <p className="user text-[13px] sm:text-[14px] lg:text-[16px] leading-[160%] text-white">
               Account Loss Analysis
             </p>
           </div>
@@ -180,7 +180,7 @@ const Dashboard = () => {
                   <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-px bg-linear-to-r from-transparent via-[#9DEEFF] to-transparent opacity-70" />
                 )}
                 {btnIcon && <img src={btnIcon} alt="" className="w-4 h-4 relative z-10 shrink-0" />}
-                <span className="relative z-10 truncate">{label}</span>
+                <span className="relative gmail leading-[150px] text-[12px] sm:text-[12px] z-10 truncate">{label}</span>
               </button>
             ))}
           </div>
@@ -192,7 +192,7 @@ const Dashboard = () => {
             </div>
             <div className="flex flex-col gap-1.5">
               <div className="flex items-center justify-between gap-2">
-                <p className="font-medium text-[12px] sm:text-[13px] leading-[160%] text-white">
+                <p className="user text-[12px] sm:text-[14px] leading-[160%]  tracking-normal text-white">
                   Initial Deposit Limit Level
                 </p>
                 <img src={Group_26} alt="icon" className="w-5 h-5 shrink-0" />
@@ -225,8 +225,8 @@ const Dashboard = () => {
                 </div>
               </div>
               <div className="flex items-center justify-between gap-1 flex-wrap">
-                <p className="font-normal text-[10px] leading-[150%] text-[#FFFFFFB2]">Entry Equity: $25,000.0</p>
-                <p className="font-medium text-[10px] leading-[150%] text-white">Loss Level: $230,000.00</p>
+                <p className="gmail text-[10px] tracking-normal leading-[150%] text-white/70">Entry Equity: $25,000.0</p>
+                <p className="gmail text-[10px] tracking-normal leading-[150%] text-white">Loss Level: $230,000.00</p>
               </div>
             </div>
           </div>
@@ -238,7 +238,7 @@ const Dashboard = () => {
             </div>
             <div className="flex flex-col gap-1.5">
               <div className="flex items-center justify-between gap-2">
-                <p className="font-medium text-[12px] sm:text-[13px] leading-[160%] text-white">Daily Loss Limit Level</p>
+                <p className="user text-[12px] sm:text-[14px] tracking-normal leading-[160%] text-white">Daily Loss Limit Level</p>
                 <img src={Group_26} alt="icon" className="w-5 h-5 shrink-0" />
               </div>
               {/* Hatch bar — full width */}
@@ -246,17 +246,17 @@ const Dashboard = () => {
                 <HatchPattern />
               </div>
               <div className="flex items-center justify-between gap-1 flex-wrap">
-                <p className="font-normal text-[10px] leading-[150%] text-[#FFFFFFB2]">Entry Equity: $25,000.0</p>
-                <p className="font-medium text-[10px] leading-[150%] text-white">Loss Level: $237,000.00</p>
+                <p className="gmail text-[10px] tracking-normal leading-[150%] text-[#FFFFFFB2]">Entry Equity: $25,000.0</p>
+                <p className="gmail text-[10px] tracking-normal leading-[150%] text-white">Loss Level: $237,000.00</p>
               </div>
             </div>
           </div>
           {/* ── Reset timer ── */}
           <div className="relative flex items-center justify-center gap-2 z-10 flex-wrap">
-            <p className="font-normal text-[13px] sm:text-[14px] leading-[150%] text-white">
+            <p className="gmail text-[13px] sm:text-[14px] leading-[150%] text-white">
               Next Daily Loss Reset in
             </p>
-            <p className="rounded-lg py-1.25 px-2.5 bg-[#FFFFFF08] font-normal text-[12px] leading-[150%] text-white whitespace-nowrap">
+            <p className="rounded-[8px] gmail py-1.25 px-2.5 bg-[#FFFFFF08] text-[12px] leading-[150%] text-white whitespace-nowrap">
               12:36:36
             </p>
           </div>
@@ -321,13 +321,13 @@ const Dashboard = () => {
                 <img src={item.icon} alt="icon" className="w-5 h-5" />
               </div>
 
-              <p className="font-medium text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px] leading-[160%] tracking-[0%] bg-[linear-gradient(180deg,#FFFFFF_42.31%,#999999_100%)] bg-clip-text text-transparent">
+              <p className="user text-[13px] sm:text-[14px] md:text-[15px] lg:text-[16px] leading-[160%] tracking-[0%] bg-[linear-gradient(180deg,#FFFFFF_42.31%,#999999_100%)] bg-clip-text text-transparent">
                 {item.title}
               </p>
             </div>
 
             <div className="z-10">
-              <p className="font-bold text-[14px] sm:text-[15px] md:text-[16px] lg:text-[20px] xl:text-[24px] 2xl:text-[32px] leading-[160%] tracking-[0%] text-[#FFFFFF]">
+              <p className="Bold-700 text-[26px] sm:text-[28px] md:text-[30px] lg:text-[32px] leading-[160%] tracking-normal text-[#FFFFFF]">
                 {item.value}
               </p>
             </div>
@@ -367,7 +367,7 @@ const Dashboard = () => {
           </div>
 
           <div>
-            <p className='font-medium text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px] leading-[160%] tracking-[0%] text-[#FFFFFF]'>
+            <p className='user text-[12px] sm:text-[14px] md:text-[16px] lg:text-[16px] leading-[160%] tracking-normal text-[#FFFFFF]'>
               Goal Overview
             </p>
           </div>
@@ -416,13 +416,13 @@ const Dashboard = () => {
                   </div>
 
                   {/* title */}
-                  <p className="font-medium text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px] leading-[160%] tracking-[0%] text-[#FFFFFF]">
+                  <p className="user text-[12px] sm:text-[13px] md:text-[14px] lg:text-[16px] xl:text-[16px] 2xl:text-[16px] leading-[160%] tracking-normal text-[#FFFFFF]">
                     {item.title}
                   </p>
 
                   {/* badge */}
                   <div className='rounded-lg py-1.25 px-3 bg-[#FFFFFF08] shadow-[inset_0px_0px_1px_0px_#FFFFFF40] opacity-100'>
-                    <p className='font-normal text-[12px] leading-[150%] tracking-[0%] text-[#FFFFFF]'>
+                    <p className='gmail text-[12px] leading-[150%] tracking-normal text-[#FFFFFF]'>
                       {item.badge}
                     </p>
                   </div>
@@ -432,20 +432,20 @@ const Dashboard = () => {
                 <div className='flex items-center justify-between'>
 
                   <div className='flex flex-col gap-1.5'>
-                    <div className='font-normal text-[12px] leading-[150%] tracking-[0%] text-[#FFFFFFB2]'>
+                    <div className='gmail text-[12px] leading-[150%] tracking-normal text-[#FFFFFFB2]'>
                       <p>{item.minLabel}</p>
                       <p>{item.minLabel2}</p>
                     </div>
-                    <p className='font-medium text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] 2xl:text-[20px] leading-[150%] tracking-[0%] text-[#FFFFFF]'>
+                    <p className='user text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] 2xl:text-[20px] leading-[150%] tracking-normal text-[#FFFFFF]'>
                       {item.minValue}
                     </p>
                   </div>
 
                   <div className='flex flex-col items-end gap-1.5'>
-                    <p className='font-normal text-[12px] leading-[150%] tracking-[0%] text-[#FFFFFFB2]'>
+                    <p className='gmail text-[12px] leading-[150%] tracking-normal text-[#FFFFFFB2]'>
                       {item.currentLabel}
                     </p>
-                    <p className='font-medium text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] 2xl:text-[20px] leading-[150%] tracking-[0%] text-[#FFFFFF]'>
+                    <p className='user text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] 2xl:text-[20px] leading-[150%] tracking-normal text-[#FFFFFF]'>
                       {item.currentValue}
                     </p>
                   </div>

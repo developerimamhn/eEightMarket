@@ -1,7 +1,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import dateIcon from "../../assets/img/BoxIcon.svg";
-import cardBgMap from "../../assets/img/tradingdashbord.png";
 import CandleBtn from "../../assets/img/CandleBtn.svg";
 import CandleBtn_2 from "../../assets/img/CandleBtn_2.png";
 import DownArrow from "../../assets/img/DownArrow.svg";
@@ -261,32 +260,32 @@ export default function AccountBalanceDashboard() {
 
   return (
     <div
-      className="rounded-[20px] p-3  sm:p-5 w-full text-[#e2f0ee] relative overflow-hidden bg-[linear-gradient(180deg,#011314_0%,#011515_85%,rgba(9,42,45,0.7)_100%)]"
-    >
+      className="rounded-[20px] p-3  sm:p-5 w-full text-[#e2f0ee] relative overflow-hidden bg-[linear-gradient(180deg,#011314_0%,#011515_85%,rgba(9,42,45,0.7)_100%)]" >
+      <div className=" absolute top-0 right-0 sm:right-6 lg:right-10 w-[437px] h-[1px] bg-gradient-to-r from-[#8FB9C2]/0 via-[#8FB9C2] to-[#8FB9C2]/0" />
       <svg className='w-full h-fit absolute top-0 left-0 z-0' viewBox="0 0 653 364" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g filter="url(#filter0_f_2204_349)">
-<path d="M399.605 -91.2331C351.044 23.047 276.997 138.413 264.259 133C251.52 127.587 312.2 7.78015 360.761 -106.5C409.322 -220.78 451.728 -313.37 464.466 -307.957C477.205 -302.544 448.166 -205.513 399.605 -91.2331Z" fill="#14FCF2" fill-opacity="0.25"/>
-</g>
-<g filter="url(#filter1_f_2204_349)">
-<ellipse cx="562.058" cy="-111.411" rx="41.0681" ry="318.93" transform="rotate(23.0221 562.058 -111.411)" fill="#14FCF2" fill-opacity="0.25"/>
-</g>
-<path d="M0.838867 363.906H0V25.0205H0.838867V363.906ZM77.1836 363.906H76.3447V25.0205H77.1836V363.906ZM153.528 363.906H152.689V25.0205H153.528V363.906ZM229.873 363.906H229.034V25.0205H229.873V363.906ZM306.221 363.906H305.382V25.0205H306.221V363.906ZM382.555 363.906H381.555V25.0205H382.555V363.906ZM458.918 363.906H458.079V25.0205H458.918V363.906ZM535.263 363.906H534.424V25.0205H535.263V363.906Z" fill="url(#paint0_radial_2204_349)" fill-opacity="0.1"/>
-<defs>
-<filter id="filter0_f_2204_349" x="162.54" y="-408.183" width="404.923" height="641.366" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-<feGaussianBlur stdDeviation="50" result="effect1_foregroundBlur_2204_349"/>
-</filter>
-<filter id="filter1_f_2204_349" x="331.693" y="-505.386" width="460.73" height="787.95" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-<feGaussianBlur stdDeviation="50" result="effect1_foregroundBlur_2204_349"/>
-</filter>
-<radialGradient id="paint0_radial_2204_349" cx="0" cy="0" r="1" gradientTransform="matrix(-126.352 -138.5 226.241 -237.617 365.799 271.5)" gradientUnits="userSpaceOnUse">
-<stop stop-color="white"/>
-<stop offset="1" stop-opacity="0"/>
-</radialGradient>
-</defs>
+        <g filter="url(#filter0_f_2204_349)">
+          <path d="M399.605 -91.2331C351.044 23.047 276.997 138.413 264.259 133C251.52 127.587 312.2 7.78015 360.761 -106.5C409.322 -220.78 451.728 -313.37 464.466 -307.957C477.205 -302.544 448.166 -205.513 399.605 -91.2331Z" fill="#14FCF2" fill-opacity="0.25" />
+        </g>
+        <g filter="url(#filter1_f_2204_349)">
+          <ellipse cx="562.058" cy="-111.411" rx="41.0681" ry="318.93" transform="rotate(23.0221 562.058 -111.411)" fill="#14FCF2" fill-opacity="0.25" />
+        </g>
+        <path d="M0.838867 363.906H0V25.0205H0.838867V363.906ZM77.1836 363.906H76.3447V25.0205H77.1836V363.906ZM153.528 363.906H152.689V25.0205H153.528V363.906ZM229.873 363.906H229.034V25.0205H229.873V363.906ZM306.221 363.906H305.382V25.0205H306.221V363.906ZM382.555 363.906H381.555V25.0205H382.555V363.906ZM458.918 363.906H458.079V25.0205H458.918V363.906ZM535.263 363.906H534.424V25.0205H535.263V363.906Z" fill="url(#paint0_radial_2204_349)" fill-opacity="0.1" />
+        <defs>
+          <filter id="filter0_f_2204_349" x="162.54" y="-408.183" width="404.923" height="641.366" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+            <feGaussianBlur stdDeviation="50" result="effect1_foregroundBlur_2204_349" />
+          </filter>
+          <filter id="filter1_f_2204_349" x="331.693" y="-505.386" width="460.73" height="787.95" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+            <feGaussianBlur stdDeviation="50" result="effect1_foregroundBlur_2204_349" />
+          </filter>
+          <radialGradient id="paint0_radial_2204_349" cx="0" cy="0" r="1" gradientTransform="matrix(-126.352 -138.5 226.241 -237.617 365.799 271.5)" gradientUnits="userSpaceOnUse">
+            <stop stop-color="white" />
+            <stop offset="1" stop-opacity="0" />
+          </radialGradient>
+        </defs>
       </svg>
       <div
   class="absolute inset-0 block h-full w-full rounded-[inherit] p-px [mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] mask-subtract! [background:linear-gradient(252.84deg,#86B4B4_0.99%,rgba(58,78,78,0.1)_36.61%)]"
@@ -372,11 +371,11 @@ export default function AccountBalanceDashboard() {
                 </defs>
               </svg>
             )}
-            <span className="relative z-10">{tf}</span>
+            <span className="relative gmail text-[10px] sm:text-[11.75px] leading-[150%] z-10">{tf}</span>
           </button>
         ))}
       </div>
-      
+
       <div
         ref={containerRef}
         className="relative backdrop-blur-2 w-full rounded-2xl pr-10 sm:pr-12 relative z-10"
@@ -437,13 +436,10 @@ export default function AccountBalanceDashboard() {
         <button
           onMouseDown={(e) => startDrag(e, "left")}
           onTouchStart={(e) => startDrag(e, "left")}
-          className="absolute z-10 w-7 h-7 sm:w-7 sm:h-7 rounded-[12px]
-           flex items-center justify-center text-white
-           border border-[#2a6660] cursor-grab active:cursor-grabbing
-           hover:opacity-90 transition-all"
+          className="drag-handle-left "
           style={{
 
-            left: selBox.x - 12, // button width এর half
+            left: selBox.x - 12, 
             top: selBox.top + selBox.h / 3 - 24,
           }}
         >
@@ -487,10 +483,7 @@ export default function AccountBalanceDashboard() {
         <button
           onMouseDown={(e) => startDrag(e, "right")}
           onTouchStart={(e) => startDrag(e, "right")}
-          className="absolute z-10 w-7 h-7 sm:w-7 sm:h-7 rounded-[12px]
-           flex items-center justify-center text-white
-           border border-[#2a6660] cursor-grab active:cursor-grabbing
-           hover:opacity-90 transition-all"
+          className="drag-handle-right"
           style={{
             background: "linear-gradient(270deg, #14C0DA 0%, #0B6674 100%)",
             left: selBox.x + selBox.w,
@@ -534,78 +527,73 @@ export default function AccountBalanceDashboard() {
           </svg>
         </button>
 
-       {/* Tooltip */}
+        {/* Tooltip */}
         {tooltip.visible && (
-  <div
-    className="hidden md:block absolute z-20 pointer-events-none "
-    style={{
-      left: '490px',   // fixed position
-      top: '-20px',    // fixed position
-    }}
-  >
-    <div
-      className="relative w-[90px] sm:w-[108px] rounded-[10px] h-[32px] sm:h-[37px] flex items-center justify-center"
-      style={{
-        backdropFilter: "blur(12px)",
-        WebkitBackdropFilter: "blur(12px)",
-      }}
-    >
-      <svg
-        className="absolute inset-0 w-full h-full"
-        viewBox="0 0 108 37"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <rect
-          x="0.5"
-          y="0.5"
-          width="107"
-          height="36"
-          rx="9.57"
-          fill="url(#paint0_tt)"
-          fillOpacity="0.3"
-          stroke="url(#paint1_tt)"
-        />
-        <defs>
-          <linearGradient
-            id="paint0_tt"
-            x1="54"
-            y1="0"
-            x2="54"
-            y2="40.7"
-            gradientUnits="userSpaceOnUse"
+          <div
+            className="hidden md:block absolute z-20 pointer-events-none "
+            style={{
+              left: '490px',   
+              top: '-20px',    
+            }}
           >
-            <stop stopColor="#0F909E" stopOpacity="0.1" />
-            <stop offset="1" stopColor="#14FCF2" stopOpacity="0.6" />
-          </linearGradient>
+            <div
+              className="relative Tooltip w-[90px] sm:w-[108px] rounded-[10px] h-[32px] sm:h-[37px] flex items-center justify-center">
+              <svg
+                className="absolute inset-0 w-full h-full"
+                viewBox="0 0 108 37"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  x="0.5"
+                  y="0.5"
+                  width="107"
+                  height="36"
+                  rx="9.57"
+                  fill="url(#paint0_tt)"
+                  fillOpacity="0.3"
+                  stroke="url(#paint1_tt)"
+                />
+                <defs>
+                  <linearGradient
+                    id="paint0_tt"
+                    x1="54"
+                    y1="0"
+                    x2="54"
+                    y2="40.7"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stopColor="#0F909E" stopOpacity="0.1" />
+                    <stop offset="1" stopColor="#14FCF2" stopOpacity="0.6" />
+                  </linearGradient>
 
-          <linearGradient
-            id="paint1_tt"
-            x1="54"
-            y1="-4.6"
-            x2="54"
-            y2="26.8"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stopColor="#C1E2E1" />
-            <stop offset="1" stopColor="white" stopOpacity="0.05" />
-          </linearGradient>
-        </defs>
-      </svg>
+                  <linearGradient
+                    id="paint1_tt"
+                    x1="54"
+                    y1="-4.6"
+                    x2="54"
+                    y2="26.8"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stopColor="#C1E2E1" />
+                    <stop offset="1" stopColor="white" stopOpacity="0.05" />
+                  </linearGradient>
+                </defs>
+              </svg>
 
-      <div className="relative z-10 text-[11px] sm:text-sm font-semibold text-[#E2F0EE] whitespace-nowrap">
-        ${tooltip.price.toLocaleString()}{" "}
-        <span className="text-[#8BBDB8] text-[10px] sm:text-[11px] font-normal">
-          USD
-        </span>
-      </div>
-    </div>
-  </div>
-)}
+              <div className="relative user leading-[150%] z-10 text-[12px] sm:text-[14px] tracking-[0.05em] text-white whitespace-nowrap">
+                ${tooltip.price.toLocaleString()}{" "}
+                <span className="user leading-[150%] tracking-[0.05em] text-white text-[12px] sm:text-[14px]">
+                  USD
+                </span>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* X-axis labels — filtered by width */}
-      <div className="user_2 pt-4 sm:pt-6 mx-6 sm:mx-12 leading-[150%] text-[10px] sm:text-[13px] flex justify-between text-[#8B9D9B] relative z-10">
+      <div className="gmail pt-4 sm:pt-6 mx-6 sm:mx-12 leading-[150%] text-[10px] sm:text-[13px] flex justify-between text-[#8B9D9B] relative z-10">
         {labels.map((l) => (
           <span key={l}>{l}</span>
         ))}
