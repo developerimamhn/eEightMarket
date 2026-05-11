@@ -229,7 +229,7 @@ export default function NewsFeed() {
         </linearGradient>
         </defs>
         </svg>
-        <div className="h-full flex items-center justify-center px-4 py-8 sm:py-12">
+        <div className="absolute inset-0  flex items-center justify-center px-4 py-8 sm:py-12">
           <h1 className="user text-white text-[22px] sm:text-[28px] md:text-[32px] lg:text-[34px]
             leading-[130%] sm:leading-[120%] text-center">
             Latest World News on <br className="hidden sm:block" /> International Trade
