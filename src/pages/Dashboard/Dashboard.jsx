@@ -197,7 +197,6 @@ const Dashboard = () => {
                 </p>
                 <img src={Group_26} alt="icon" className="w-5 h-5 shrink-0" />
               </div>
-              {/* Slider track — 100% width, responsive */}
               <div className="flex flex-col items-start gap-2 bg-[#1a1a1a] rounded-xl">
                 <div
                   ref={trackRef}

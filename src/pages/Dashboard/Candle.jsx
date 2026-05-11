@@ -291,20 +291,10 @@ export default function AccountBalanceDashboard() {
       <div
   class="absolute inset-0 block h-full w-full rounded-[inherit] p-px [mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] mask-subtract! [background:linear-gradient(252.84deg,#86B4B4_0.99%,rgba(58,78,78,0.1)_36.61%)]"
 ></div>
-{/* <svg className='w-full h-fit absolute top-0 left-0 z-1' viewBox="0 0 740 406" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="0.5" y="0.5" width="739" height="405" rx="19.5" stroke="url(#paint0_linear_2202_50)"/>
-<defs>
-<linearGradient id="paint0_linear_2202_50" x1="733.5" y1="5.50001" x2="471.5" y2="153" gradientUnits="userSpaceOnUse">
-<stop stop-color="#86B4B4"/>
-<stop offset="1" stop-color="#3A4E4E" stop-opacity="0.1"/>
-</linearGradient>
-</defs>
-</svg> */}
-
       <div className="flex items-center justify-between mb-4 gap-2 flex-wrap relative z-10">
         <div className="flex items-center gap-2 sm:gap-3 min-w-0">
           <img src={dateIcon} alt="Data" className="shrink-0 w-6 h-6 sm:w-auto sm:h-auto" />
-          <span className="text-[18px] sm:text-[22px] lg:text-[24px] leading-[150%] bg-linear-to-b from-white via-white to-[#999999] bg-clip-text text-transparent truncate">
+          <span className="accountfas">
             Account balance
           </span>
         </div>

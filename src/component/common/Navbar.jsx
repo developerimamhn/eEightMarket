@@ -23,13 +23,13 @@ export default function Navbar({ onMenuClick, sidebarOpen }) {
               background: "linear-gradient(90deg, rgba(14,31,37,0.8) 0%, rgba(13,30,33,0.8) 55.43%)",
             }}
           >
-            <img src={search} alt="search" className="w-5 h-5 object-contain shrink-0 opacity-50 mr-2" />
+            <img src={search} alt="search" className="w-5 h-5 object-contain shrink-0 mr-2" />
             <input
               type="text"
               placeholder="Search"
               onFocus={() => setSearchFocused(true)}
               onBlur={() => setSearchFocused(false)}
-              className="bg-transparent text-[13px] text-white/50 placeholder:text-white/35
+              className="bg-transparent text-[13px] text-white/50 placeholder:text-white/75
                          placeholder:text-[14px] outline-none flex-1 min-w-0"
             />
             <button className="flex items-center justify-center shrink-0 ml-auto">
@@ -68,8 +68,8 @@ function DesktopRightActions() {
     <div className="flex items-center gap-3">
       {/* Bell */}
       <button
-        className="flex items-center justify-center w-12 h-12 rounded-[16px] bg-white/[0.04]
-                   hover:bg-white/[0.08] transition-colors active:scale-95"
+        className="flex items-center justify-center w-12 h-12 rounded-2xl bg-white/4
+                   hover:bg-white/8 transition-colors active:scale-95"
         aria-label="Notifications"
       >
         <img src={Bell} alt="bell" className="w-12 h-12 object-contain" />
@@ -80,12 +80,12 @@ function DesktopRightActions() {
         <button
           onClick={() => setAccountOpen((v) => !v)}
           className="relative flex items-center justify-between
-                     w-[190px] lg:w-[242px] h-[48px] rounded-[16px] px-[14px] lg:px-[20px]
+                     w-47.5 lg:w-60.5 h-12 rounded-2xl px-3.5 lg:px-5
                      bg-[#161817] hover:bg-[#1c1f1d] transition-colors"
         >
-          <span className="absolute inset-0 rounded-[16px] p-[1px] pointer-events-none"
+          <span className="absolute inset-0 rounded-2xl p-px pointer-events-none"
             style={{ background: "linear-gradient(198.73deg, rgba(244,253,255,0.5) 5.95%, rgba(255,255,255,0) 43.28%)" }}>
-            <span className="w-full h-full block rounded-[16px] bg-[#161817]" />
+            <span className="w-full h-full block rounded-2xl bg-[#161817]" />
           </span>
           <span className="user-koma text-[13px] lg:text-[15px] font-normal text-white relative z-10 truncate mr-2">
             E8 Account 2110113586
@@ -103,30 +103,14 @@ function DesktopRightActions() {
             {["E8 Account 2110113586", "E8 Account 3210024571", "E8 Account 4120987654"].map((acc, i) => (
               <button key={i}
                 className="w-full text-left px-4 py-3 text-[13px] text-white/70
-                           hover:bg-white/[0.06] hover:text-white transition-colors">
+                           hover:bg-white/6 hover:text-white transition-colors">
                 {acc}
               </button>
             ))}
           </div>
         )}
       </div>
-
-      {/* User Profile */}
-<svg className="absolute top-1 right-0" width="419" height="274" viewBox="0 0 419 274" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <g filter="url(#filter0_f_74_376)">
-    <circle cx="286.5" cy="-12.5" r="56.5" fill="#7DFFE9" fillOpacity="0.8"/>
-  </g>
-  <defs>
-    <filter id="filter0_f_74_376" x="0" y="-299" width="573" height="573" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-      <feFlood floodOpacity="0" result="BackgroundImageFix"/>
-      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-      <feGaussianBlur stdDeviation="115" result="effect1_foregroundBlur_74_376"/>
-    </filter>
-  </defs>
-</svg>
-
-
-
+   
       <div ref={userRef} className="relative">
         <button
           onClick={() => setUserOpen((v) => !v)}

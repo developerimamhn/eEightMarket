@@ -90,6 +90,17 @@
   font-style: normal;
 }
 
+
+@layer utilities {
+  .accountfas {
+    font-family: 'Neue Haas Grotesk Text Pro';
+    @apply font-medium text-[18px] sm:text-[22px] lg:text-[24px] leading-[150%] bg-linear-to-b from-white via-white to-[#999999] bg-clip-text text-transparent truncate;
+  }
+}
+
+
+
+
 .text-base-haas {
   font-family: 'Neue Haas Grotesk Text Pro';
   @apply font-normal text-[14px] tracking-[0%] bg-transparent placeholder:text-white/25 text-left focus:outline-hidden outline-hidden! border-none leading-[150%] text-[#ffffffd9] w-full;
@@ -141,7 +152,16 @@
 }
 
 .nav-item {
-  @apply relative w-full text-white flex items-center gap-[8px] px-[28px] py-2 rounded-lg overflow-hidden leading-[150%];
+  @apply relative text-white flex items-center gap-2 px-5 py-3 rounded-2xl overflow-hidden leading-[150%] w-full;
+  border-width: 1px solid #ffffff00;
+  background: transparent;
+}
+
+.nav-item.active {
+  background: linear-gradient(70.23deg, rgba(0, 232, 255, 0.4) 5.45%, rgba(3, 33, 40, 0.04) 66.07%);
+  border-color: rgba(255, 255, 255, 0.15);
+  border-width: 1px;
+  border-style: solid;
 }
 
 .logo-e8 {
