@@ -35,7 +35,7 @@ const SAMPLE_EVENTS = [
 ];
 
 const DAYS = ["Friday", "Saturday"];
-const CURRENCIES = ["All", "GBP", "EUR", "CHF", "CAD", "USD"];
+const CURRENCIES = ["GBP", "EUR", "CHF", "CAD", "USD","All"];
 
 const CURRENCY_LOGOS = {
   GBP: GBPLogo,
@@ -95,7 +95,7 @@ function Pagination({ current, total, onChange }) {
   };
 
   return (
-    <div className="flex items-center gap-[6px]">
+    <div className="flex items-center gap-1.5">
       {/* Prev */}
       <button
         onClick={() => onChange(Math.max(1, current - 1))}
