@@ -262,7 +262,9 @@ export function EconomicCalendar() {
       <button
         key={day}
         onClick={() => setActiveDay(day)}
-        className={`user h-full text-white px-2.5 sm:px-3 rounded-lg text-[12px] sm:text-[14px] whitespace-nowrap transition-all duration-150`}
+
+        className='gmail h-full text-white/70 px-2.5 sm:px-3 rounded-[8px] text-[12px] sm:text-[13.58px] whitespace-nowrap transition-all duration-150'
+
       >
         <span className="sm:hidden">{day.slice(0, 3)}</span>
         <span className="hidden sm:inline">{day}</span>
@@ -286,7 +288,7 @@ export function EconomicCalendar() {
                 <button
                   key={cur}
                   onClick={() => handleCurrencyClick(cur)}
-                  className={`shrink-0 inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full text-[11px] font-semibold border transition-all ${selectedCurrency === cur
+                  className={`gmail hrink-0 inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full text-[11px] font-semibold border transition-all ${selectedCurrency === cur
                     ? "bg-slate-700 border-slate-500 text-white"
                     : "border-slate-800 text-slate-500 hover:text-slate-300 hover:border-slate-700"
                     }`}
@@ -340,7 +342,7 @@ export function EconomicCalendar() {
                   <button
                     key={cur}
                     onClick={() => handleCurrencyClick(cur)}
-                    className={`shrink-0 inline-flex items-center gap-1.5 px-[8px] py-[3px] rounded-[8px] border border-white/10 bg-white/5 transition-all ${selectedCurrency === cur ? "text-white" : "text-slate-500 hover:text-slate-300"
+                    className={`gmail shrink-0 inline-flex items-center gap-1.5 px-[8px] py-[3px] rounded-[8px] border border-white/10 bg-white/5 leading-[150%] text-[10px] sm:text-[12px] transition-all ${selectedCurrency === cur ? "text-white" : "text-slate-500 hover:text-slate-300"
                       }`}
                   >
                     {CURRENCY_LOGOS[cur] && <img src={CURRENCY_LOGOS[cur]} alt={cur} className="w-[12px] h-[12px] rounded-[3px] object-contain" />}

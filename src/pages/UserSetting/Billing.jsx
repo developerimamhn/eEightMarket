@@ -76,7 +76,7 @@ const BillingInfo = () => {
         }}
       >
         <div
-          class="absolute inset-0 block h-full w-full rounded-[inherit] p-px [mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] mask-subtract! [background:linear-gradient(205.84deg,#86B4B4_0.99%,rgba(58,78,78,0.1)_36.61%)]"
+          className="absolute inset-0 block h-full w-full rounded-[inherit] p-px [mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] mask-subtract! [background:linear-gradient(205.84deg,#86B4B4_0.99%,rgba(58,78,78,0.1)_36.61%)] pointer-events-none"
         ></div>
         <div className="relative z-10 p-5">
 

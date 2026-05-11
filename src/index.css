@@ -189,19 +189,16 @@
   font-family: 'Neue Haas Grotesk Text Pro';
   font-weight: 400;
 }
-
+.Bold-700 {
+  font-family: 'Neue Haas Grotesk Text Pro';
+  font-weight: 700;
+}
 
 .user {
    font-family: 'Neue Haas Grotesk Text Pro';
   font-weight: 500;
 }
 
-
-.user-koma {
-  font-family: 'Neue Haas Grotesk Text Pro';
-  font-weight: 400;
-  
-}
 
 
 
@@ -331,3 +328,51 @@
   mask-composite: exclude;
   pointer-events: none;
 }
+
+
+
+.Tooltip {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+
+.drag-handle-right {
+  background: linear-gradient(270deg, #14C0DA 0%, #0B6674 100%);
+  position: absolute;
+  z-index: 10;
+  width: 28px;
+  height: 28px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border: 1px solid #2a6660;
+  cursor: grab;
+  transition: all 0.2s;
+  left: var(--left);
+  top: var(--top);
+  transform: translateX(-50%);
+}
+
+
+.drag-handle-left {
+  background: linear-gradient(90deg, #14C0DA 0%, #0B6674 100%);
+  position: absolute;
+  z-index: 10;
+  width: 28px;
+  height: 28px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border: 1px solid #2a6660;
+  cursor: grab;
+  transition: all 0.2s;
+  left: var(--left);
+  top: var(--top);
+}
+
+

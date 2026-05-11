@@ -94,7 +94,7 @@ const Extras = () => {
             <img src={Frame_1} alt="icon" className="w-3 h-3 sm:w-4 sm:h-4 md:w-4.5 md:h-4.5" />
           </div>
           <div>
-            <p className='font-medium text-[13px] sm:text-[14px] md:text-[15px] lg:text-[16px] xl:text-[17px] 2xl:text-[18px] leading-[160%] text-white'>
+            <p className='user text-[13px] sm:text-[14px] md:text-[15px] lg:text-[17.46px] xl:text-[17.46px] 2xl:text-[18px] leading-[160%] text-white'>
               Trading Instruments
             </p>
           </div>
@@ -4046,7 +4046,7 @@ const Extras = () => {
                       className="flex items-center justify-center rounded-[14px] border-[0.97px] border-[#FFFFFF1A] p-2 md:p-2.5 gap-[5.82px] bg-[#FFFFFF08] backdrop-blur-xs"
                     >
                       <img src={item.icon} alt="logo" className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" />
-                      <span className="font-normal text-[10px] sm:text-[12px] md:text-[13.58px] leading-[150%] text-[#FFFFFF]">
+                      <span className="gmail text-[10px] sm:text-[12px] md:text-[13.58px] leading-[150%] text-[#FFFFFF]">
                         {item.name}
                       </span>
                     </div>
@@ -4056,7 +4056,7 @@ const Extras = () => {
                   <input
                     type="text"
                     placeholder="Search Symbol"
-                    className="w-full h-full rounded-2xl border border-[#FFFFFF1A] bg-[#FDFFFF0D] font-normal text-[16px] leading-[150%] tracking-[0%] text-[#FFFFFFB2] px-4 outline-none backdrop-blur-xs"
+                    className="w-full h-full rounded-2xl border border-[#FFFFFF1A] bg-[#FDFFFF0D] gmail text-[16px] leading-[150%] tracking-normal text-[#FFFFFFB2] px-4 outline-none backdrop-blur-xs"
                   />
                   <div className="absolute right-1 top-1/2 -translate-y-1/2">
                     <img src={icon_7} alt="icon" className="w-8 h-8 md:w-10 md:h-10" />
@@ -4065,7 +4065,7 @@ const Extras = () => {
               </div>
               {/* Center section */}
               <div className='flex flex-col items-center justify-center gap-5 mt-6 relative z-12'>
-                <h3 className='font-medium text-[16px] md:text-[17px] lg:text-[18px] xl:text-[19px] 2xl:text-[20px] leading-[160%] tracking-[0%] text-center text-[#FFFFFF]'>
+                <h3 className='user text-[16px] md:text-[17px] lg:text-[18px] xl:text-[19px] 2xl:text-[20px] leading-[160%] tracking-normal text-center text-[#FFFFFF]'>
                   Nasdaq 100 Index
                 </h3>
                 {/* Toggle switch */}
@@ -4080,7 +4080,7 @@ const Extras = () => {
                   </div>
                   <button
                     onClick={() => setActive("left")}
-                    className={`relative z-10 w-34 h-8 md:w-42 md:h-9 lg:w-50 lg:h-10 flex items-center justify-center gap-1 font-normal text-[10px] sm:text-[12px] md:text-[13.58px] leading-[150%] cursor-pointer
+                    className={`relative z-10 w-34 h-8 md:w-42 md:h-9 lg:w-50 lg:h-10 flex items-center justify-center gap-1 gmail text-[10px] sm:text-[12px] md:text-[13.58px] leading-[150%] cursor-pointer
                       ${active === "left" ? "text-white" : "text-[#FFFFFFB2]"}`}
                   >
                     <img src={icon_8} alt="icon" className="w-3 h-3 md:w-[15.52px] md:h-[15.52px]" />
@@ -4088,7 +4088,7 @@ const Extras = () => {
                   </button>
                   <button
                     onClick={() => setActive("right")}
-                    className={`z-10 w-34 h-8 md:w-42 md:h-9 lg:w-50 lg:h-10 flex items-center justify-center font-normal text-[10px] sm:text-[12px] md:text-[13.58px] leading-[150%] rounded-2xl cursor-pointer
+                    className={`z-10 w-34 h-8 md:w-42 md:h-9 lg:w-50 lg:h-10 flex items-center justify-center gmail text-[10px] sm:text-[12px] md:text-[13.58px] leading-[150%] rounded-2xl cursor-pointer
                       ${active === "right" ? "text-white" : "text-[#FFFFFFB2]"}`}
                   >
                     Raw Spreads
@@ -4115,7 +4115,7 @@ const Extras = () => {
                       {/* Content */}
                       <div className='flex items-center gap-[7.76px]'>
                         <img src={icon_9} alt="icon" className="w-6 h-6 sm:w-8 sm:h-8 md:w-9 md:h-9" />
-                        <p className='font-normal text-[12px] sm:text-[13px] md:text-[14px] leading-[160%] tracking-[0%] text-[#FFFFFF]'>
+                        <p className='gmail text-[12px] sm:text-[13px] md:text-[14px] leading-[160%] tracking-normal text-[#FFFFFF]'>
                           Trading Hours
                         </p>
                       </div>
@@ -4144,11 +4144,11 @@ const Extras = () => {
                                 maskComposite: "exclude",
                               }}
                             />
-                            <p className="relative z-10 p-4 font-normal text-[13px]  sm:text-[14px]  md:text-[15px]  lg:text-[16px] leading-[150%] text-[#FFFFFFB2]">
+                            <p className="relative z-10 p-4 gmail text-[13px]  sm:text-[14px]  md:text-[15px]  lg:text-[16px] leading-[150%] text-[#FFFFFFB2]">
                               {item.day}
                             </p>
 
-                            <p className="relative z-10 p-4 font-medium text-[13px]  sm:text-[14px]  md:text-[15px]  lg:text-[16px] leading-[150%] text-[#FFFFFF]">
+                            <p className="relative z-10 p-4 user text-[13px]  sm:text-[14px]  md:text-[15px]  lg:text-[16px] leading-[150%] text-[#FFFFFF]">
                               {item.time}
                             </p>
                           </div>
@@ -4156,7 +4156,7 @@ const Extras = () => {
                         {/* Footer note */}
                         <div className="flex items-center gap-1 mt-2">
                           <img src={icon_11} alt="icon" className="w-6 h-6" />
-                          <p className="font-normal text-[13px] sm:text-[14px] md:text-[15px] lg:text-[16px] xl:text-[17px] 2xl:text-[18px] leading-[150%] text-[#FFFFFFB2]">
+                          <p className="gmail text-[13px] sm:text-[14px] md:text-[15px] lg:text-[16px] xl:text-[17px] 2xl:text-[18px] leading-[150%] text-[#FFFFFFB2]">
                             All times are in UTC timezone
                           </p>
                         </div>
@@ -4182,7 +4182,7 @@ const Extras = () => {
                     <div className="relative z-10 p-5">
                       <div className='flex items-center gap-[7.76px]'>
                         <img src={icon_10} alt="icon" className="w-6 h-6 sm:w-8 sm:h-8 md:w-9 md:h-9" />
-                        <p className='font-normal text-[12px] sm:text-[13px] md:text-[14px] leading-[160%] tracking-[0%] text-[#FFFFFF]'>
+                        <p className='gmail text-[12px] sm:text-[13px] md:text-[14px] leading-[160%] tracking-normal text-[#FFFFFF]'>
                           Information
                         </p>
                       </div>
@@ -4212,11 +4212,11 @@ const Extras = () => {
                               }}
                             />
 
-                            <p className="relative z-10 p-4 font-normal text-[13px]  sm:text-[14px]  md:text-[15px]  lg:text-[16px] leading-[150%] text-[#FFFFFFB2]">
+                            <p className="relative z-10 p-4 gmail text-[13px]  sm:text-[14px]  md:text-[15px]  lg:text-[16px] leading-[150%] text-[#FFFFFFB2]">
                               {item.day}
                             </p>
 
-                            <p className="relative z-10 p-4 font-medium text-[13px]  sm:text-[14px]  md:text-[15px]  lg:text-[16px] leading-[150%] text-[#FFFFFF]">
+                            <p className="relative z-10 p-4 user text-[13px]  sm:text-[14px]  md:text-[15px]  lg:text-[16px] leading-[150%] text-[#FFFFFF]">
                               {item.time}
                             </p>
                           </div>

@@ -127,8 +127,14 @@ const MobileSidebarHeader = () => {
     <div className="md:hidden flex flex-col gap-2.5 mb-4">
       <div className="flex items-center gap-2">
         <div
-          className="flex items-center flex-1 rounded-[14px] px-2 py-1.5 md:px-3 md:py-2.5"
-          style={{ background: "linear-gradient(90deg, rgba(14,31,37,0.8) 0%, rgba(13,30,33,0.8) 55.43%)" }}
+          className="flex items-center flex-1 bg-[#080A0B] rounded-[14px] px-2 py-1.5 md:px-3 md:py-2.5"
+         style={{
+  background: `
+    radial-gradient(ellipse at 20% 30%, rgba(0, 235, 255, 0.15) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 80%, rgba(0, 235, 255, 0.08) 0%, transparent 50%),
+    #080A0B
+  `
+}}
         >
           <img src={searchIcon} alt="search" className="w-4 h-4 object-contain opacity-50 mr-2 shrink-0" />
           <input
@@ -161,7 +167,7 @@ const MobileSidebarHeader = () => {
           >
             <span className="w-full h-full block rounded-[14px] bg-[#161817]" />
           </span>
-          <span className="text-[13px] font-normal text-white relative z-10 truncate mr-2">
+          <span className="gmail text-[13px] font-normal text-white relative z-10 truncate mr-2">
             E8 Account 2110113586
           </span>
           <img
@@ -205,8 +211,8 @@ const MobileSidebarHeader = () => {
                        relative z-10 shadow-[0_-1px_0_rgba(255,255,255,0.8)]"
           />
           <div className="flex-1 text-left relative z-10 min-w-0">
-            <div className="text-[13px] font-medium text-white/90 leading-[150%] truncate">James Carter</div>
-            <div className="text-[11px] text-white/40 leading-[160%] truncate">james.carter@example.com</div>
+            <div className="user text-[13px] font-medium text-white/90 leading-[150%] truncate">James Carter</div>
+            <div className="gmail text-[11px] text-white/30 leading-[160%] truncate">james.carter@example.com</div>
           </div>
           <div className="flex items-center gap-2 relative z-10 shrink-0">
             <img
@@ -258,7 +264,6 @@ const Sidebar = ({ mobileOpen, setMobileOpen }) => {
 
   return (
     <>
-      {/* Backdrop */}
       {mobileOpen && (
         <div
           className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden"
@@ -280,10 +285,7 @@ const Sidebar = ({ mobileOpen, setMobileOpen }) => {
         }}
       >
         <div className="absolute inset-0 bg-[#03151A]/90" />
-
         <div className="relative z-10 flex flex-col h-full p-4 overflow-hidden">
-
-          {/* Logo */}
           <div className="flex items-center justify-between mb-3.75">
             <div className="flex items-baseline gap-1.5">
               <span className="logo-e8">E8</span>
@@ -299,11 +301,7 @@ const Sidebar = ({ mobileOpen, setMobileOpen }) => {
               </svg>
             </button>
           </div>
-
-          {/* ── Mobile: Navbar elements inside sidebar ── */}
           <MobileSidebarHeader />
-
-          {/* Nav Groups */}
           <div className="flex-1 space-y-4 overflow-hidden">
             {navGroups.map((group) => (
               <div key={group.label}>
@@ -319,8 +317,6 @@ const Sidebar = ({ mobileOpen, setMobileOpen }) => {
               </div>
             ))}
           </div>
-
-          {/* Bottom items */}
           <div className="space-y-2 mt-4">
             {bottomItems.map((item) => (
               <NavItem
@@ -330,8 +326,6 @@ const Sidebar = ({ mobileOpen, setMobileOpen }) => {
                 onClick={() => handleClick(item)}
               />
             ))}
-
-            {/* Dark Mode */}
             <div className="flex items-center gap-[10px] px-[28px] py-[10px]">
               <span className="opacity-50">
                 <Ico src={Moon} alt="Moon" />
