@@ -1,4 +1,5 @@
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, useLayoutEffect } from "react";
+import gsap from "gsap";
 import Candle from "./Candle"
 
 import icon from "../../assets/img/trade-up.svg"
@@ -98,10 +99,36 @@ const HatchPattern = () => (
 
 
 const Dashboard = () => {
+  const dashboardRef = useRef(null);
   const [active, setActive] = useState("max");
   const [value, setValue] = useState(0.6);
   const trackRef = useRef(null);
   const dragging = useRef(false);
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+      // ড্যাশবোর্ড লোড হওয়ার সময় staggered animation
+      tl.from(".candle-section", { opacity: 0, x: -50, duration: 1 })
+        .from(".analysis-section", { opacity: 0, x: 50, duration: 1 }, "-=0.8")
+        .from(".stat-card", { 
+          opacity: 0, 
+          y: 30, 
+          stagger: 0.1, 
+          duration: 0.8 
+        }, "-=0.6")
+        .from(".goal-section-header", { opacity: 0, y: 20, duration: 0.6 }, "-=0.4")
+        .from(".goal-card", { 
+          opacity: 0, 
+          y: 20, 
+          stagger: 0.1, 
+          duration: 0.7 
+        }, "-=0.5");
+    }, dashboardRef);
+
+    return () => ctx.revert();
+  }, []);
 
   const getVal = useCallback((clientX) => {
     const rect = trackRef.current.getBoundingClientRect();
@@ -115,13 +142,13 @@ const Dashboard = () => {
   const onEnd = () => { dragging.current = false; };
 
   return (
-    <div className=''>
+    <div ref={dashboardRef}>
 
       <div className="flex flex-col lg:flex-row gap-4 items-stretch mb-6">
-        <div className="w-full lg:flex-1 min-w-0">
+        <div className="candle-section w-full lg:flex-1 min-w-0">
           <Candle />
         </div>
-        <div className="relative z-0 w-full lg:w-70 xl:w-75 2xl:w-[320px] shrink-0 rounded-[20px] bg-[#121212] overflow-hidden p-4 sm:p-5 flex flex-col justify-between gap-4 min-h-95 lg:min-h-111.5 lg:ml-0">
+        <div className="analysis-section relative z-0 w-full lg:w-70 xl:w-75 2xl:w-[320px] shrink-0 rounded-[20px] bg-[#121212] overflow-hidden p-4 sm:p-5 flex flex-col justify-between gap-4 min-h-95 lg:min-h-111.5 lg:ml-0">
           <div className="absolute top-0 right-0 z-0 pointer-events-none">
             <svg width="276" height="288" viewBox="0 0 276 288" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g filter="url(#filter0_f_1318_639)">
@@ -267,7 +294,7 @@ const Dashboard = () => {
         {stats.map((item) => (
           <div
             key={item.id}
-            className="flex flex-col gap-5 relative w-full h-full rounded-2xl bg-[#FFFFFF08] p-5 overflow-hidden"
+            className="stat-card flex flex-col gap-5 relative w-full h-full rounded-2xl bg-[#FFFFFF08] p-5 overflow-hidden"
           >
             {/* Gradient border */}
             <div className='absolute inset-0 p-px rounded-2xl stat-card-border' />
@@ -337,7 +364,7 @@ const Dashboard = () => {
 
       {/* Main card 2 */}
       <div className='w-full h-full rounded-3xl bg-[#121212] opacity-100 mt-10 p-5'>
-        <div className='flex items-center gap-[7.75px]'>
+        <div className='goal-section-header flex items-center gap-[7.75px]'>
           <div className='flex items-center justify-center relative w-11 h-11 rounded-2xl bg-[#FFFFFF12] overflow-hidden'>
             {/* Gradient border */}
             <div className="gradient-border-fade" />
@@ -377,7 +404,7 @@ const Dashboard = () => {
           {cards.map((item) => (
             <div
               key={item.id}
-              className='relative w-full h-full rounded-2xl bg-[#FFFFFF08] overflow-hidden'>
+              className='goal-card relative w-full h-full rounded-2xl bg-[#FFFFFF08] overflow-hidden'>
 
               {/* Gradient border */}
               <div className="gradient-border-card" />

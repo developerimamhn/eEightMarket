@@ -1,4 +1,5 @@
-import { useState, useId, useRef, useEffect } from "react";
+import { useState, useId, useRef, useEffect, useLayoutEffect } from "react";
+import gsap from "gsap";
 import { useNavigate, useLocation } from "react-router-dom";
 import bgImage from "../../assets/img/bg_3.png";
 import Dashboard from "../../assets/img/dashboard.png";
@@ -19,7 +20,7 @@ import Bell from "../../assets/img/belIcon.png";
 import downArrow from "../../assets/img/Down_Arrow.png";
 
 const Ico = ({ src, alt }) => (
-  <img src={src} alt={alt} className="w-[20px] h-[20px] object-contain" />
+  <img src={src} alt={alt} className="w-5 h-5 object-contain" />
 );
 const navGroups = [
   {
@@ -87,7 +88,7 @@ const BtnActiveBg = () => {
 const Toggle = ({ on, onClick }) => (
   <div
     onClick={onClick}
-    className="w-[36px] h-[20px] p-[2px] rounded-[120px] border border-[#00858C] cursor-pointer flex items-center"
+    className="w-9 h-5 p-0.5 rounded-[120px] border border-[#00858C] cursor-pointer flex items-center"
   >
     <div
       className={`w-3.5 h-3.5 rounded-full bg-[#00E8FF] transition-all duration-300
@@ -108,6 +109,21 @@ const NavItem = ({ src, label, active, onClick }) => (
   </span>
 </button>
 );
+
+/**
+ * স্মুথ ড্রপডাউন অ্যানিমেশনের জন্য একটি র‍্যাপার কম্পোনেন্ট
+ */
+function DropdownWrapper({ children, className }) {
+  const ref = useRef(null);
+  useLayoutEffect(() => {
+    gsap.fromTo(ref.current, 
+      { opacity: 0, y: -10, scale: 0.95 },
+      { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "power2.out" }
+    );
+  }, []);
+  return <div ref={ref} className={className}>{children}</div>;
+}
+
 const MobileSidebarHeader = () => {
   const [accountOpen, setAccountOpen] = useState(false);
   const [userOpen, setUserOpen] = useState(false);
@@ -178,10 +194,11 @@ const MobileSidebarHeader = () => {
         </button>
 
         {accountOpen && (
-          <div className="absolute top-[calc(100%+6px)] left-0 right-0 z-50
-                          rounded-[14px] bg-[#161817] border border-white/10
-                          shadow-[0_8px_32px_rgba(0,0,0,0.6)] overflow-hidden
-                          animate-[fadeIn_0.15s_ease]">
+          <DropdownWrapper 
+            className="absolute top-[calc(100%+6px)] left-0 right-0 z-50
+                       rounded-[14px] bg-[#161817] border border-white/10
+                       shadow-[0_8px_32px_rgba(0,0,0,0.6)] overflow-hidden"
+          >
             {["E8 Account 2110113586", "E8 Account 3210024571", "E8 Account 4120987654"].map((acc, i) => (
               <button key={i}
                 className="w-full text-left px-4 py-3 text-[13px] text-white/70
@@ -189,7 +206,7 @@ const MobileSidebarHeader = () => {
                 {acc}
               </button>
             ))}
-          </div>
+          </DropdownWrapper>
         )}
       </div>
       <div ref={userRef} className="relative">
@@ -223,10 +240,11 @@ const MobileSidebarHeader = () => {
           </div>
         </button>
         {userOpen && (
-          <div className="absolute top-[calc(100%+6px)] left-0 right-0 z-50 min-w-full
-                          rounded-[14px] bg-[#161817] border border-white/10
-                          shadow-[0_8px_32px_rgba(0,0,0,0.6)] overflow-hidden
-                          animate-[fadeIn_0.15s_ease]">
+          <DropdownWrapper 
+            className="absolute top-[calc(100%+6px)] left-0 right-0 z-50 min-w-full
+                       rounded-[14px] bg-[#161817] border border-white/10
+                       shadow-[0_8px_32px_rgba(0,0,0,0.6)] overflow-hidden"
+          >
             {[
               { label: "Profile Settings", icon: "⚙" },
               { label: "Security", icon: "🔒" },
@@ -243,7 +261,7 @@ const MobileSidebarHeader = () => {
                 {label}
               </button>
             ))}
-          </div>
+          </DropdownWrapper>
         )}
       </div>
 
@@ -256,6 +274,24 @@ const Sidebar = ({ mobileOpen, setMobileOpen }) => {
   const navigate = useNavigate();
   const location = useLocation();
   const [darkMode, setDarkMode] = useState(true);
+  const sidebarRef = useRef(null);
+  const navContentRef = useRef(null);
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      // সাইডবার এলিমেন্টগুলোর staggered entrance অ্যানিমেশন
+      gsap.from(navContentRef.current.children, {
+        opacity: 0,
+        x: -20,
+        stagger: 0.08,
+        duration: 0.6,
+        ease: "power3.out",
+        delay: 0.2
+      });
+    }, sidebarRef);
+
+    return () => ctx.revert();
+  }, []);
 
   const handleClick = (item) => {
     navigate(item.route);
@@ -272,6 +308,7 @@ const Sidebar = ({ mobileOpen, setMobileOpen }) => {
       )}
 
       <div
+        ref={sidebarRef}
         className={`
           sidebar fixed top-0 left-0 h-screen w-full md:w-60 z-50
           md:static
@@ -285,7 +322,7 @@ const Sidebar = ({ mobileOpen, setMobileOpen }) => {
         }}
       >
         <div className="absolute inset-0 bg-[#03151A]/90" />
-        <div className="relative z-10 flex flex-col h-full p-4 overflow-hidden">
+        <div ref={navContentRef} className="relative z-10 flex flex-col h-full p-4 overflow-hidden">
           <div className="flex items-center justify-between mb-3.75">
             <div className="flex items-baseline gap-1.5">
               <span className="logo-e8">E8</span>
