@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useRef, useLayoutEffect } from "react";
+import gsap from "gsap";
 import GBPLogo from "../assets/img/GBP.png";
 import EURLogo from "../assets/img/EUR.png";
 import CHFLogo from "../assets/img/CHU.png";
@@ -22,20 +23,20 @@ const SAMPLE_EVENTS = [
   { id: 8, name: "MPC Member Greene Speaks", impact: "low", currency: "GBP", date: "25/04/2025 20:00:00", forecast: "0", previous: "0" },
   { id: 9, name: "IMF Meeting", impact: "low", currency: "All", date: "25/04/2025 20:15:00", forecast: "0", previous: "0" },
   { id: 10, name: "IMF Meeting", impact: "low", currency: "All", date: "25/04/2025 20:15:00", forecast: "0", previous: "0" },
-  { id: 1, name: "Retail Sales m/m", impact: "high", currency: "GBP", date: "25/04/2025 12:00:00", forecast: "-0.4%", previous: "1.0%" },
-  { id: 2, name: "Italian Bank Holiday", impact: "holiday", currency: "EUR", date: "25/04/2025 12:03:00", forecast: "0", previous: "0" },
-  { id: 3, name: "SNB Chairman Schlegel Speaks", impact: "high", currency: "CHF", date: "25/04/2025 14:00:00", forecast: "0", previous: "0" },
-  { id: 4, name: "Core Retail Sales m/m", impact: "high", currency: "CAD", date: "25/04/2025 18:30:00", forecast: "0.0%", previous: "0.2%" },
-  { id: 5, name: "Retail Sales m/m", impact: "high", currency: "CAD", date: "25/04/2025 12:00:00", forecast: "-0.4%", previous: "-0.6%" },
-  { id: 6, name: "Revised UoM Inflation Expect", impact: "low", currency: "USD", date: "25/04/2025 20:00:00", forecast: "0", previous: "6.7%" },
-  { id: 7, name: "Revised UoM Consumer Sentiment", impact: "medium", currency: "USD", date: "25/04/2025 20:00:00", forecast: "50.8", previous: "50.8" },
-  { id: 8, name: "MPC Member Greene Speaks", impact: "low", currency: "GBP", date: "25/04/2025 20:00:00", forecast: "0", previous: "0" },
-  { id: 9, name: "IMF Meeting", impact: "low", currency: "All", date: "25/04/2025 20:15:00", forecast: "0", previous: "0" },
-  { id: 10, name: "IMF Meeting", impact: "low", currency: "All", date: "25/04/2025 20:15:00", forecast: "0", previous: "0" },
+  { id: 11, name: "Retail Sales m/m", impact: "high", currency: "GBP", date: "25/04/2025 12:00:00", forecast: "-0.4%", previous: "1.0%" },
+  { id: 12, name: "Italian Bank Holiday", impact: "holiday", currency: "EUR", date: "25/04/2025 12:03:00", forecast: "0", previous: "0" },
+  { id: 13, name: "SNB Chairman Schlegel Speaks", impact: "high", currency: "CHF", date: "25/04/2025 14:00:00", forecast: "0", previous: "0" },
+  { id: 14, name: "Core Retail Sales m/m", impact: "high", currency: "CAD", date: "25/04/2025 18:30:00", forecast: "0.0%", previous: "0.2%" },
+  { id: 15, name: "Retail Sales m/m", impact: "high", currency: "CAD", date: "25/04/2025 12:00:00", forecast: "-0.4%", previous: "-0.6%" },
+  { id: 16, name: "Revised UoM Inflation Expect", impact: "low", currency: "USD", date: "25/04/2025 20:00:00", forecast: "0", previous: "6.7%" },
+  { id: 17, name: "Revised UoM Consumer Sentiment", impact: "medium", currency: "USD", date: "25/04/2025 20:00:00", forecast: "50.8", previous: "50.8" },
+  { id: 18, name: "MPC Member Greene Speaks", impact: "low", currency: "GBP", date: "25/04/2025 20:00:00", forecast: "0", previous: "0" },
+  { id: 19, name: "IMF Meeting", impact: "low", currency: "All", date: "25/04/2025 20:15:00", forecast: "0", previous: "0" },
+  { id: 20, name: "IMF Meeting", impact: "low", currency: "All", date: "25/04/2025 20:15:00", forecast: "0", previous: "0" },
 ];
 
 const DAYS = ["Friday", "Saturday"];
-const CURRENCIES = ["GBP", "EUR", "CHF", "CAD", "USD","All"];
+const CURRENCIES = ["GBP", "EUR", "CHF", "CAD", "USD", "All"];
 
 const CURRENCY_LOGOS = {
   GBP: GBPLogo,
@@ -227,6 +228,86 @@ export function EconomicCalendar() {
   const [page, setPage] = useState(1);
   const rowsPerPage = 10;
 
+  // ── animation ref ──────────────────────────────────────────────────────────
+  const pageRef = useRef(null);
+
+useLayoutEffect(() => {
+  const ctx = gsap.context(() => {
+    const tl = gsap.timeline({
+      defaults: {
+        ease: "power3.out",
+        duration: 0.7,
+      },
+    });
+
+    tl
+      // Header
+      .from(".ec-header", {
+        opacity: 0,
+        y: -18,
+      })
+
+      // Main Card
+      .from(".ec-main-card", {
+        opacity: 0,
+        y: 28,
+        duration: 0.9,
+      }, "<0.15")
+
+      // Filters
+      .from(".ec-filters", {
+        opacity: 0,
+        y: 14,
+        duration: 0.65,
+      }, "<0.1")
+
+      // Currency Buttons
+      .from(".ec-currency-btn", {
+        opacity: 0,
+        y: 10,
+        scale: 0.94,
+        stagger: 0.06,
+        duration: 0.45,
+        ease: "back.out(1.5)",
+      }, "<0.05")
+
+      // Impact Buttons
+      .from(".ec-impact-btn", {
+        opacity: 0,
+        y: 10,
+        scale: 0.94,
+        stagger: 0.06,
+        duration: 0.45,
+        ease: "back.out(1.5)",
+      }, "<0.05")
+
+      // Table Head
+      .from(".ec-table-head", {
+        opacity: 0,
+        y: 10,
+        duration: 0.45,
+      }, "<0.1")
+
+      // Table Rows
+      .from(".ec-table-row", {
+        opacity: 0,
+        y: 12,
+        stagger: 0.05,
+        duration: 0.4,
+      }, "<0.05")
+
+      // Footer
+      .from(".ec-footer", {
+        opacity: 0,
+        y: 8,
+        duration: 0.4,
+      }, "<0.08");
+
+  }, pageRef);
+
+  return () => ctx.revert();
+}, []);
+
   const filtered = SAMPLE_EVENTS.filter((e) => {
     const currencyMatch = selectedCurrency === "All" ? true : e.currency === selectedCurrency;
     const impactMatch = selectedImpact === "all" ? true : e.impact === selectedImpact;
@@ -240,71 +321,70 @@ export function EconomicCalendar() {
   const handleImpactClick = (key) => { setSelectedImpact(key); setPage(1); };
 
   return (
-    <div className="p-3 sm:p-6">
-
+    <div className="p-3 sm:p-6" ref={pageRef}>
 
       {/* ── Top header ── */}
-    <div className="flex items-center justify-between gap-3 pb-6">
+      <div className="ec-header flex items-center justify-between gap-3 pb-6">
 
-      {/* Logo + Title */}
-      <div className="flex items-center gap-1.5 sm:gap-2 min-w-0">
-        <img
-          src={Calendar_Logo}
-          alt="calendar"
-          className="w-8 h-8 sm:w-10 sm:h-10 lg:w-11 lg:h-11 rounded-xl sm:rounded-2xl object-contain shrink-0"
-        />
-        <span className="user text-[15px] sm:text-[18px] text-white truncate">
-          Economic Calendar
-        </span>
+        {/* Logo + Title */}
+        <div className="flex items-center gap-1.5 sm:gap-2 min-w-0">
+          <img
+            src={Calendar_Logo}
+            alt="calendar"
+            className="w-8 h-8 sm:w-10 sm:h-10 lg:w-11 lg:h-11 rounded-xl sm:rounded-2xl object-contain shrink-0"
+          />
+          <span className="user text-[15px] sm:text-[18px] text-white truncate">
+            Economic Calendar
+          </span>
+        </div>
+
+        <div className="shrink-0 flex items-center gap-0.5 h-9 sm:h-10 lg:h-11.25 bg-white/3 border border-white/10 rounded-[10px] p-1">
+          {DAYS.map((day) => (
+            <button
+              key={day}
+              onClick={() => setActiveDay(day)}
+              className='gmail h-full text-white/70 px-2.5 sm:px-3 rounded-lg text-[12px] sm:text-[13.58px] whitespace-nowrap transition-all duration-150'
+            >
+              <span className="sm:hidden">{day.slice(0, 3)}</span>
+              <span className="hidden sm:inline">{day}</span>
+            </button>
+          ))}
+        </div>
       </div>
-      <div className="shrink-0 flex items-center gap-0.5 h-9 sm:h-10 lg:h-11.25 bg-white/3 border border-white/10 rounded-[10px] p-1">
-        {DAYS.map((day) => (
-          <button
-            key={day}
-            onClick={() => setActiveDay(day)}
 
-            className='gmail h-full text-white/70 px-2.5 sm:px-3 rounded-lg text-[12px] sm:text-[13.58px] whitespace-nowrap transition-all duration-150'
-
-          >
-            <span className="sm:hidden">{day.slice(0, 3)}</span>
-            <span className="hidden sm:inline">{day}</span>
-          </button>
-        ))}
-      </div>
-    </div>
-      <div className="w-full rounded-[19px] bg-[linear-gradient(180deg,#011314_0%,#011515_85%,rgba(9,42,45,0.7)_100%)]">
-        <div className="w-full rounded-2xl  relative">
+      <div className="ec-main-card w-full rounded-[19px] bg-[linear-gradient(180deg,#011314_0%,#011515_85%,rgba(9,42,45,0.7)_100%)]">
+        <div className="w-full rounded-2xl relative">
           <div
-  class="absolute inset-0 block h-full w-full rounded-[inherit] p-px [mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] mask-subtract! [background:linear-gradient(252.84deg,#86B4B4_0.99%,rgba(58,78,78,0.1)_36.61%)]"
-></div>
+            className="absolute inset-0 block h-full w-full rounded-[inherit] p-px [mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] mask-subtract! [background:linear-gradient(252.84deg,#86B4B4_0.99%,rgba(58,78,78,0.1)_36.61%)]"
+          />
           <svg className="absolute top-0 left-0 w-full h-auto -z-px" viewBox="0 0 1104 811" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g clip-path="url(#clip0_2258_50)">
-            <g filter="url(#filter0_f_2258_50)">
-            <path d="M704.452 -91.2332C655.891 23.0469 581.844 138.413 569.105 133C556.367 127.587 617.047 7.78 665.608 -106.5C714.169 -220.78 756.574 -313.37 769.313 -307.957C782.052 -302.544 753.013 -205.513 704.452 -91.2332Z" fill="#14FCF2" fill-opacity="0.25"/>
-            </g>
-            <g filter="url(#filter1_f_2258_50)">
-            <ellipse cx="866.907" cy="-111.411" rx="41.0681" ry="318.93" transform="rotate(23.0221 866.907 -111.411)" fill="#14FCF2" fill-opacity="0.25"/>
-            </g>
+            <g clipPath="url(#clip0_2258_50)">
+              <g filter="url(#filter0_f_2258_50)">
+                <path d="M704.452 -91.2332C655.891 23.0469 581.844 138.413 569.105 133C556.367 127.587 617.047 7.78 665.608 -106.5C714.169 -220.78 756.574 -313.37 769.313 -307.957C782.052 -302.544 753.013 -205.513 704.452 -91.2332Z" fill="#14FCF2" fillOpacity="0.25" />
+              </g>
+              <g filter="url(#filter1_f_2258_50)">
+                <ellipse cx="866.907" cy="-111.411" rx="41.0681" ry="318.93" transform="rotate(23.0221 866.907 -111.411)" fill="#14FCF2" fillOpacity="0.25" />
+              </g>
             </g>
             <defs>
-            <filter id="filter0_f_2258_50" x="467.387" y="-408.183" width="404.923" height="641.366" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-            <feGaussianBlur stdDeviation="50" result="effect1_foregroundBlur_2258_50"/>
-            </filter>
-            <filter id="filter1_f_2258_50" x="636.542" y="-505.386" width="460.73" height="787.95" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-            <feGaussianBlur stdDeviation="50" result="effect1_foregroundBlur_2258_50"/>
-            </filter>
-            <clipPath id="clip0_2258_50">
-            <rect width="1104" height="811" rx="20" fill="white"/>
-            </clipPath>
+              <filter id="filter0_f_2258_50" x="467.387" y="-408.183" width="404.923" height="641.366" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                <feFlood floodOpacity="0" result="BackgroundImageFix" />
+                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                <feGaussianBlur stdDeviation="50" result="effect1_foregroundBlur_2258_50" />
+              </filter>
+              <filter id="filter1_f_2258_50" x="636.542" y="-505.386" width="460.73" height="787.95" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                <feFlood floodOpacity="0" result="BackgroundImageFix" />
+                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                <feGaussianBlur stdDeviation="50" result="effect1_foregroundBlur_2258_50" />
+              </filter>
+              <clipPath id="clip0_2258_50">
+                <rect width="1104" height="811" rx="20" fill="white" />
+              </clipPath>
             </defs>
-            </svg>
+          </svg>
 
-
-          <div className="block sm:hidden relative z-10">
+          {/* ── MOBILE filters ── */}
+          <div className="ec-filters block sm:hidden relative z-10">
             <div
               className="flex items-center gap-2 px-3 pt-3 pb-2 overflow-x-auto"
               style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
@@ -316,7 +396,7 @@ export function EconomicCalendar() {
                 <button
                   key={cur}
                   onClick={() => handleCurrencyClick(cur)}
-                  className={`gmail hrink-0 inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full text-[11px] font-semibold border transition-all ${selectedCurrency === cur
+                  className={`ec-currency-btn gmail shrink-0 inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full text-[11px] font-semibold border transition-all ${selectedCurrency === cur
                     ? "bg-slate-700 border-slate-500 text-white"
                     : "border-slate-800 text-slate-500 hover:text-slate-300 hover:border-slate-700"
                     }`}
@@ -335,12 +415,11 @@ export function EconomicCalendar() {
               <div className="shrink-0 flex items-center">
                 <img src={ImpactLogo} alt="impact" className="hidden md:block h-[36px] rounded-[14px] object-contain opacity-60" />
               </div>
-
               {Object.entries(IMPACT_STYLES).map(([key, s]) => (
                 <button
                   key={key}
                   onClick={() => handleImpactClick(key)}
-                  className={`shrink-0 inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full text-[11px] font-semibold border transition-all ${selectedImpact === key
+                  className={`ec-impact-btn shrink-0 inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full text-[11px] font-semibold border transition-all ${selectedImpact === key
                     ? "bg-slate-700 border-slate-500 text-white"
                     : "border-slate-800 text-slate-500 hover:border-slate-700"
                     }`}
@@ -352,7 +431,8 @@ export function EconomicCalendar() {
             </div>
           </div>
 
-          <div className="hidden sm:flex items-start justify-between p-3.5 lg:p-3.75 xl:p-4 2xl:p-5 relative z-10">
+          {/* ── DESKTOP filters ── */}
+          <div className="ec-filters hidden sm:flex items-start justify-between p-3.5 lg:p-3.75 xl:p-4 2xl:p-5 relative z-10">
 
             {/* Currency */}
             <div className="flex flex-col gap-4">
@@ -365,7 +445,7 @@ export function EconomicCalendar() {
                   <button
                     key={cur}
                     onClick={() => handleCurrencyClick(cur)}
-                    className={`gmail shrink-0 inline-flex items-center gap-1.5 px-[8px] py-[3px] rounded-[8px] border border-white/10 bg-white/5 leading-[150%] text-[10px] sm:text-[12px] transition-all ${selectedCurrency === cur ? "text-white" : "text-slate-500 hover:text-slate-300"
+                    className={`ec-currency-btn gmail shrink-0 inline-flex items-center gap-1.5 px-[8px] py-[3px] rounded-[8px] border border-white/10 bg-white/5 leading-[150%] text-[10px] sm:text-[12px] transition-all ${selectedCurrency === cur ? "text-white" : "text-slate-500 hover:text-slate-300"
                       }`}
                   >
                     {CURRENCY_LOGOS[cur] && <img src={CURRENCY_LOGOS[cur]} alt={cur} className="w-[12px] h-[12px] rounded-[3px] object-contain" />}
@@ -386,7 +466,7 @@ export function EconomicCalendar() {
                   <button
                     key={key}
                     onClick={() => handleImpactClick(key)}
-                    className={`inline-flex items-center gap-1.5 px-[8px] py-[3px] rounded-[8px] border border-white/10 bg-white/5 transition-all ${selectedImpact === key ? "text-white" : "text-slate-600 hover:text-slate-400"
+                    className={`ec-impact-btn inline-flex items-center gap-1.5 px-[8px] py-[3px] rounded-[8px] border border-white/10 bg-white/5 transition-all ${selectedImpact === key ? "text-white" : "text-slate-600 hover:text-slate-400"
                       }`}
                   >
                     <span className={`w-[12px] h-[12px] rounded-[120px] ${s.dot}`} />
@@ -395,13 +475,9 @@ export function EconomicCalendar() {
                 ))}
               </div>
             </div>
-
           </div>
 
-
-          {/* ════════════════════════════════
-              MOBILE: Accordion list
-          ════════════════════════════════ */}
+          {/* ── MOBILE: Accordion list ── */}
           <div className="block sm:hidden relative z-10">
             {paged.length === 0 ? (
               <p className="text-center py-10 text-slate-600 text-sm">No events found</p>
@@ -412,13 +488,11 @@ export function EconomicCalendar() {
             )}
           </div>
 
-          {/* ════════════════════════════════
-              DESKTOP: Table
-          ════════════════════════════════ */}
+          {/* ── DESKTOP: Table ── */}
           <div className="hidden sm:block px-4 relative z-10">
             <table className="w-full border-collapse" style={{ minWidth: "600px" }}>
-             <thead>
-                <tr>
+              <thead>
+                <tr className="ec-table-head">
                   {TABLE_COLS.map((col, idx, arr) => (
                     <th
                       key={col.label}
@@ -428,7 +502,7 @@ export function EconomicCalendar() {
                       `}
                     >
                       <div className={`flex items-center ${idx < arr.length - 1 ? "border-r border-slate-700/60" : ""}`}>
-                        <button className="table-header inline-flex items-center gap-2 px-5 py-3 cursor-pointer select-none whitespace-nowrap bg-transparent hover:rounded-2xl  transition-all w-full leading-[150%] tracking-normal min-w-11">
+                        <button className="table-header inline-flex items-center gap-2 px-5 py-3 cursor-pointer select-none whitespace-nowrap bg-transparent hover:rounded-2xl transition-all w-full leading-[150%] tracking-normal min-w-11">
                           {col.label}
                           {col.sortable && (
                             <img src={IconArrow} alt="sort" className="ml-auto w-3 h-3 object-contain" />
@@ -450,7 +524,7 @@ export function EconomicCalendar() {
                   paged.map((event) => (
                     <tr
                       key={event.id}
-                      className="border-b border-slate-800/30 hover:bg-slate-800/10 transition-colors"
+                      className="ec-table-row border-b border-slate-800/30 hover:bg-slate-800/10 transition-colors"
                     >
                       <td className="px-4 py-2.5 text-slate-200 text-[16px] font-[450] whitespace-nowrap">
                         {event.name}
@@ -487,10 +561,7 @@ export function EconomicCalendar() {
           </div>
 
           {/* ── Footer ── */}
-
-
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-0 px-4 sm:px-5 py-3 border-t border-slate-800/60 ">
-
+          <div className="ec-footer flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-0 px-4 sm:px-5 py-3 border-t border-slate-800/60">
             {/* Left: Restricted info */}
             <div className="flex items-center gap-2">
               <img
@@ -508,7 +579,6 @@ export function EconomicCalendar() {
             <div className="flex justify-end sm:justify-normal">
               <Pagination current={page} total={totalPages} onChange={setPage} />
             </div>
-
           </div>
 
         </div>

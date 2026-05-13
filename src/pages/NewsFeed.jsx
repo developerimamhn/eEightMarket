@@ -1,6 +1,7 @@
 
 
-import { useState } from "react";
+import { useState, useLayoutEffect, useRef } from "react";
+import gsap from "gsap";
 import newsBg from "../assets/img/NewsBg.png";
 import cardBgTeal from "../assets/img/News1st_card_bg.png";
 import cardBgAmber from "../assets/img/News2nd_card_bg.png";
@@ -87,7 +88,7 @@ const NewsCard = ({ source, date, title, body, body2 }) => {
 
   return (
     <div
-     className={`relative rounded-2xl border ${isAmber ? "border-[rgba(255,152,0,0.12)]" : "border-[rgba(0,235,255,0.12)]"} overflow-hidden flex flex-col p-4 sm:p-5 min-h-70 sm:min-h-90 lg:min-h-97.5 transition-transform duration-300 h-px`}
+     className={`news-card relative rounded-2xl border ${isAmber ? "border-[rgba(255,152,0,0.12)]" : "border-[rgba(0,235,255,0.12)]"} overflow-hidden flex flex-col p-4 sm:p-5 min-h-70 sm:min-h-90 lg:min-h-97.5 transition-transform duration-300 h-px`}
       style={{
         backgroundImage: `url(${cardBgMap[source]})`,
         backgroundSize: "cover",
@@ -197,10 +198,40 @@ const newsData = [
 /* ── Main component ── */
 export default function NewsFeed() {
   const [activeSource, setActiveSource] = useState(null);
+  const containerRef = useRef(null);
 
   const filtered = activeSource
     ? newsData.filter((n) => n.source === activeSource)
     : newsData.slice(0, 2);
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline();
+
+      tl.from('.news-hero-title', {
+        y: 24,
+        opacity: 0,
+        duration: 0.8,
+        ease: 'power3.out',
+      })
+      .from('.news-filter-area', {
+        y: 24,
+        opacity: 0,
+        duration: 0.7,
+        ease: 'power3.out',
+      }, '-=0.4')
+      .from('.news-card', {
+        y: 30,
+        opacity: 0,
+        scale: 0.98,
+        duration: 0.8,
+        ease: 'power3.out',
+        stagger: 0.16,
+      }, '-=0.35');
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
 
   const toggleSource = (src) =>
     setActiveSource((prev) => (prev === src ? null : src));
@@ -230,7 +261,7 @@ export default function NewsFeed() {
         </defs>
         </svg>
         <div className="absolute inset-0  flex items-center justify-center px-4 py-8 sm:py-12">
-          <h1 className="user text-white text-[22px] sm:text-[28px] md:text-[32px] lg:text-[34px]
+          <h1 className="news-hero-title user text-white text-[22px] sm:text-[28px] md:text-[32px] lg:text-[34px]
             leading-[130%] sm:leading-[120%] text-center">
             Latest World News on <br className="hidden sm:block" /> International Trade
           </h1>
@@ -247,7 +278,7 @@ export default function NewsFeed() {
 
       {/* ── FILTER BAR ── */}
      
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4 py-3 sm:py-6">
+      <div className="news-filter-area flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4 py-3 sm:py-6">
 
         {/* Label */}
         <div className="flex items-center gap-2 shrink-0">

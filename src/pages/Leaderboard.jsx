@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState, useLayoutEffect, useRef } from 'react'
+import gsap from 'gsap'
 import Frame_1 from "../assets/img/mentoring.svg";
 import Frame_2 from "../assets/img/credit-card-validation.svg";
 import FancySvgButton from '../component/ui/button/FancySvgButton';
@@ -26,9 +27,9 @@ import man_image9 from "../assets/img/man_image9.png";
 const cardData = [
     {
         name: "Toni S.",
-        profit: "$66,262.25",
+        profit: "66,262.25",
         account: "E8TRACK",
-        size: "$266,262.25",
+        size: "266,262.25",
         country: "DE",
         flag: circle,
         image: man_image,
@@ -36,9 +37,9 @@ const cardData = [
     },
     {
         name: "Aashish G.",
-        profit: "$49,056.00",
+        profit: "49,056.00",
         account: "E8ONE",
-        size: "$500,000.00",
+        size: "500,000.00",
         country: "IN",
         flag: circle2,
         image: man_image1,
@@ -46,9 +47,9 @@ const cardData = [
     },
     {
         name: "Nathan H.",
-        profit: "$48,596.34",
+        profit: "48,596.34",
         account: "E8FTURES1",
-        size: "$100,000.00",
+        size: "100,000.00",
         country: "GB",
         flag: circle3,
         image: man_image2,
@@ -56,9 +57,9 @@ const cardData = [
     },
     {
         name: "Artur Z.",
-        profit: "$40,635.53",
+        profit: "40,635.53",
         account: "E8ONE",
-        size: "$500,000.00",
+        size: "500,000.00",
         country: "US",
         flag: circle4,
         image: man_image3,
@@ -98,9 +99,60 @@ const users = [
 
 const Leaderboard = () => {
     const [active, setActive] = useState("left");
+    const containerRef = useRef(null);
+
+    useLayoutEffect(() => {
+        const ctx = gsap.context(() => {
+            const tl = gsap.timeline();
+
+            // 3D card animations
+            tl.fromTo('.card-3d', {
+                rotationY: -90,
+                opacity: 0,
+                transformOrigin: 'left center'
+            }, {
+                rotationY: 0,
+                opacity: 1,
+                duration: 0.8,
+                stagger: 0.2,
+                ease: 'back.out(1.7)'
+            });
+
+            // Text animations
+            tl.fromTo('.text-subtle', {
+                y: 20,
+                opacity: 0
+            }, {
+                y: 0,
+                opacity: 1,
+                duration: 0.6,
+                stagger: 0.1
+            }, '-=0.5');
+
+            // Count animations
+            gsap.fromTo('.count-number', {
+                innerText: 0
+            }, {
+                innerText: (i, target) => parseFloat(target.dataset.target),
+                duration: 2,
+                ease: 'power2.out',
+                snap: { innerText: 1 },
+                stagger: 0.2,
+                modifiers: {
+                    innerText: function(value) {
+                        const num = parseFloat(value);
+                        if (isNaN(num)) return value;
+                        return '$' + num.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+                    }
+                }
+            });
+        }, containerRef);
+
+        return () => ctx.revert();
+    }, []);
 
     return (
-        <div className="text-stone-50 mx-auto px-">
+        <div className="text-stone-50 mx-auto px-" ref={containerRef}>
             <div className='flex flex-col lg:flex-row items-center justify-between gap-4'>
                 <div className='relative flex items-center gap-[7.75px] z-10'>
                     <div className='flex items-center justify-center relative w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-lg sm:rounded-xl md:rounded-2xl bg-[#FFFFFF12] overflow-hidden'>
@@ -211,7 +263,7 @@ const Leaderboard = () => {
                             </div>
                             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 lg:gap-6 mt-6'>
                                 {cardData.map((item, index) => (
-                                    <div className='relative w-full h-full  rounded-2xl bg-[#FFFFFF08]'>
+                                    <div className='card-3d relative w-full h-full  rounded-2xl bg-[#FFFFFF08]'>
                                         {/* Gradient border */}
                                         <div className='gradient-border-card' />
                                         {/* Top Section */}
@@ -268,22 +320,24 @@ const Leaderboard = () => {
                                             {/* Bottom Section */}
                                             <div className="flex flex-col justify-between absolute inset-0 z-20 p-4">
                                                 <div className="flex flex-col gap-1.5">
-                                                    <p className="gmail text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px] text-[#FFFFFFB2]">Profit</p>
-                                                    <p className="text-white user leading-[150%] text-[14px] sm:text-[15px] md:text-[16px] lg:text-[28px] xl:text-[24px] 2xl:text-[28px]">
-                                                        {item.profit}
+                                                    <p className="text-subtle gmail text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px] text-[#FFFFFFB2]">Profit</p>
+                                                    <p className="count-number text-white user leading-[150%] text-[14px] sm:text-[15px] md:text-[16px] lg:text-[28px] xl:text-[24px] 2xl:text-[28px]" data-target={parseFloat(item.profit.replace(/[$,]/g, ''))} data-type="profit">
+                                                        0
                                                     </p>
                                                 </div>
                                                 <div className="flex flex-col gap-3 ">
                                                     <div className="flex justify-between">
-                                                        <p className="gmail text-[#FFFFFFB2] text-[12px] md:text-[13px] lg:text-[14px]">Account</p>
+                                                        <p className="text-subtle gmail text-[#FFFFFFB2] text-[12px] md:text-[13px] lg:text-[14px]">Account</p>
                                                         <p className="user leading-[150%] text-white text-[12px] md:text-[13px] lg:text-[14px]">{item.account}</p>
                                                     </div>
                                                     <div className="flex justify-between">
-                                                        <p className="gmail leading-[150%] text-[#FFFFFFB2] text-[12px] md:text-[13px] lg:text-[14px]">Size</p>
-                                                        <p className="user leading-[150%] text-white text-[12px] md:text-[13px] lg:text-[14px]">{item.size}</p>
+                                                        <p className="text-subtle gmail leading-[150%] text-[#FFFFFFB2] text-[12px] md:text-[13px] lg:text-[14px]">Size</p>
+                                                        <p className="count-number user leading-[150%] text-white text-[12px] md:text-[13px] lg:text-[14px]" data-target={parseFloat(item.size.replace(/[$,]/g, ''))} data-type="profit">
+                                                            0
+                                                        </p>
                                                     </div>
                                                     <div className="flex justify-between">
-                                                        <p className="gmail leading-[150%] text-[#FFFFFFB2] text-[12px] md:text-[13px] lg:text-[14px]">Country</p>
+                                                        <p className="text-subtle gmail leading-[150%] text-[#FFFFFFB2] text-[12px] md:text-[13px] lg:text-[14px]">Country</p>
                                                         <div className="flex items-center gap-1.5">
                                                             <img src={item.flag} alt="flag" className="w-4 h-4" />
                                                             <p className="gamil leading-[150%] text-white text-[10px] md:text-[12px] lg:text-[12px]">{item.country}</p>
@@ -303,7 +357,7 @@ const Leaderboard = () => {
                     {users.map((user) => (
                         <div
                             key={user.id}
-                            className="relative w-full rounded-2xl overflow-hidden flex flex-col"
+                            className="card-3d relative w-full rounded-2xl overflow-hidden flex flex-col"
                         >
                             {/* Background Image */}
                             <img
@@ -345,13 +399,13 @@ const Leaderboard = () => {
                                 {/* Info Section */}
                                 <div className="flex flex-col gap-3 grow">
                                     <div className="flex justify-between">
-                                        <p className="gmail leading-[150%] text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] text-[#FFFFFFB2]">Account Size</p>
+                                        <p className="text-subtle gmail leading-[150%] text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] text-[#FFFFFFB2]">Account Size</p>
                                         <p className="user leading-[150%] text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] text-white">
                                             {user.account}
                                         </p>
                                     </div>
                                     <div className="flex justify-between">
-                                        <p className="gmail leading-[150%] text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] text-[#FFFFFFB2]">Country</p>
+                                        <p className="text-subtle gmail leading-[150%] text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] text-[#FFFFFFB2]">Country</p>
                                         <div className="flex items-center gap-1.5">
                                             <img src={circle} alt="flag" className="w-4 h-4" />
                                             <p className="gmail leading-[150%] text-white text-[11px] sm:text-[12px]">{user.country}</p>

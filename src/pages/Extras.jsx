@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import { useState, useLayoutEffect, useRef } from 'react'
+import gsap from 'gsap'
 
 // Custom components & assets import
 import ExactButton from '../component/ui/button/ExactButton';
@@ -62,12 +63,52 @@ const schedule_2 = [
 ];
 
 const Extras = () => {
+  const pageRef = useRef(null);
   const [activeTab, setActiveTab] = useState("Indices");
   const [active, setActive] = useState("left");
 
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+      // Entrance animations for main containers
+      tl.from(".header-anim", { y: -30, opacity: 0, duration: 1 })
+        .from(".tabs-anim", { y: 20, opacity: 0, duration: 0.8 }, "-=0.6")
+        .from(".main-card-anim", { scale: 0.95, opacity: 0, duration: 1.2 }, "-=0.4")
+        .from(".text-subtle", { 
+          opacity: 0, 
+          y: 10, 
+          duration: 0.8, 
+          stagger: 0.05 
+        }, "-=0.8");
+
+      // Number counting animation
+      gsap.utils.toArray(".count-number").forEach((el) => {
+        const target = parseFloat(el.dataset.target);
+        if (!isNaN(target)) {
+          const suffix = el.dataset.suffix || "";
+          const counter = { value: 0 };
+          gsap.to(counter, {
+            value: target,
+            duration: 2.5,
+            ease: "power2.out",
+            onUpdate: () => {
+              el.innerText = Math.floor(counter.value).toLocaleString() + suffix;
+            },
+            onComplete: () => {
+              el.innerText = target.toLocaleString() + suffix;
+            },
+          });
+        }
+      });
+    }, pageRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <div className='mx-auto'>
-      <div className='flex flex-col lg:flex-row items-center justify-between gap-4 lg:gap-0'>
+    <div ref={pageRef} className='mx-auto overflow-hidden'>
+      <div className='header-anim flex flex-col lg:flex-row items-center justify-between gap-4 lg:gap-0'>
         <div className='relative flex items-center gap-[7.75px] z-10'>
           <div className='flex items-center justify-center relative w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-lg sm:rounded-xl md:rounded-2xl bg-[#FFFFFF12] overflow-hidden'>
             {/* Gradient border */}
@@ -94,12 +135,12 @@ const Extras = () => {
             <img src={Frame_1} alt="icon" className="w-3 h-3 sm:w-4 sm:h-4 md:w-4.5 md:h-4.5" />
           </div>
           <div>
-            <p className='user text-[13px] sm:text-[14px] md:text-[15px] lg:text-[17.46px] xl:text-[17.46px] 2xl:text-[18px] leading-[160%] text-white'>
+            <p className='user text-[13px] sm:text-[14px] md:text-[15px] lg:text-[17.46px] xl:text-[17.46px] 2xl:text-[18px] leading-[160%] text-white text-subtle'>
               Trading Instruments
             </p>
           </div>
         </div>
-        <div className="flex rounded-lg sm:rounded-xl md:rounded-2xl border border-[#FFFFFF1A] p-0.5 md:p-1 bg-[#FFFFFF0D]">
+        <div className="tabs-anim flex rounded-lg sm:rounded-xl md:rounded-2xl border border-[#FFFFFF1A] p-0.5 md:p-1 bg-[#FFFFFF0D]">
           {tabs.map((item) => {
             const isActive = activeTab === item.name;
             const button = (
@@ -123,9 +164,9 @@ const Extras = () => {
         </div>
       </div>
       <div className=''>
-        <div className="w-full mx-auto p-px rounded-3xl bg-[linear-gradient(252.84deg,#86B4B4_0.99%,rgba(58,78,78,0.1)_36.61%)] mt-8 relative overflow-hidden">
+        <div className="main-card-anim w-full mx-auto p-px rounded-3xl bg-[linear-gradient(252.84deg,#86B4B4_0.99%,rgba(58,78,78,0.1)_36.61%)] mt-8 relative overflow-hidden">
           <div
-          class="absolute inset-0 block h-full w-full rounded-[inherit] p-px [mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] mask-subtract! [background:linear-gradient(205.84deg,#86B4B4_0.99%,rgba(58,78,78,0.1)_36.61%)] z-11"
+          className="absolute inset-0 block h-full w-full rounded-[inherit] p-px [mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] mask-subtract! [background:linear-gradient(205.84deg,#86B4B4_0.99%,rgba(58,78,78,0.1)_36.61%)] z-11"
         ></div>
           <svg className='absolute top-0 left-0 z-10 w-full h-auto' viewBox="0 0 1104 809" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g opacity="0.2" clip-path="url(#clip0_0_1)">
@@ -4065,7 +4106,7 @@ const Extras = () => {
               </div>
               {/* Center section */}
               <div className='flex flex-col items-center justify-center gap-5 mt-6 relative z-12'>
-                <h3 className='user text-[16px] md:text-[17px] lg:text-[18px] xl:text-[19px] 2xl:text-[20px] leading-[160%] tracking-normal text-center text-[#FFFFFF]'>
+                <h3 className='user text-[16px] md:text-[17px] lg:text-[18px] xl:text-[19px] 2xl:text-[20px] leading-[160%] tracking-normal text-center text-[#FFFFFF] text-subtle'>
                   Nasdaq 100 Index
                 </h3>
                 {/* Toggle switch */}
@@ -4115,7 +4156,7 @@ const Extras = () => {
                       {/* Content */}
                       <div className='flex items-center gap-[7.76px]'>
                         <img src={icon_9} alt="icon" className="w-6 h-6 sm:w-8 sm:h-8 md:w-9 md:h-9" />
-                        <p className='gmail text-[12px] sm:text-[13px] md:text-[14px] leading-[160%] tracking-normal text-[#FFFFFF]'>
+                        <p className='gmail text-[12px] sm:text-[13px] md:text-[14px] leading-[160%] tracking-normal text-[#FFFFFF] text-subtle'>
                           Trading Hours
                         </p>
                       </div>
@@ -4144,11 +4185,11 @@ const Extras = () => {
                                 maskComposite: "exclude",
                               }}
                             />
-                            <p className="relative z-10 p-4 gmail text-[13px]  sm:text-[14px]  md:text-[15px]  lg:text-[16px] leading-[150%] text-[#FFFFFFB2]">
+                            <p className="relative z-10 p-4 gmail text-[13px]  sm:text-[14px]  md:text-[15px]  lg:text-[16px] leading-[150%] text-[#FFFFFFB2] text-subtle">
                               {item.day}
                             </p>
 
-                            <p className="relative z-10 p-4 user text-[13px]  sm:text-[14px]  md:text-[15px]  lg:text-[16px] leading-[150%] text-[#FFFFFF]">
+                            <p className="relative z-10 p-4 user text-[13px]  sm:text-[14px]  md:text-[15px]  lg:text-[16px] leading-[150%] text-[#FFFFFF] text-subtle">
                               {item.time}
                             </p>
                           </div>
@@ -4182,7 +4223,7 @@ const Extras = () => {
                     <div className="relative z-10 p-5">
                       <div className='flex items-center gap-[7.76px]'>
                         <img src={icon_10} alt="icon" className="w-6 h-6 sm:w-8 sm:h-8 md:w-9 md:h-9" />
-                        <p className='gmail text-[12px] sm:text-[13px] md:text-[14px] leading-[160%] tracking-normal text-[#FFFFFF]'>
+                        <p className='gmail text-[12px] sm:text-[13px] md:text-[14px] leading-[160%] tracking-normal text-[#FFFFFF] text-subtle'>
                           Information
                         </p>
                       </div>
@@ -4212,11 +4253,16 @@ const Extras = () => {
                               }}
                             />
 
-                            <p className="relative z-10 p-4 gmail text-[13px]  sm:text-[14px]  md:text-[15px]  lg:text-[16px] leading-[150%] text-[#FFFFFFB2]">
+                            <p className="relative z-10 p-4 gmail text-[13px]  sm:text-[14px]  md:text-[15px]  lg:text-[16px] leading-[150%] text-[#FFFFFFB2] text-subtle">
                               {item.day}
                             </p>
 
-                            <p className="relative z-10 p-4 user text-[13px]  sm:text-[14px]  md:text-[15px]  lg:text-[16px] leading-[150%] text-[#FFFFFF]">
+                            <p
+                              className={
+                                `relative z-10 p-4 user text-[13px]  sm:text-[14px]  md:text-[15px]  lg:text-[16px] leading-[150%] text-[#FFFFFF] ${!isNaN(Number(item.time)) ? "count-number text-subtle" : "text-subtle"}`
+                              }
+                              {...(!isNaN(Number(item.time)) ? { "data-target": Number(item.time) } : {})}
+                            >
                               {item.time}
                             </p>
                           </div>

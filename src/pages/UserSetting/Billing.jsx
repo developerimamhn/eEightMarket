@@ -27,7 +27,7 @@ const InputField = ({ label, value, onChange, placeholder = "" }) => {
         className="absolute left-4 pointer-events-none transition-all duration-300 ease-in-out"
         style={{
           top: lifted ? "0px" : "50%",
-          left: lifted ? "48px" : "16px",
+          left: lifted ? "28px" : "16px",
           transform: lifted ? "translateY(-50%)" : "translateY(-50%)",
           fontSize: lifted ? "12px" : "14px",
           // color: lifted ? "rgba(255,255,255,1)" : "rgba(255, 255, 255, 0.7)",
